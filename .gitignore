@@ -1,0 +1,6 @@
+*build*/
+init-cache-*.cmake
+*.bat
+*.user
+*.orig
+*.bak
