@@ -41,6 +41,7 @@ project(Cube VERSION 0.3.0 LANGUAGES CXX)
 include(GNUInstallDirs)
 include(CMakePackageConfigHelpers)
 
+option(BUILD_TESTING "Enable tests" On)
 option(${PROJECT_NAME}_DEVELOPER "Enable extra targets for developers" Off)
 mark_as_advanced(${PROJECT_NAME}_DEVELOPER)
 
