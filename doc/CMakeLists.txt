@@ -27,6 +27,7 @@ if(BUILD_DOCUMENTATION)
             ../include/cube/gloo/program.hpp
             ../include/cube/gloo/uniform.hpp
             ../include/cube/gloo.hpp
+        STRIP_FROM_PATH "${PROJECT_SOURCE_DIR}/include/"
     )
     add_custom_target(doc)
     add_dependencies(doc html)

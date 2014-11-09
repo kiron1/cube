@@ -74,10 +74,11 @@ if(BoostBook_FOUND AND NOT COMMAND add_boostbook)
         include(CMakeParseArguments)
                 cmake_parse_arguments(_arg
             "ALL"
-            ""
+            "STRIP_FROM_PATH"
             "SOURCES"
             ${ARGN}
         )
+        find_program(SED_EXECUTABLE sed)
         function(copy _output _input)
             get_filename_component(_dir "${_output}" DIRECTORY)
             add_custom_command(OUTPUT "${_output}"
@@ -236,6 +237,12 @@ if(BoostBook_FOUND AND NOT COMMAND add_boostbook)
                 INPUT "${_bin_dir}/autodoc.doxygen.xml"
                 WORKING_DIRECTORY "${_bin_dir}"
             )
+            if(SED_EXECUTABLE AND _arg_STRIP_FROM_PATH)
+                add_custom_command(OUTPUT "${_bin_dir}/autodoc.xml" APPEND
+                    COMMAND ${SED_EXECUTABLE} -i "'s!name=\"${_arg_STRIP_FROM_PATH}!name=\"!g'" "${_bin_dir}/autodoc.xml"
+                )
+            endif()
+
             list(APPEND _xmldeps "${_bin_dir}/autodoc.xml")
         endif()
 
