@@ -5,13 +5,13 @@
 <link rel="stylesheet" href="../../boostbook.css" type="text/css">
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="../../index.html" title="Chapter&#160;1.&#160;Cube">
-<link rel="up" href="../reference.html#header..home.ion.src.cube.include.cube.gloo.uniform_hpp" title="Header &lt;/home/ion/src/cube/include/cube/gloo/uniform.hpp&gt;">
+<link rel="up" href="../reference.html#header.cube.gloo.uniform_hpp" title="Header &lt;cube/gloo/uniform.hpp&gt;">
 <link rel="prev" href="basic_uniform_vector.html" title="Class template basic_uniform_vector">
 <link rel="next" href="window.html" title="Class window">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
 <div class="spirit-nav">
-<a accesskey="p" href="basic_uniform_vector.html"><img src="../../images/prev.png" alt="Prev"></a><a accesskey="u" href="../reference.html#header..home.ion.src.cube.include.cube.gloo.uniform_hpp"><img src="../../images/up.png" alt="Up"></a><a accesskey="h" href="../../index.html"><img src="../../images/home.png" alt="Home"></a><a accesskey="n" href="window.html"><img src="../../images/next.png" alt="Next"></a>
+<a accesskey="p" href="basic_uniform_vector.html"><img src="../../images/prev.png" alt="Prev"></a><a accesskey="u" href="../reference.html#header.cube.gloo.uniform_hpp"><img src="../../images/up.png" alt="Up"></a><a accesskey="h" href="../../index.html"><img src="../../images/home.png" alt="Home"></a><a accesskey="n" href="window.html"><img src="../../images/next.png" alt="Next"></a>
 </div>
 <div class="refentry">
 <a name="cube.gloo.uniform_base"></a><div class="titlepage"></div>
@@ -20,47 +20,47 @@
 <p>cube::gloo::uniform_base</p>
 </div>
 <h2 xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv-title">Synopsis</h2>
-<div xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv"><pre class="synopsis"><span class="comment">// In header: &lt;<a class="link" href="../reference.html#header..home.ion.src.cube.include.cube.gloo.uniform_hpp" title="Header &lt;/home/ion/src/cube/include/cube/gloo/uniform.hpp&gt;">/home/ion/src/cube/include/cube/gloo/uniform.hpp</a>&gt;
+<div xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv"><pre class="synopsis"><span class="comment">// In header: &lt;<a class="link" href="../reference.html#header.cube.gloo.uniform_hpp" title="Header &lt;cube/gloo/uniform.hpp&gt;">cube/gloo/uniform.hpp</a>&gt;
 
 </span>
 <span class="keyword">class</span> <a class="link" href="uniform_base.html" title="Class uniform_base">uniform_base</a> <span class="special">{</span>
 <span class="keyword">public</span><span class="special">:</span>
   <span class="comment">// <a class="link" href="uniform_base.html#cube.gloo.uniform_baseconstruct-copy-destruct">construct/copy/destruct</a></span>
-  <a class="link" href="uniform_base.html#idp31071888-bb"><span class="identifier">uniform_base</span></a><span class="special">(</span><a class="link" href="program.html" title="Class program">program</a> <span class="special">&amp;</span><span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span><span class="special">,</span> <span class="identifier">GLint</span><span class="special">)</span><span class="special">;</span>
+  <a class="link" href="uniform_base.html#idp31830128-bb"><span class="identifier">uniform_base</span></a><span class="special">(</span><a class="link" href="program.html" title="Class program">program</a> <span class="special">&amp;</span><span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span><span class="special">,</span> <span class="identifier">GLint</span><span class="special">)</span><span class="special">;</span>
 
-  <span class="comment">// <a class="link" href="uniform_base.html#idp31069408-bb">public member functions</a></span>
-  <span class="keyword">explicit</span> <a class="link" href="uniform_base.html#idp31069904-bb"><span class="keyword">operator</span> <span class="keyword">bool</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="comment">// <a class="link" href="uniform_base.html#idp31827648-bb">public member functions</a></span>
+  <span class="keyword">explicit</span> <a class="link" href="uniform_base.html#idp31828144-bb"><span class="keyword">operator</span> <span class="keyword">bool</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
 
-  <span class="comment">// <a class="link" href="uniform_base.html#idp31074272-bb">private member functions</a></span>
-  <span class="keyword">virtual</span> <span class="keyword">void</span> <a class="link" href="uniform_base.html#idp31074768-bb"><span class="identifier">transfer</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span> <span class="special">=</span> <span class="number">0</span><span class="special">;</span>
-  <span class="keyword">void</span> <a class="link" href="uniform_base.html#idp31076000-bb"><span class="identifier">create</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
-  <span class="keyword">void</span> <a class="link" href="uniform_base.html#idp31076752-bb"><span class="identifier">enable</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
-  <span class="keyword">void</span> <a class="link" href="uniform_base.html#idp31077504-bb"><span class="identifier">disable</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
-  <span class="keyword">void</span> <a class="link" href="uniform_base.html#idp31078256-bb"><span class="identifier">destroy</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="comment">// <a class="link" href="uniform_base.html#idp31832512-bb">private member functions</a></span>
+  <span class="keyword">virtual</span> <span class="keyword">void</span> <a class="link" href="uniform_base.html#idp31833008-bb"><span class="identifier">transfer</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span> <span class="special">=</span> <span class="number">0</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="uniform_base.html#idp31834240-bb"><span class="identifier">create</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="uniform_base.html#idp31834992-bb"><span class="identifier">enable</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="uniform_base.html#idp31835744-bb"><span class="identifier">disable</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="uniform_base.html#idp31836496-bb"><span class="identifier">destroy</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
 <span class="special">}</span><span class="special">;</span></pre></div>
 <div class="refsect1">
-<a name="idp84568768"></a><h2>Description</h2>
+<a name="idp103353584"></a><h2>Description</h2>
 <div class="refsect2">
-<a name="idp84569184"></a><h3>
+<a name="idp103354000"></a><h3>
 <a name="cube.gloo.uniform_baseconstruct-copy-destruct"></a><code class="computeroutput">uniform_base</code> 
         public
        construct/copy/destruct</h3>
-<div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><pre class="literallayout"><a name="idp31071888-bb"></a><span class="identifier">uniform_base</span><span class="special">(</span><a class="link" href="program.html" title="Class program">program</a> <span class="special">&amp;</span> p<span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> name<span class="special">,</span> <span class="identifier">GLint</span> expected_type<span class="special">)</span><span class="special">;</span></pre></li></ol></div>
+<div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><pre class="literallayout"><a name="idp31830128-bb"></a><span class="identifier">uniform_base</span><span class="special">(</span><a class="link" href="program.html" title="Class program">program</a> <span class="special">&amp;</span> p<span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> name<span class="special">,</span> <span class="identifier">GLint</span> expected_type<span class="special">)</span><span class="special">;</span></pre></li></ol></div>
 </div>
 <div class="refsect2">
-<a name="idp84580416"></a><h3>
-<a name="idp31069408-bb"></a><code class="computeroutput">uniform_base</code> public member functions</h3>
-<div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><pre class="literallayout"><span class="keyword">explicit</span> <a name="idp31069904-bb"></a><span class="keyword">operator</span> <span class="keyword">bool</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li></ol></div>
+<a name="idp103365168"></a><h3>
+<a name="idp31827648-bb"></a><code class="computeroutput">uniform_base</code> public member functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><pre class="literallayout"><span class="keyword">explicit</span> <a name="idp31828144-bb"></a><span class="keyword">operator</span> <span class="keyword">bool</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li></ol></div>
 </div>
 <div class="refsect2">
-<a name="idp84588272"></a><h3>
-<a name="idp31074272-bb"></a><code class="computeroutput">uniform_base</code> private member functions</h3>
+<a name="idp103372960"></a><h3>
+<a name="idp31832512-bb"></a><code class="computeroutput">uniform_base</code> private member functions</h3>
 <div class="orderedlist"><ol class="orderedlist" type="1">
-<li class="listitem"><pre class="literallayout"><span class="keyword">virtual</span> <span class="keyword">void</span> <a name="idp31074768-bb"></a><span class="identifier">transfer</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span> <span class="special">=</span> <span class="number">0</span><span class="special">;</span></pre></li>
-<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp31076000-bb"></a><span class="identifier">create</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
-<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp31076752-bb"></a><span class="identifier">enable</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
-<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp31077504-bb"></a><span class="identifier">disable</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
-<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp31078256-bb"></a><span class="identifier">destroy</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">virtual</span> <span class="keyword">void</span> <a name="idp31833008-bb"></a><span class="identifier">transfer</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span> <span class="special">=</span> <span class="number">0</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp31834240-bb"></a><span class="identifier">create</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp31834992-bb"></a><span class="identifier">enable</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp31835744-bb"></a><span class="identifier">disable</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp31836496-bb"></a><span class="identifier">destroy</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
 </ol></div>
 </div>
 </div>
@@ -75,7 +75,7 @@
 </tr></table>
 <hr>
 <div class="spirit-nav">
-<a accesskey="p" href="basic_uniform_vector.html"><img src="../../images/prev.png" alt="Prev"></a><a accesskey="u" href="../reference.html#header..home.ion.src.cube.include.cube.gloo.uniform_hpp"><img src="../../images/up.png" alt="Up"></a><a accesskey="h" href="../../index.html"><img src="../../images/home.png" alt="Home"></a><a accesskey="n" href="window.html"><img src="../../images/next.png" alt="Next"></a>
+<a accesskey="p" href="basic_uniform_vector.html"><img src="../../images/prev.png" alt="Prev"></a><a accesskey="u" href="../reference.html#header.cube.gloo.uniform_hpp"><img src="../../images/up.png" alt="Up"></a><a accesskey="h" href="../../index.html"><img src="../../images/home.png" alt="Home"></a><a accesskey="n" href="window.html"><img src="../../images/next.png" alt="Next"></a>
 </div>
 </body>
 </html>

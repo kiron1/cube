@@ -5,13 +5,13 @@
 <link rel="stylesheet" href="../../boostbook.css" type="text/css">
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="../../index.html" title="Chapter&#160;1.&#160;Cube">
-<link rel="up" href="../reference.html#header..home.ion.src.cube.include.cube.gloo.attribute_hpp" title="Header &lt;/home/ion/src/cube/include/cube/gloo/attribute.hpp&gt;">
+<link rel="up" href="../reference.html#header.cube.gloo.attribute_hpp" title="Header &lt;cube/gloo/attribute.hpp&gt;">
 <link rel="prev" href="../reference.html" title="Reference">
 <link rel="next" href="basic_attribute.html" title="Class template basic_attribute">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
 <div class="spirit-nav">
-<a accesskey="p" href="../reference.html"><img src="../../images/prev.png" alt="Prev"></a><a accesskey="u" href="../reference.html#header..home.ion.src.cube.include.cube.gloo.attribute_hpp"><img src="../../images/up.png" alt="Up"></a><a accesskey="h" href="../../index.html"><img src="../../images/home.png" alt="Home"></a><a accesskey="n" href="basic_attribute.html"><img src="../../images/next.png" alt="Next"></a>
+<a accesskey="p" href="../reference.html"><img src="../../images/prev.png" alt="Prev"></a><a accesskey="u" href="../reference.html#header.cube.gloo.attribute_hpp"><img src="../../images/up.png" alt="Up"></a><a accesskey="h" href="../../index.html"><img src="../../images/home.png" alt="Home"></a><a accesskey="n" href="basic_attribute.html"><img src="../../images/next.png" alt="Next"></a>
 </div>
 <div class="refentry">
 <a name="cube.gloo.attribute_base"></a><div class="titlepage"></div>
@@ -20,26 +20,26 @@
 <p>cube::gloo::attribute_base &#8212; Attribute proxy of an OpenGL program. </p>
 </div>
 <h2 xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv-title">Synopsis</h2>
-<div xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv"><pre class="synopsis"><span class="comment">// In header: &lt;<a class="link" href="../reference.html#header..home.ion.src.cube.include.cube.gloo.attribute_hpp" title="Header &lt;/home/ion/src/cube/include/cube/gloo/attribute.hpp&gt;">/home/ion/src/cube/include/cube/gloo/attribute.hpp</a>&gt;
+<div xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv"><pre class="synopsis"><span class="comment">// In header: &lt;<a class="link" href="../reference.html#header.cube.gloo.attribute_hpp" title="Header &lt;cube/gloo/attribute.hpp&gt;">cube/gloo/attribute.hpp</a>&gt;
 
 </span>
 <span class="keyword">class</span> <a class="link" href="attribute_base.html" title="Class attribute_base">attribute_base</a> <span class="special">{</span>
 <span class="keyword">public</span><span class="special">:</span>
   <span class="comment">// <a class="link" href="attribute_base.html#cube.gloo.attribute_baseconstruct-copy-destruct">construct/copy/destruct</a></span>
-  <a class="link" href="attribute_base.html#idp24615584-bb"><span class="identifier">attribute_base</span></a><span class="special">(</span><a class="link" href="program.html" title="Class program">program</a> <span class="special">&amp;</span><span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span><span class="special">,</span> <span class="identifier">GLint</span><span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span><span class="special">)</span><span class="special">;</span>
+  <a class="link" href="attribute_base.html#idp25427600-bb"><span class="identifier">attribute_base</span></a><span class="special">(</span><a class="link" href="program.html" title="Class program">program</a> <span class="special">&amp;</span><span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span><span class="special">,</span> <span class="identifier">GLint</span><span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span><span class="special">)</span><span class="special">;</span>
 
-  <span class="comment">// <a class="link" href="attribute_base.html#idp24611616-bb">public member functions</a></span>
-  <span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span> <a class="link" href="attribute_base.html#idp24612176-bb"><span class="identifier">size</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
-  <span class="keyword">explicit</span> <a class="link" href="attribute_base.html#idp24613296-bb"><span class="keyword">operator</span> <span class="keyword">bool</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="comment">// <a class="link" href="attribute_base.html#idp25423632-bb">public member functions</a></span>
+  <span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span> <a class="link" href="attribute_base.html#idp25424192-bb"><span class="identifier">size</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">explicit</span> <a class="link" href="attribute_base.html#idp25425312-bb"><span class="keyword">operator</span> <span class="keyword">bool</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
 
-  <span class="comment">// <a class="link" href="attribute_base.html#idp24618912-bb">private member functions</a></span>
-  <span class="keyword">void</span> <a class="link" href="attribute_base.html#idp24619488-bb"><span class="identifier">create</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
-  <span class="keyword">void</span> <a class="link" href="attribute_base.html#idp24620336-bb"><span class="identifier">enable</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
-  <span class="keyword">void</span> <a class="link" href="attribute_base.html#idp24621184-bb"><span class="identifier">disable</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
-  <span class="keyword">void</span> <a class="link" href="attribute_base.html#idp24622032-bb"><span class="identifier">destroy</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="comment">// <a class="link" href="attribute_base.html#idp25430928-bb">private member functions</a></span>
+  <span class="keyword">void</span> <a class="link" href="attribute_base.html#idp25431504-bb"><span class="identifier">create</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="attribute_base.html#idp25432352-bb"><span class="identifier">enable</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="attribute_base.html#idp25433200-bb"><span class="identifier">disable</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="attribute_base.html#idp25434048-bb"><span class="identifier">destroy</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
 <span class="special">}</span><span class="special">;</span></pre></div>
 <div class="refsect1">
-<a name="idp83007152"></a><h2>Description</h2>
+<a name="idp101784816"></a><h2>Description</h2>
 <div class="note"><table border="0" summary="Note">
 <tr>
 <td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../../images/note.png"></td>
@@ -64,29 +64,29 @@
 <p>
 </p>
 <div class="refsect2">
-<a name="idp83013600"></a><h3>
+<a name="idp101791264"></a><h3>
 <a name="cube.gloo.attribute_baseconstruct-copy-destruct"></a><code class="computeroutput">attribute_base</code> 
         public
        construct/copy/destruct</h3>
-<div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><pre class="literallayout"><a name="idp24615584-bb"></a><span class="identifier">attribute_base</span><span class="special">(</span><a class="link" href="program.html" title="Class program">program</a> <span class="special">&amp;</span> p<span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> name<span class="special">,</span> <span class="identifier">GLint</span> expected_type<span class="special">,</span> 
+<div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><pre class="literallayout"><a name="idp25427600-bb"></a><span class="identifier">attribute_base</span><span class="special">(</span><a class="link" href="program.html" title="Class program">program</a> <span class="special">&amp;</span> p<span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> name<span class="special">,</span> <span class="identifier">GLint</span> expected_type<span class="special">,</span> 
                <span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span> dim<span class="special">)</span><span class="special">;</span></pre></li></ol></div>
 </div>
 <div class="refsect2">
-<a name="idp83025648"></a><h3>
-<a name="idp24611616-bb"></a><code class="computeroutput">attribute_base</code> public member functions</h3>
+<a name="idp101803312"></a><h3>
+<a name="idp25423632-bb"></a><code class="computeroutput">attribute_base</code> public member functions</h3>
 <div class="orderedlist"><ol class="orderedlist" type="1">
-<li class="listitem"><pre class="literallayout"><span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span> <a name="idp24612176-bb"></a><span class="identifier">size</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
-<li class="listitem"><pre class="literallayout"><span class="keyword">explicit</span> <a name="idp24613296-bb"></a><span class="keyword">operator</span> <span class="keyword">bool</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span> <a name="idp25424192-bb"></a><span class="identifier">size</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">explicit</span> <a name="idp25425312-bb"></a><span class="keyword">operator</span> <span class="keyword">bool</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
 </ol></div>
 </div>
 <div class="refsect2">
-<a name="idp83038048"></a><h3>
-<a name="idp24618912-bb"></a><code class="computeroutput">attribute_base</code> private member functions</h3>
+<a name="idp101815712"></a><h3>
+<a name="idp25430928-bb"></a><code class="computeroutput">attribute_base</code> private member functions</h3>
 <div class="orderedlist"><ol class="orderedlist" type="1">
-<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp24619488-bb"></a><span class="identifier">create</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
-<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp24620336-bb"></a><span class="identifier">enable</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
-<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp24621184-bb"></a><span class="identifier">disable</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
-<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp24622032-bb"></a><span class="identifier">destroy</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp25431504-bb"></a><span class="identifier">create</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp25432352-bb"></a><span class="identifier">enable</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp25433200-bb"></a><span class="identifier">disable</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp25434048-bb"></a><span class="identifier">destroy</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
 </ol></div>
 </div>
 </div>
@@ -101,7 +101,7 @@
 </tr></table>
 <hr>
 <div class="spirit-nav">
-<a accesskey="p" href="../reference.html"><img src="../../images/prev.png" alt="Prev"></a><a accesskey="u" href="../reference.html#header..home.ion.src.cube.include.cube.gloo.attribute_hpp"><img src="../../images/up.png" alt="Up"></a><a accesskey="h" href="../../index.html"><img src="../../images/home.png" alt="Home"></a><a accesskey="n" href="basic_attribute.html"><img src="../../images/next.png" alt="Next"></a>
+<a accesskey="p" href="../reference.html"><img src="../../images/prev.png" alt="Prev"></a><a accesskey="u" href="../reference.html#header.cube.gloo.attribute_hpp"><img src="../../images/up.png" alt="Up"></a><a accesskey="h" href="../../index.html"><img src="../../images/home.png" alt="Home"></a><a accesskey="n" href="basic_attribute.html"><img src="../../images/next.png" alt="Next"></a>
 </div>
 </body>
 </html>

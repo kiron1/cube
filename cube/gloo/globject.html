@@ -5,13 +5,13 @@
 <link rel="stylesheet" href="../../boostbook.css" type="text/css">
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="../../index.html" title="Chapter&#160;1.&#160;Cube">
-<link rel="up" href="../reference.html#header..home.ion.src.cube.include.cube.gloo.globject_hpp" title="Header &lt;/home/ion/src/cube/include/cube/gloo/globject.hpp&gt;">
+<link rel="up" href="../reference.html#header.cube.gloo.globject_hpp" title="Header &lt;cube/gloo/globject.hpp&gt;">
 <link rel="prev" href="element_index_base.html" title="Class element_index_base">
 <link rel="next" href="with_handle.html" title="Class with_handle">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
 <div class="spirit-nav">
-<a accesskey="p" href="element_index_base.html"><img src="../../images/prev.png" alt="Prev"></a><a accesskey="u" href="../reference.html#header..home.ion.src.cube.include.cube.gloo.globject_hpp"><img src="../../images/up.png" alt="Up"></a><a accesskey="h" href="../../index.html"><img src="../../images/home.png" alt="Home"></a><a accesskey="n" href="with_handle.html"><img src="../../images/next.png" alt="Next"></a>
+<a accesskey="p" href="element_index_base.html"><img src="../../images/prev.png" alt="Prev"></a><a accesskey="u" href="../reference.html#header.cube.gloo.globject_hpp"><img src="../../images/up.png" alt="Up"></a><a accesskey="h" href="../../index.html"><img src="../../images/home.png" alt="Home"></a><a accesskey="n" href="with_handle.html"><img src="../../images/next.png" alt="Next"></a>
 </div>
 <div class="refentry">
 <a name="cube.gloo.globject"></a><div class="titlepage"></div>
@@ -20,7 +20,7 @@
 <p>cube::gloo::globject &#8212; CRTP base class which handles the state of an OpenGL object. </p>
 </div>
 <h2 xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv-title">Synopsis</h2>
-<div xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv"><pre class="synopsis"><span class="comment">// In header: &lt;<a class="link" href="../reference.html#header..home.ion.src.cube.include.cube.gloo.globject_hpp" title="Header &lt;/home/ion/src/cube/include/cube/gloo/globject.hpp&gt;">/home/ion/src/cube/include/cube/gloo/globject.hpp</a>&gt;
+<div xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv"><pre class="synopsis"><span class="comment">// In header: &lt;<a class="link" href="../reference.html#header.cube.gloo.globject_hpp" title="Header &lt;cube/gloo/globject.hpp&gt;">cube/gloo/globject.hpp</a>&gt;
 
 </span><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> Derived<span class="special">,</span> <span class="keyword">typename</span><span class="special">...</span> Policies<span class="special">&gt;</span> 
 <span class="keyword">class</span> <a class="link" href="globject.html" title="Class template globject">globject</a> <span class="special">:</span> <span class="keyword">public</span> <span class="identifier">Policies</span> <span class="special">{</span>
@@ -28,16 +28,16 @@
 
   <span class="keyword">enum</span> <a name="cube.gloo.globject.state_type"></a>state_type <span class="special">{</span> constructed, idle, enabled, dead <span class="special">}</span><span class="special">;</span>
   <span class="comment">// <a class="link" href="globject.html#cube.gloo.globjectconstruct-copy-destruct">construct/copy/destruct</a></span>
-  <a class="link" href="globject.html#idp30935200-bb"><span class="identifier">globject</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <a class="link" href="globject.html#idp31693440-bb"><span class="identifier">globject</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
 
-  <span class="comment">// <a class="link" href="globject.html#idp30929184-bb">public member functions</a></span>
-  <span class="identifier">state_type</span> <a class="link" href="globject.html#idp30929680-bb"><span class="identifier">state</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
-  <span class="keyword">void</span> <a class="link" href="globject.html#idp30930672-bb"><span class="identifier">activate</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
-  <span class="keyword">void</span> <a class="link" href="globject.html#idp30931952-bb"><span class="identifier">deactivate</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
-  <span class="keyword">void</span> <a class="link" href="globject.html#idp30933200-bb"><span class="identifier">dispose</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="comment">// <a class="link" href="globject.html#idp31687424-bb">public member functions</a></span>
+  <span class="identifier">state_type</span> <a class="link" href="globject.html#idp31687920-bb"><span class="identifier">state</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="globject.html#idp31688912-bb"><span class="identifier">activate</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="globject.html#idp31690192-bb"><span class="identifier">deactivate</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="globject.html#idp31691440-bb"><span class="identifier">dispose</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
 <span class="special">}</span><span class="special">;</span></pre></div>
 <div class="refsect1">
-<a name="idp83518784"></a><h2>Description</h2>
+<a name="idp102305632"></a><h2>Description</h2>
 <p>When the OpenGL object is activated by calling activate it will call <code class="computeroutput">create</code> and then <code class="computeroutput">enable</code> of its derived class. If the OpenGL object was created by a previous activate call only the <code class="computeroutput">enable</code> method of the derived class will be called.</p>
 <p>Calling deactivate, will call the <code class="computeroutput">disable</code> method of the derived class if allowed.</p>
 <p>The dispose method will call <code class="computeroutput">destroy</code> of the derived class. Inside the <code class="computeroutput">destroy</code> method, the resources acquired in <code class="computeroutput">create</code> must be cleaned up.</p>
@@ -58,27 +58,27 @@
 <p>
 </p>
 <div class="refsect2">
-<a name="idp83556864"></a><h3>
+<a name="idp102343792"></a><h3>
 <a name="cube.gloo.globjectconstruct-copy-destruct"></a><code class="computeroutput">globject</code> 
         public
        construct/copy/destruct</h3>
-<div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><pre class="literallayout"><a name="idp30935200-bb"></a><span class="identifier">globject</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li></ol></div>
+<div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><pre class="literallayout"><a name="idp31693440-bb"></a><span class="identifier">globject</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li></ol></div>
 </div>
 <div class="refsect2">
-<a name="idp83562800"></a><h3>
-<a name="idp30929184-bb"></a><code class="computeroutput">globject</code> public member functions</h3>
+<a name="idp102349600"></a><h3>
+<a name="idp31687424-bb"></a><code class="computeroutput">globject</code> public member functions</h3>
 <div class="orderedlist"><ol class="orderedlist" type="1">
-<li class="listitem"><pre class="literallayout"><span class="identifier">state_type</span> <a name="idp30929680-bb"></a><span class="identifier">state</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="identifier">state_type</span> <a name="idp31687920-bb"></a><span class="identifier">state</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
 <li class="listitem">
-<pre class="literallayout"><span class="keyword">void</span> <a name="idp30930672-bb"></a><span class="identifier">activate</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>
+<pre class="literallayout"><span class="keyword">void</span> <a name="idp31688912-bb"></a><span class="identifier">activate</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>
 <p>Activate this OpenGL object (will create (if necessary) and enable the object), must be called inside a valid OpenGL context. </p>
 </li>
 <li class="listitem">
-<pre class="literallayout"><span class="keyword">void</span> <a name="idp30931952-bb"></a><span class="identifier">deactivate</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>
+<pre class="literallayout"><span class="keyword">void</span> <a name="idp31690192-bb"></a><span class="identifier">deactivate</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>
 <p>Deactivate this OpenGL object (disables the object), must be called inside a valid OpenGL context. </p>
 </li>
 <li class="listitem">
-<pre class="literallayout"><span class="keyword">void</span> <a name="idp30933200-bb"></a><span class="identifier">dispose</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>
+<pre class="literallayout"><span class="keyword">void</span> <a name="idp31691440-bb"></a><span class="identifier">dispose</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>
 <p>Dispose this OpenGL object (delete its resources), must be called inside a valid OpenGL context. </p>
 </li>
 </ol></div>
@@ -95,7 +95,7 @@
 </tr></table>
 <hr>
 <div class="spirit-nav">
-<a accesskey="p" href="element_index_base.html"><img src="../../images/prev.png" alt="Prev"></a><a accesskey="u" href="../reference.html#header..home.ion.src.cube.include.cube.gloo.globject_hpp"><img src="../../images/up.png" alt="Up"></a><a accesskey="h" href="../../index.html"><img src="../../images/home.png" alt="Home"></a><a accesskey="n" href="with_handle.html"><img src="../../images/next.png" alt="Next"></a>
+<a accesskey="p" href="element_index_base.html"><img src="../../images/prev.png" alt="Prev"></a><a accesskey="u" href="../reference.html#header.cube.gloo.globject_hpp"><img src="../../images/up.png" alt="Up"></a><a accesskey="h" href="../../index.html"><img src="../../images/home.png" alt="Home"></a><a accesskey="n" href="with_handle.html"><img src="../../images/next.png" alt="Next"></a>
 </div>
 </body>
 </html>

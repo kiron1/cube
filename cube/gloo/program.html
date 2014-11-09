@@ -5,13 +5,13 @@
 <link rel="stylesheet" href="../../boostbook.css" type="text/css">
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="../../index.html" title="Chapter&#160;1.&#160;Cube">
-<link rel="up" href="../reference.html#header..home.ion.src.cube.include.cube.gloo.program_hpp" title="Header &lt;/home/ion/src/cube/include/cube/gloo/program.hpp&gt;">
+<link rel="up" href="../reference.html#header.cube.gloo.program_hpp" title="Header &lt;cube/gloo/program.hpp&gt;">
 <link rel="prev" href="../../CUBE_GLOO_GL_H.html" title="Macro CUBE_GLOO_GL_H">
 <link rel="next" href="fragment_shader.html" title="Class fragment_shader">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
 <div class="spirit-nav">
-<a accesskey="p" href="../../CUBE_GLOO_GL_H.html"><img src="../../images/prev.png" alt="Prev"></a><a accesskey="u" href="../reference.html#header..home.ion.src.cube.include.cube.gloo.program_hpp"><img src="../../images/up.png" alt="Up"></a><a accesskey="h" href="../../index.html"><img src="../../images/home.png" alt="Home"></a><a accesskey="n" href="fragment_shader.html"><img src="../../images/next.png" alt="Next"></a>
+<a accesskey="p" href="../../CUBE_GLOO_GL_H.html"><img src="../../images/prev.png" alt="Prev"></a><a accesskey="u" href="../reference.html#header.cube.gloo.program_hpp"><img src="../../images/up.png" alt="Up"></a><a accesskey="h" href="../../index.html"><img src="../../images/home.png" alt="Home"></a><a accesskey="n" href="fragment_shader.html"><img src="../../images/next.png" alt="Next"></a>
 </div>
 <div class="refentry">
 <a name="cube.gloo.program"></a><div class="titlepage"></div>
@@ -20,7 +20,7 @@
 <p>cube::gloo::program &#8212; OpenGL shader program, linking the shaders and binding the variables. </p>
 </div>
 <h2 xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv-title">Synopsis</h2>
-<div xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv"><pre class="synopsis"><span class="comment">// In header: &lt;<a class="link" href="../reference.html#header..home.ion.src.cube.include.cube.gloo.program_hpp" title="Header &lt;/home/ion/src/cube/include/cube/gloo/program.hpp&gt;">/home/ion/src/cube/include/cube/gloo/program.hpp</a>&gt;
+<div xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv"><pre class="synopsis"><span class="comment">// In header: &lt;<a class="link" href="../reference.html#header.cube.gloo.program_hpp" title="Header &lt;cube/gloo/program.hpp&gt;">cube/gloo/program.hpp</a>&gt;
 
 </span>
 <span class="keyword">class</span> <a class="link" href="program.html" title="Class program">program</a> <span class="special">:</span> <span class="keyword">public</span> <span class="identifier">cube</span><span class="special">::</span><span class="identifier">gloo</span><span class="special">::</span><span class="identifier">globject</span><span class="special">&lt;</span> <span class="identifier">program</span><span class="special">,</span> <span class="identifier">with_handle</span> <span class="special">&gt;</span> <span class="special">{</span>
@@ -36,32 +36,32 @@
                    triangle_fan = = GL_TRIANGLE_FAN <span class="special">}</span><span class="special">;</span>
 
   <span class="comment">// <a class="link" href="program.html#cube.gloo.programconstruct-copy-destruct">construct/copy/destruct</a></span>
-  <a class="link" href="program.html#idp30979200-bb"><span class="identifier">program</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
-  <a class="link" href="program.html#idp30979456-bb"><span class="identifier">program</span></a><span class="special">(</span><a class="link" href="vertex_shader.html" title="Class vertex_shader">vertex_shader</a><span class="special">,</span> <a class="link" href="fragment_shader.html" title="Class fragment_shader">fragment_shader</a><span class="special">)</span><span class="special">;</span>
-  <a class="link" href="program.html#idp30981216-bb"><span class="identifier">program</span></a><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span><span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span><span class="special">)</span><span class="special">;</span>
+  <a class="link" href="program.html#idp31737440-bb"><span class="identifier">program</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <a class="link" href="program.html#idp31737696-bb"><span class="identifier">program</span></a><span class="special">(</span><a class="link" href="vertex_shader.html" title="Class vertex_shader">vertex_shader</a><span class="special">,</span> <a class="link" href="fragment_shader.html" title="Class fragment_shader">fragment_shader</a><span class="special">)</span><span class="special">;</span>
+  <a class="link" href="program.html#idp31739456-bb"><span class="identifier">program</span></a><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span><span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span><span class="special">)</span><span class="special">;</span>
 
-  <span class="comment">// <a class="link" href="program.html#idp30970032-bb">public member functions</a></span>
-  <span class="keyword">void</span> <a class="link" href="program.html#idp30970528-bb"><span class="identifier">attach</span></a><span class="special">(</span><a class="link" href="vertex_shader.html" title="Class vertex_shader">vertex_shader</a> <span class="keyword">const</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
-  <span class="keyword">void</span> <a class="link" href="program.html#idp30972416-bb"><span class="identifier">attach</span></a><span class="special">(</span><a class="link" href="fragment_shader.html" title="Class fragment_shader">fragment_shader</a> <span class="keyword">const</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
-  <span class="keyword">void</span> <a class="link" href="program.html#idp30974304-bb"><span class="identifier">draw</span></a><span class="special">(</span><span class="identifier">draw_mode</span><span class="special">)</span><span class="special">;</span>
-  <span class="keyword">void</span> <a class="link" href="program.html#idp30975936-bb"><span class="identifier">draw</span></a><span class="special">(</span><span class="identifier">draw_mode</span><span class="special">,</span> <a class="link" href="element_index_base.html" title="Class element_index_base">element_index_base</a> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <span class="comment">// <a class="link" href="program.html#idp31728272-bb">public member functions</a></span>
+  <span class="keyword">void</span> <a class="link" href="program.html#idp31728768-bb"><span class="identifier">attach</span></a><span class="special">(</span><a class="link" href="vertex_shader.html" title="Class vertex_shader">vertex_shader</a> <span class="keyword">const</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="program.html#idp31730656-bb"><span class="identifier">attach</span></a><span class="special">(</span><a class="link" href="fragment_shader.html" title="Class fragment_shader">fragment_shader</a> <span class="keyword">const</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="program.html#idp31732544-bb"><span class="identifier">draw</span></a><span class="special">(</span><span class="identifier">draw_mode</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="program.html#idp31734176-bb"><span class="identifier">draw</span></a><span class="special">(</span><span class="identifier">draw_mode</span><span class="special">,</span> <a class="link" href="element_index_base.html" title="Class element_index_base">element_index_base</a> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
 
-  <span class="comment">// <a class="link" href="program.html#idp30982720-bb">private member functions</a></span>
-  <span class="keyword">void</span> <a class="link" href="program.html#idp30983216-bb"><span class="identifier">attach</span></a><span class="special">(</span><a class="link" href="attribute_base.html" title="Class attribute_base">attribute_base</a> <span class="special">*</span><span class="special">)</span><span class="special">;</span>
-  <span class="keyword">void</span> <a class="link" href="program.html#idp30984848-bb"><span class="identifier">attach</span></a><span class="special">(</span><a class="link" href="uniform_base.html" title="Class uniform_base">uniform_base</a> <span class="special">*</span><span class="special">)</span><span class="special">;</span>
-  <span class="emphasis"><em><span class="identifier">unspecified</span></em></span> <a class="link" href="program.html#idp30986480-bb"><span class="identifier">variable</span></a><span class="special">(</span><a class="link" href="attribute_base.html" title="Class attribute_base">attribute_base</a> <span class="special">*</span><span class="special">)</span><span class="special">;</span>
-  <span class="emphasis"><em><span class="identifier">unspecified</span></em></span> <a class="link" href="program.html#idp30988240-bb"><span class="identifier">variable</span></a><span class="special">(</span><a class="link" href="uniform_base.html" title="Class uniform_base">uniform_base</a> <span class="special">*</span><span class="special">)</span><span class="special">;</span>
-  <span class="keyword">void</span> <a class="link" href="program.html#idp30990000-bb"><span class="identifier">detach</span></a><span class="special">(</span><a class="link" href="attribute_base.html" title="Class attribute_base">attribute_base</a> <span class="special">*</span><span class="special">)</span><span class="special">;</span>
-  <span class="keyword">void</span> <a class="link" href="program.html#idp30991632-bb"><span class="identifier">detach</span></a><span class="special">(</span><a class="link" href="uniform_base.html" title="Class uniform_base">uniform_base</a> <span class="special">*</span><span class="special">)</span><span class="special">;</span>
-  <span class="identifier">attribute_table</span> <a class="link" href="program.html#idp30993264-bb"><span class="identifier">active_attributes</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
-  <span class="identifier">uniform_table</span> <a class="link" href="program.html#idp30994016-bb"><span class="identifier">active_uniforms</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
-  <span class="keyword">void</span> <a class="link" href="program.html#idp30994768-bb"><span class="identifier">create</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
-  <span class="keyword">void</span> <a class="link" href="program.html#idp30995520-bb"><span class="identifier">enable</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
-  <span class="keyword">void</span> <a class="link" href="program.html#idp30996272-bb"><span class="identifier">disable</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
-  <span class="keyword">void</span> <a class="link" href="program.html#idp30997024-bb"><span class="identifier">destroy</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="comment">// <a class="link" href="program.html#idp31740960-bb">private member functions</a></span>
+  <span class="keyword">void</span> <a class="link" href="program.html#idp31741456-bb"><span class="identifier">attach</span></a><span class="special">(</span><a class="link" href="attribute_base.html" title="Class attribute_base">attribute_base</a> <span class="special">*</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="program.html#idp31743088-bb"><span class="identifier">attach</span></a><span class="special">(</span><a class="link" href="uniform_base.html" title="Class uniform_base">uniform_base</a> <span class="special">*</span><span class="special">)</span><span class="special">;</span>
+  <span class="emphasis"><em><span class="identifier">unspecified</span></em></span> <a class="link" href="program.html#idp31744720-bb"><span class="identifier">variable</span></a><span class="special">(</span><a class="link" href="attribute_base.html" title="Class attribute_base">attribute_base</a> <span class="special">*</span><span class="special">)</span><span class="special">;</span>
+  <span class="emphasis"><em><span class="identifier">unspecified</span></em></span> <a class="link" href="program.html#idp31746480-bb"><span class="identifier">variable</span></a><span class="special">(</span><a class="link" href="uniform_base.html" title="Class uniform_base">uniform_base</a> <span class="special">*</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="program.html#idp31748240-bb"><span class="identifier">detach</span></a><span class="special">(</span><a class="link" href="attribute_base.html" title="Class attribute_base">attribute_base</a> <span class="special">*</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="program.html#idp31749872-bb"><span class="identifier">detach</span></a><span class="special">(</span><a class="link" href="uniform_base.html" title="Class uniform_base">uniform_base</a> <span class="special">*</span><span class="special">)</span><span class="special">;</span>
+  <span class="identifier">attribute_table</span> <a class="link" href="program.html#idp31751504-bb"><span class="identifier">active_attributes</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="identifier">uniform_table</span> <a class="link" href="program.html#idp31752256-bb"><span class="identifier">active_uniforms</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="program.html#idp31753008-bb"><span class="identifier">create</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="program.html#idp31753760-bb"><span class="identifier">enable</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="program.html#idp31754512-bb"><span class="identifier">disable</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="program.html#idp31755264-bb"><span class="identifier">destroy</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
 <span class="special">}</span><span class="special">;</span></pre></div>
 <div class="refsect1">
-<a name="idp83853712"></a><h2>Description</h2>
+<a name="idp102640032"></a><h2>Description</h2>
 <p><a name="classcube_1_1gloo_1_1program_1program"></a></p>
 <p><b>Example.&#160;</b></p>
 <p>
@@ -78,46 +78,46 @@
 <p>
 </p>
 <div class="refsect2">
-<a name="idp83859216"></a><h3>
+<a name="idp102645520"></a><h3>
 <a name="cube.gloo.programconstruct-copy-destruct"></a><code class="computeroutput">program</code> 
         public
        construct/copy/destruct</h3>
 <div class="orderedlist"><ol class="orderedlist" type="1">
-<li class="listitem"><pre class="literallayout"><a name="idp30979200-bb"></a><span class="identifier">program</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
-<li class="listitem"><pre class="literallayout"><a name="idp30979456-bb"></a><span class="identifier">program</span><span class="special">(</span><a class="link" href="vertex_shader.html" title="Class vertex_shader">vertex_shader</a> vertex<span class="special">,</span> <a class="link" href="fragment_shader.html" title="Class fragment_shader">fragment_shader</a> fragment<span class="special">)</span><span class="special">;</span></pre></li>
-<li class="listitem"><pre class="literallayout"><a name="idp30981216-bb"></a><span class="identifier">program</span><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> vertex<span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> fragment<span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><a name="idp31737440-bb"></a><span class="identifier">program</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><a name="idp31737696-bb"></a><span class="identifier">program</span><span class="special">(</span><a class="link" href="vertex_shader.html" title="Class vertex_shader">vertex_shader</a> vertex<span class="special">,</span> <a class="link" href="fragment_shader.html" title="Class fragment_shader">fragment_shader</a> fragment<span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><a name="idp31739456-bb"></a><span class="identifier">program</span><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> vertex<span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> fragment<span class="special">)</span><span class="special">;</span></pre></li>
 </ol></div>
 </div>
 <div class="refsect2">
-<a name="idp83878752"></a><h3>
-<a name="idp30970032-bb"></a><code class="computeroutput">program</code> public member functions</h3>
+<a name="idp102665088"></a><h3>
+<a name="idp31728272-bb"></a><code class="computeroutput">program</code> public member functions</h3>
 <div class="orderedlist"><ol class="orderedlist" type="1">
 <li class="listitem">
-<pre class="literallayout"><span class="keyword">void</span> <a name="idp30970528-bb"></a><span class="identifier">attach</span><span class="special">(</span><a class="link" href="vertex_shader.html" title="Class vertex_shader">vertex_shader</a> <span class="keyword">const</span> <span class="special">&amp;</span> shader<span class="special">)</span><span class="special">;</span></pre>Attach a vertex shader to the program. </li>
+<pre class="literallayout"><span class="keyword">void</span> <a name="idp31728768-bb"></a><span class="identifier">attach</span><span class="special">(</span><a class="link" href="vertex_shader.html" title="Class vertex_shader">vertex_shader</a> <span class="keyword">const</span> <span class="special">&amp;</span> shader<span class="special">)</span><span class="special">;</span></pre>Attach a vertex shader to the program. </li>
 <li class="listitem">
-<pre class="literallayout"><span class="keyword">void</span> <a name="idp30972416-bb"></a><span class="identifier">attach</span><span class="special">(</span><a class="link" href="fragment_shader.html" title="Class fragment_shader">fragment_shader</a> <span class="keyword">const</span> <span class="special">&amp;</span> shader<span class="special">)</span><span class="special">;</span></pre>Attach a fragment shader to the program. </li>
+<pre class="literallayout"><span class="keyword">void</span> <a name="idp31730656-bb"></a><span class="identifier">attach</span><span class="special">(</span><a class="link" href="fragment_shader.html" title="Class fragment_shader">fragment_shader</a> <span class="keyword">const</span> <span class="special">&amp;</span> shader<span class="special">)</span><span class="special">;</span></pre>Attach a fragment shader to the program. </li>
 <li class="listitem">
-<pre class="literallayout"><span class="keyword">void</span> <a name="idp30974304-bb"></a><span class="identifier">draw</span><span class="special">(</span><span class="identifier">draw_mode</span> mode<span class="special">)</span><span class="special">;</span></pre>Draw. </li>
+<pre class="literallayout"><span class="keyword">void</span> <a name="idp31732544-bb"></a><span class="identifier">draw</span><span class="special">(</span><span class="identifier">draw_mode</span> mode<span class="special">)</span><span class="special">;</span></pre>Draw. </li>
 <li class="listitem">
-<pre class="literallayout"><span class="keyword">void</span> <a name="idp30975936-bb"></a><span class="identifier">draw</span><span class="special">(</span><span class="identifier">draw_mode</span> mode<span class="special">,</span> <a class="link" href="element_index_base.html" title="Class element_index_base">element_index_base</a> <span class="special">&amp;</span> indices<span class="special">)</span><span class="special">;</span></pre>Draw using a <code class="computeroutput"><a class="link" href="element_index.html" title="Class template element_index">element_index</a></code>. </li>
+<pre class="literallayout"><span class="keyword">void</span> <a name="idp31734176-bb"></a><span class="identifier">draw</span><span class="special">(</span><span class="identifier">draw_mode</span> mode<span class="special">,</span> <a class="link" href="element_index_base.html" title="Class element_index_base">element_index_base</a> <span class="special">&amp;</span> indices<span class="special">)</span><span class="special">;</span></pre>Draw using a <code class="computeroutput"><a class="link" href="element_index.html" title="Class template element_index">element_index</a></code>. </li>
 </ol></div>
 </div>
 <div class="refsect2">
-<a name="idp83908000"></a><h3>
-<a name="idp30982720-bb"></a><code class="computeroutput">program</code> private member functions</h3>
+<a name="idp102694208"></a><h3>
+<a name="idp31740960-bb"></a><code class="computeroutput">program</code> private member functions</h3>
 <div class="orderedlist"><ol class="orderedlist" type="1">
-<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp30983216-bb"></a><span class="identifier">attach</span><span class="special">(</span><a class="link" href="attribute_base.html" title="Class attribute_base">attribute_base</a> <span class="special">*</span> symbol<span class="special">)</span><span class="special">;</span></pre></li>
-<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp30984848-bb"></a><span class="identifier">attach</span><span class="special">(</span><a class="link" href="uniform_base.html" title="Class uniform_base">uniform_base</a> <span class="special">*</span> symbol<span class="special">)</span><span class="special">;</span></pre></li>
-<li class="listitem"><pre class="literallayout"><span class="emphasis"><em><span class="identifier">unspecified</span></em></span> <a name="idp30986480-bb"></a><span class="identifier">variable</span><span class="special">(</span><a class="link" href="attribute_base.html" title="Class attribute_base">attribute_base</a> <span class="special">*</span> symbol<span class="special">)</span><span class="special">;</span></pre></li>
-<li class="listitem"><pre class="literallayout"><span class="emphasis"><em><span class="identifier">unspecified</span></em></span> <a name="idp30988240-bb"></a><span class="identifier">variable</span><span class="special">(</span><a class="link" href="uniform_base.html" title="Class uniform_base">uniform_base</a> <span class="special">*</span> symbol<span class="special">)</span><span class="special">;</span></pre></li>
-<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp30990000-bb"></a><span class="identifier">detach</span><span class="special">(</span><a class="link" href="attribute_base.html" title="Class attribute_base">attribute_base</a> <span class="special">*</span> desc<span class="special">)</span><span class="special">;</span></pre></li>
-<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp30991632-bb"></a><span class="identifier">detach</span><span class="special">(</span><a class="link" href="uniform_base.html" title="Class uniform_base">uniform_base</a> <span class="special">*</span> desc<span class="special">)</span><span class="special">;</span></pre></li>
-<li class="listitem"><pre class="literallayout"><span class="identifier">attribute_table</span> <a name="idp30993264-bb"></a><span class="identifier">active_attributes</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
-<li class="listitem"><pre class="literallayout"><span class="identifier">uniform_table</span> <a name="idp30994016-bb"></a><span class="identifier">active_uniforms</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
-<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp30994768-bb"></a><span class="identifier">create</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
-<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp30995520-bb"></a><span class="identifier">enable</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
-<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp30996272-bb"></a><span class="identifier">disable</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
-<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp30997024-bb"></a><span class="identifier">destroy</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp31741456-bb"></a><span class="identifier">attach</span><span class="special">(</span><a class="link" href="attribute_base.html" title="Class attribute_base">attribute_base</a> <span class="special">*</span> symbol<span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp31743088-bb"></a><span class="identifier">attach</span><span class="special">(</span><a class="link" href="uniform_base.html" title="Class uniform_base">uniform_base</a> <span class="special">*</span> symbol<span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="emphasis"><em><span class="identifier">unspecified</span></em></span> <a name="idp31744720-bb"></a><span class="identifier">variable</span><span class="special">(</span><a class="link" href="attribute_base.html" title="Class attribute_base">attribute_base</a> <span class="special">*</span> symbol<span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="emphasis"><em><span class="identifier">unspecified</span></em></span> <a name="idp31746480-bb"></a><span class="identifier">variable</span><span class="special">(</span><a class="link" href="uniform_base.html" title="Class uniform_base">uniform_base</a> <span class="special">*</span> symbol<span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp31748240-bb"></a><span class="identifier">detach</span><span class="special">(</span><a class="link" href="attribute_base.html" title="Class attribute_base">attribute_base</a> <span class="special">*</span> desc<span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp31749872-bb"></a><span class="identifier">detach</span><span class="special">(</span><a class="link" href="uniform_base.html" title="Class uniform_base">uniform_base</a> <span class="special">*</span> desc<span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="identifier">attribute_table</span> <a name="idp31751504-bb"></a><span class="identifier">active_attributes</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="identifier">uniform_table</span> <a name="idp31752256-bb"></a><span class="identifier">active_uniforms</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp31753008-bb"></a><span class="identifier">create</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp31753760-bb"></a><span class="identifier">enable</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp31754512-bb"></a><span class="identifier">disable</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp31755264-bb"></a><span class="identifier">destroy</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
 </ol></div>
 </div>
 </div>
@@ -132,7 +132,7 @@
 </tr></table>
 <hr>
 <div class="spirit-nav">
-<a accesskey="p" href="../../CUBE_GLOO_GL_H.html"><img src="../../images/prev.png" alt="Prev"></a><a accesskey="u" href="../reference.html#header..home.ion.src.cube.include.cube.gloo.program_hpp"><img src="../../images/up.png" alt="Up"></a><a accesskey="h" href="../../index.html"><img src="../../images/home.png" alt="Home"></a><a accesskey="n" href="fragment_shader.html"><img src="../../images/next.png" alt="Next"></a>
+<a accesskey="p" href="../../CUBE_GLOO_GL_H.html"><img src="../../images/prev.png" alt="Prev"></a><a accesskey="u" href="../reference.html#header.cube.gloo.program_hpp"><img src="../../images/up.png" alt="Up"></a><a accesskey="h" href="../../index.html"><img src="../../images/home.png" alt="Home"></a><a accesskey="n" href="fragment_shader.html"><img src="../../images/next.png" alt="Next"></a>
 </div>
 </body>
 </html>
