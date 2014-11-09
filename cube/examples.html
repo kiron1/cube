@@ -1,0 +1,508 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<title>Examples</title>
+<link rel="stylesheet" href="../boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="../index.html" title="Chapter&#160;1.&#160;Cube">
+<link rel="up" href="../index.html" title="Chapter&#160;1.&#160;Cube">
+<link rel="prev" href="variables.html" title="Variables">
+<link rel="next" href="developers.html" title="Developers">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="spirit-nav">
+<a accesskey="p" href="variables.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../index.html"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="developers.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="cube.examples"></a><a class="link" href="examples.html" title="Examples">Examples</a>
+</h2></div></div></div>
+<div class="toc"><dl class="toc"><dt><span class="section"><a href="examples.html#cube.examples.display_shape">Display Shape</a></span></dt></dl></div>
+<h4>
+<a name="cube.examples.h0"></a>
+      <span class="phrase"><a name="cube.examples.basic_examples"></a></span><a class="link" href="examples.html#cube.examples.basic_examples">Basic
+      examples</a>
+    </h4>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
+          display_shape - the most basic example to displat a simple 2d shape
+        </li></ul></div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="cube.examples.display_shape"></a><a class="link" href="examples.html#cube.examples.display_shape" title="Display Shape">Display Shape</a>
+</h3></div></div></div>
+<div class="note"><table border="0" summary="Note">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></td>
+<th align="left">Note</th>
+</tr>
+<tr><td align="left" valign="top"><p>
+          The idea of this example is from <a href="http://vispy.org/examples/basics/gloo/display_shape.html" target="_top">vispy</a>.
+        </p></td></tr>
+</table></div>
+<p>
+        This example is provided in two version. One version uses the raw OpenGL
+        calls, the other uses the <code class="computeroutput"><span class="identifier">cube</span><span class="special">::</span><span class="identifier">gloo</span></code>
+        higher level API.
+      </p>
+<p>
+        This example demontrates how to draw two colored triangles on the screen.
+      </p>
+<h5>
+<a name="cube.examples.display_shape.h0"></a>
+        <span class="phrase"><a name="cube.examples.display_shape.opengl_shader_code"></a></span><a class="link" href="examples.html#cube.examples.display_shape.opengl_shader_code">OpenGL
+        shader code</a>
+      </h5>
+<p>
+        The used OpenGL shaders are the same for both versions:
+      </p>
+<div class="table">
+<a name="cube.examples.display_shape.opengl_shader_code0"></a><p class="title"><b>Table&#160;1.1.&#160;OpenGL shader code</b></p>
+<div class="table-contents"><table class="table" summary="OpenGL shader code">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th>
+                <p>
+                  Vertex shader
+                </p>
+              </th>
+<th>
+                <p>
+                  Fragment shader
+                </p>
+              </th>
+</tr></thead>
+<tbody><tr>
+<td>
+<pre class="programlisting"><span class="keyword">static</span> <span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="identifier">vertex_shader_source</span> <span class="special">=</span>
+    <span class="string">"// Attributes\n"</span>
+    <span class="string">"// ------------------------------------\n"</span>
+    <span class="string">"attribute vec3 a_position;\n"</span>
+    <span class="string">"\n"</span>
+    <span class="string">"void main()\n"</span>
+    <span class="string">"{\n"</span>
+    <span class="string">"    gl_Position = vec4(a_position, 1.0);\n"</span>
+    <span class="string">"}\n"</span><span class="special">;</span>
+</pre>
+              </td>
+<td>
+<pre class="programlisting"><span class="keyword">static</span> <span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="identifier">fragment_shader_source</span> <span class="special">=</span>
+    <span class="string">"// Uniforms\n"</span>
+    <span class="string">"// ------------------------------------\n"</span>
+    <span class="string">"uniform vec4 u_color;\n"</span>
+    <span class="string">"\n"</span>
+    <span class="string">"void main()\n"</span>
+    <span class="string">"{\n"</span>
+    <span class="string">"    gl_FragColor = u_color;\n"</span>
+    <span class="string">"}\n"</span><span class="special">;</span>
+</pre>
+              </td>
+</tr></tbody>
+</table></div>
+</div>
+<br class="table-break"><h5>
+<a name="cube.examples.display_shape.h1"></a>
+        <span class="phrase"><a name="cube.examples.display_shape.opengl_data"></a></span><a class="link" href="examples.html#cube.examples.display_shape.opengl_data">OpenGL
+        data</a>
+      </h5>
+<p>
+        The uniforms and vertex attributes are also the same for both bersions:
+      </p>
+<pre class="programlisting"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">float</span> <span class="identifier">position</span><span class="special">[</span><span class="number">4</span><span class="special">*</span><span class="number">3</span><span class="special">]</span> <span class="special">=</span> <span class="special">{</span>
+    <span class="special">-</span><span class="number">0.8f</span><span class="special">,</span> <span class="special">-</span><span class="number">0.8f</span><span class="special">,</span> <span class="number">0.0f</span><span class="special">,</span>
+    <span class="special">+</span><span class="number">0.7f</span><span class="special">,</span> <span class="special">-</span><span class="number">0.7f</span><span class="special">,</span> <span class="number">0.0f</span><span class="special">,</span>
+    <span class="special">-</span><span class="number">0.7f</span><span class="special">,</span> <span class="special">+</span><span class="number">0.7f</span><span class="special">,</span> <span class="number">0.0f</span><span class="special">,</span>
+    <span class="special">+</span><span class="number">0.8f</span><span class="special">,</span> <span class="special">+</span><span class="number">0.8f</span><span class="special">,</span> <span class="number">0.0f</span><span class="special">,</span>
+<span class="special">};</span>
+
+<span class="keyword">static</span> <span class="keyword">unsigned</span> <span class="keyword">short</span> <span class="identifier">outline_elements</span><span class="special">[]</span> <span class="special">=</span> <span class="special">{</span>
+    <span class="number">2</span><span class="special">,</span> <span class="number">0</span><span class="special">,</span> <span class="number">1</span><span class="special">,</span> <span class="number">2</span><span class="special">,</span> <span class="number">3</span><span class="special">,</span> <span class="number">1</span>
+<span class="special">};</span>
+
+<span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">float</span> <span class="identifier">face_color</span><span class="special">[</span><span class="number">4</span><span class="special">]</span> <span class="special">=</span> <span class="special">{</span>
+    <span class="number">0.2f</span><span class="special">,</span> <span class="number">1.0f</span><span class="special">,</span> <span class="number">0.4f</span><span class="special">,</span> <span class="number">1.0f</span>
+<span class="special">};</span>
+
+<span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">float</span> <span class="identifier">line_color</span><span class="special">[</span><span class="number">4</span><span class="special">]</span> <span class="special">=</span> <span class="special">{</span>
+    <span class="number">0.0f</span><span class="special">,</span> <span class="number">0.0f</span><span class="special">,</span> <span class="number">0.0f</span><span class="special">,</span> <span class="number">1.0f</span>
+<span class="special">};</span>
+</pre>
+<h5>
+<a name="cube.examples.display_shape.h2"></a>
+        <span class="phrase"><a name="cube.examples.display_shape.helper_functions_for_raw_opengl"></a></span><a class="link" href="examples.html#cube.examples.display_shape.helper_functions_for_raw_opengl">Helper
+        functions for raw OpenGL</a>
+      </h5>
+<p>
+        First introduces some helper functions used in the raw OpenGL example:
+      </p>
+<div class="table">
+<a name="cube.examples.display_shape.opengl_helper_functions"></a><p class="title"><b>Table&#160;1.2.&#160;OpenGL helper functions.</b></p>
+<div class="table-contents"><table class="table" summary="OpenGL helper functions.">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th>
+                <p>
+                  raw OpenGL
+                </p>
+              </th>
+<th>
+                <p>
+                  <code class="computeroutput"><span class="identifier">cube</span><span class="special">::</span><span class="identifier">gloo</span></code>
+                </p>
+              </th>
+</tr></thead>
+<tbody><tr>
+<td>
+<pre class="programlisting"><span class="keyword">static</span> <span class="identifier">GLuint</span> <span class="identifier">make_buffer</span><span class="special">(</span>
+    <span class="identifier">GLenum</span> <span class="identifier">target</span><span class="special">,</span>
+    <span class="keyword">const</span> <span class="keyword">void</span> <span class="special">*</span><span class="identifier">data</span><span class="special">,</span>
+    <span class="identifier">GLsizei</span> <span class="identifier">size</span>
+<span class="special">)</span> <span class="special">{</span>
+    <span class="identifier">GLuint</span> <span class="identifier">buffer</span><span class="special">;</span>
+    <span class="identifier">glGenBuffers</span><span class="special">(</span><span class="number">1</span><span class="special">,</span> <span class="special">&amp;</span><span class="identifier">buffer</span><span class="special">);</span>
+    <span class="identifier">glBindBuffer</span><span class="special">(</span><span class="identifier">target</span><span class="special">,</span> <span class="identifier">buffer</span><span class="special">);</span>
+    <span class="identifier">glBufferData</span><span class="special">(</span><span class="identifier">target</span><span class="special">,</span> <span class="identifier">size</span><span class="special">,</span> <span class="identifier">data</span><span class="special">,</span> <span class="identifier">GL_STATIC_DRAW</span><span class="special">);</span>
+    <span class="keyword">return</span> <span class="identifier">buffer</span><span class="special">;</span>
+<span class="special">}</span>
+<span class="keyword">static</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="identifier">info_log</span><span class="special">(</span>
+    <span class="identifier">GLuint</span> <span class="identifier">object</span><span class="special">,</span>
+    <span class="identifier">PFNGLGETSHADERIVPROC</span> <span class="identifier">shader_iv_proc</span><span class="special">,</span>
+    <span class="identifier">PFNGLGETSHADERINFOLOGPROC</span> <span class="identifier">shader_infolog_proc</span>
+<span class="special">)</span>
+<span class="special">{</span>
+    <span class="identifier">GLint</span> <span class="identifier">len</span><span class="special">;</span>
+    <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="identifier">log</span><span class="special">;</span>
+
+    <span class="identifier">shader_iv_proc</span><span class="special">(</span><span class="identifier">object</span><span class="special">,</span> <span class="identifier">GL_INFO_LOG_LENGTH</span><span class="special">,</span> <span class="special">&amp;</span><span class="identifier">len</span><span class="special">);</span>
+    <span class="identifier">log</span><span class="special">.</span><span class="identifier">resize</span><span class="special">(</span><span class="identifier">len</span><span class="special">);</span>
+    <span class="identifier">shader_infolog_proc</span><span class="special">(</span><span class="identifier">object</span><span class="special">,</span> <span class="identifier">len</span><span class="special">,</span> <span class="identifier">NULL</span><span class="special">,</span> <span class="special">&amp;</span><span class="identifier">log</span><span class="special">[</span><span class="number">0</span><span class="special">]);</span>
+    <span class="keyword">return</span> <span class="identifier">log</span><span class="special">;</span>
+<span class="special">}</span>
+
+<span class="keyword">static</span> <span class="identifier">GLuint</span> <span class="identifier">make_shader</span><span class="special">(</span><span class="identifier">GLenum</span> <span class="identifier">type</span><span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="keyword">const</span><span class="special">&amp;</span> <span class="identifier">source</span><span class="special">)</span>
+<span class="special">{</span>
+    <span class="keyword">const</span> <span class="identifier">GLchar</span><span class="special">*</span> <span class="identifier">src</span><span class="special">[]</span> <span class="special">=</span> <span class="special">{</span> <span class="identifier">source</span><span class="special">.</span><span class="identifier">c_str</span><span class="special">()</span> <span class="special">};</span>
+    <span class="keyword">const</span> <span class="identifier">GLint</span> <span class="identifier">srclen</span><span class="special">[]</span> <span class="special">=</span> <span class="special">{</span> <span class="keyword">static_cast</span><span class="special">&lt;</span><span class="identifier">GLint</span><span class="special">&gt;(</span><span class="identifier">source</span><span class="special">.</span><span class="identifier">size</span><span class="special">())</span> <span class="special">};</span>
+    <span class="identifier">GLuint</span> <span class="identifier">shader</span><span class="special">;</span>
+    <span class="identifier">GLint</span> <span class="identifier">shader_ok</span><span class="special">;</span>
+
+    <span class="identifier">shader</span> <span class="special">=</span> <span class="identifier">glCreateShader</span><span class="special">(</span><span class="identifier">type</span><span class="special">);</span>
+    <span class="identifier">glShaderSource</span><span class="special">(</span><span class="identifier">shader</span><span class="special">,</span> <span class="number">1</span><span class="special">,</span> <span class="identifier">src</span><span class="special">,</span> <span class="identifier">srclen</span><span class="special">);</span>
+    <span class="identifier">glCompileShader</span><span class="special">(</span><span class="identifier">shader</span><span class="special">);</span>
+
+    <span class="identifier">glGetShaderiv</span><span class="special">(</span><span class="identifier">shader</span><span class="special">,</span> <span class="identifier">GL_COMPILE_STATUS</span><span class="special">,</span> <span class="special">&amp;</span><span class="identifier">shader_ok</span><span class="special">);</span>
+    <span class="keyword">if</span> <span class="special">(!</span><span class="identifier">shader_ok</span><span class="special">)</span> <span class="special">{</span>
+        <span class="identifier">std</span><span class="special">::</span><span class="identifier">cerr</span>
+                <span class="special">&lt;&lt;</span> <span class="string">"Failed to compile shader:\n"</span>
+                <span class="special">&lt;&lt;</span> <span class="identifier">info_log</span><span class="special">(</span><span class="identifier">shader</span><span class="special">,</span> <span class="identifier">glGetShaderiv</span><span class="special">,</span> <span class="identifier">glGetShaderInfoLog</span><span class="special">)</span>
+                <span class="special">&lt;&lt;</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">endl</span><span class="special">;</span>
+        <span class="identifier">glDeleteShader</span><span class="special">(</span><span class="identifier">shader</span><span class="special">);</span>
+        <span class="keyword">return</span> <span class="number">0</span><span class="special">;</span>
+    <span class="special">}</span>
+    <span class="keyword">return</span> <span class="identifier">shader</span><span class="special">;</span>
+<span class="special">}</span>
+
+
+<span class="keyword">static</span> <span class="identifier">GLuint</span> <span class="identifier">make_program</span><span class="special">(</span><span class="identifier">GLuint</span> <span class="identifier">vertex_shader</span><span class="special">,</span> <span class="identifier">GLuint</span> <span class="identifier">fragment_shader</span><span class="special">)</span>
+<span class="special">{</span>
+    <span class="identifier">GLint</span> <span class="identifier">program_ok</span><span class="special">;</span>
+
+    <span class="identifier">GLuint</span> <span class="identifier">program</span> <span class="special">=</span> <span class="identifier">glCreateProgram</span><span class="special">();</span>
+
+    <span class="identifier">glAttachShader</span><span class="special">(</span><span class="identifier">program</span><span class="special">,</span> <span class="identifier">vertex_shader</span><span class="special">);</span>
+    <span class="identifier">glAttachShader</span><span class="special">(</span><span class="identifier">program</span><span class="special">,</span> <span class="identifier">fragment_shader</span><span class="special">);</span>
+    <span class="identifier">glLinkProgram</span><span class="special">(</span><span class="identifier">program</span><span class="special">);</span>
+
+    <span class="identifier">glGetProgramiv</span><span class="special">(</span><span class="identifier">program</span><span class="special">,</span> <span class="identifier">GL_LINK_STATUS</span><span class="special">,</span> <span class="special">&amp;</span><span class="identifier">program_ok</span><span class="special">);</span>
+    <span class="keyword">if</span> <span class="special">(!</span><span class="identifier">program_ok</span><span class="special">)</span> <span class="special">{</span>
+        <span class="identifier">std</span><span class="special">::</span><span class="identifier">cerr</span>
+                <span class="special">&lt;&lt;</span> <span class="string">"Failed to link shader program:\n"</span>
+                <span class="special">&lt;&lt;</span> <span class="identifier">info_log</span><span class="special">(</span><span class="identifier">program</span><span class="special">,</span> <span class="identifier">glGetProgramiv</span><span class="special">,</span> <span class="identifier">glGetProgramInfoLog</span><span class="special">)</span>
+                <span class="special">&lt;&lt;</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">endl</span><span class="special">;</span>
+        <span class="identifier">glDeleteProgram</span><span class="special">(</span><span class="identifier">program</span><span class="special">);</span>
+        <span class="keyword">return</span> <span class="number">0</span><span class="special">;</span>
+    <span class="special">}</span>
+    <span class="keyword">return</span> <span class="identifier">program</span><span class="special">;</span>
+<span class="special">}</span>
+</pre>
+              </td>
+<td>
+                <div class="note"><table border="0" summary="Note">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></td>
+<th align="left">Note</th>
+</tr>
+<tr><td align="left" valign="top"><p>
+                    The <code class="computeroutput"><span class="identifier">cube</span><span class="special">::</span><span class="identifier">gloo</span></code> version does not need
+                    any helpers, the library is the helper.
+                  </p></td></tr>
+</table></div>
+              </td>
+</tr></tbody>
+</table></div>
+</div>
+<br class="table-break"><h5>
+<a name="cube.examples.display_shape.h3"></a>
+        <span class="phrase"><a name="cube.examples.display_shape.initialize"></a></span><a class="link" href="examples.html#cube.examples.display_shape.initialize">Initialize</a>
+      </h5>
+<p>
+        The raw OpenGL objects must be create when an OpenGL context is available.
+      </p>
+<div class="table">
+<a name="cube.examples.display_shape.initialize0"></a><p class="title"><b>Table&#160;1.3.&#160;Initialize</b></p>
+<div class="table-contents"><table class="table" summary="Initialize">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th>
+                <p>
+                  raw OpenGL
+                </p>
+              </th>
+<th>
+                <p>
+                  <code class="computeroutput"><span class="identifier">cube</span><span class="special">::</span><span class="identifier">gloo</span></code>
+                </p>
+              </th>
+</tr></thead>
+<tbody><tr>
+<td>
+<pre class="programlisting"><span class="keyword">void</span> <span class="identifier">initialize</span><span class="special">()</span>
+<span class="special">{</span>
+    <span class="identifier">vertex_shader_</span> <span class="special">=</span> <span class="identifier">make_shader</span><span class="special">(</span>
+        <span class="identifier">GL_VERTEX_SHADER</span><span class="special">,</span>
+        <span class="identifier">vertex_shader_source</span>
+    <span class="special">);</span>
+    <span class="identifier">assert</span><span class="special">(</span><span class="identifier">vertex_shader_</span> <span class="special">!=</span> <span class="number">0</span><span class="special">);</span>
+    <span class="identifier">assert</span><span class="special">(</span><span class="identifier">glGetError</span><span class="special">()</span> <span class="special">==</span> <span class="identifier">GL_NO_ERROR</span><span class="special">);</span>
+
+    <span class="identifier">fragment_shader_</span> <span class="special">=</span> <span class="identifier">make_shader</span><span class="special">(</span>
+        <span class="identifier">GL_FRAGMENT_SHADER</span><span class="special">,</span>
+        <span class="identifier">fragment_shader_source</span>
+    <span class="special">);</span>
+    <span class="identifier">assert</span><span class="special">(</span><span class="identifier">fragment_shader_</span> <span class="special">!=</span> <span class="number">0</span><span class="special">);</span>
+    <span class="identifier">assert</span><span class="special">(</span><span class="identifier">glGetError</span><span class="special">()</span> <span class="special">==</span> <span class="identifier">GL_NO_ERROR</span><span class="special">);</span>
+
+    <span class="identifier">program_</span> <span class="special">=</span> <span class="identifier">make_program</span><span class="special">(</span><span class="identifier">vertex_shader_</span><span class="special">,</span> <span class="identifier">fragment_shader_</span><span class="special">);</span>
+    <span class="identifier">assert</span><span class="special">(</span><span class="identifier">program_</span> <span class="special">!=</span> <span class="number">0</span><span class="special">);</span>
+    <span class="identifier">assert</span><span class="special">(</span><span class="identifier">glGetError</span><span class="special">()</span> <span class="special">==</span> <span class="identifier">GL_NO_ERROR</span><span class="special">);</span>
+
+    <span class="identifier">color_uniform_</span> <span class="special">=</span> <span class="identifier">glGetUniformLocation</span><span class="special">(</span><span class="identifier">program_</span><span class="special">,</span> <span class="string">"u_color"</span><span class="special">);</span>
+    <span class="identifier">assert</span><span class="special">(</span><span class="identifier">glGetError</span><span class="special">()</span> <span class="special">==</span> <span class="identifier">GL_NO_ERROR</span><span class="special">);</span>
+
+    <span class="identifier">position_attrib_</span> <span class="special">=</span> <span class="identifier">glGetAttribLocation</span><span class="special">(</span><span class="identifier">program_</span><span class="special">,</span> <span class="string">"a_position"</span><span class="special">);</span>
+    <span class="identifier">assert</span><span class="special">(</span><span class="identifier">glGetError</span><span class="special">()</span> <span class="special">==</span> <span class="identifier">GL_NO_ERROR</span><span class="special">);</span>
+
+    <span class="identifier">position_buffer_</span> <span class="special">=</span> <span class="identifier">make_buffer</span><span class="special">(</span>
+        <span class="identifier">GL_ARRAY_BUFFER</span><span class="special">,</span>
+        <span class="identifier">position</span><span class="special">,</span>
+        <span class="keyword">sizeof</span><span class="special">(</span><span class="identifier">position</span><span class="special">)</span>
+    <span class="special">);</span>
+    <span class="identifier">assert</span><span class="special">(</span><span class="identifier">position_buffer_</span> <span class="special">!=</span> <span class="number">0</span><span class="special">);</span>
+    <span class="identifier">assert</span><span class="special">(</span><span class="identifier">glGetError</span><span class="special">()</span> <span class="special">==</span> <span class="identifier">GL_NO_ERROR</span><span class="special">);</span>
+
+    <span class="identifier">element_buffer_</span> <span class="special">=</span> <span class="identifier">make_buffer</span><span class="special">(</span>
+        <span class="identifier">GL_ELEMENT_ARRAY_BUFFER</span><span class="special">,</span>
+        <span class="identifier">elements</span><span class="special">,</span>
+        <span class="keyword">sizeof</span><span class="special">(</span><span class="identifier">elements</span><span class="special">)</span>
+    <span class="special">);</span>
+    <span class="identifier">assert</span><span class="special">(</span><span class="identifier">position_buffer_</span> <span class="special">!=</span> <span class="number">0</span><span class="special">);</span>
+    <span class="identifier">assert</span><span class="special">(</span><span class="identifier">glGetError</span><span class="special">()</span> <span class="special">==</span> <span class="identifier">GL_NO_ERROR</span><span class="special">);</span>
+<span class="special">}</span>
+</pre>
+              </td>
+<td>
+<pre class="programlisting"><span class="identifier">shape_strategy</span><span class="special">()</span>
+    <span class="special">:</span> <span class="identifier">program_</span><span class="special">(</span><span class="identifier">vertex_shader_source</span><span class="special">,</span> <span class="identifier">fragment_shader_source</span><span class="special">)</span>
+    <span class="special">,</span> <span class="identifier">a_position_</span><span class="special">(</span><span class="identifier">program_</span><span class="special">,</span> <span class="string">"a_position"</span><span class="special">)</span>
+    <span class="special">,</span> <span class="identifier">u_color_</span><span class="special">(</span><span class="identifier">program_</span><span class="special">,</span> <span class="string">"u_color"</span><span class="special">)</span>
+    <span class="special">,</span> <span class="identifier">face_index_</span><span class="special">(</span><span class="number">4</span><span class="special">)</span>
+    <span class="special">,</span> <span class="identifier">outline_index_</span><span class="special">(</span><span class="number">6</span><span class="special">)</span>
+<span class="special">{</span>
+    <span class="identifier">std</span><span class="special">::</span><span class="identifier">iota</span><span class="special">(</span><span class="identifier">face_index_</span><span class="special">.</span><span class="identifier">begin</span><span class="special">(),</span> <span class="identifier">face_index_</span><span class="special">.</span><span class="identifier">end</span><span class="special">(),</span> <span class="number">0</span><span class="special">);</span>
+    <span class="identifier">std</span><span class="special">::</span><span class="identifier">copy</span><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">begin</span><span class="special">(</span><span class="identifier">outline_elements</span><span class="special">),</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">end</span><span class="special">(</span><span class="identifier">outline_elements</span><span class="special">),</span> <span class="identifier">outline_index_</span><span class="special">.</span><span class="identifier">begin</span><span class="special">());</span>
+
+    <span class="identifier">a_position_</span> <span class="special">=</span> <span class="identifier">position</span><span class="special">;</span> <span class="comment">///&lt; set a_position attribute</span>
+<span class="special">}</span>
+</pre>
+                <p>
+                  With the following class attributes:
+                </p>
+<pre class="programlisting"><span class="identifier">cube</span><span class="special">::</span><span class="identifier">gloo</span><span class="special">::</span><span class="identifier">program</span> <span class="identifier">program_</span><span class="special">;</span>
+
+<span class="identifier">cube</span><span class="special">::</span><span class="identifier">gloo</span><span class="special">::</span><span class="identifier">attribute</span><span class="special">::</span><span class="identifier">vec3</span> <span class="identifier">a_position_</span><span class="special">;</span> <span class="comment">// 'attribute vec3 a_position' proxy</span>
+
+<span class="identifier">cube</span><span class="special">::</span><span class="identifier">gloo</span><span class="special">::</span><span class="identifier">uniform</span><span class="special">::</span><span class="identifier">vec4</span> <span class="identifier">u_color_</span><span class="special">;</span> <span class="comment">// 'uniform vec4 u_color' proxy</span>
+
+<span class="identifier">cube</span><span class="special">::</span><span class="identifier">gloo</span><span class="special">::</span><span class="identifier">element_index</span><span class="special">&lt;</span><span class="keyword">unsigned</span> <span class="keyword">short</span><span class="special">&gt;</span> <span class="identifier">face_index_</span><span class="special">;</span>
+<span class="identifier">cube</span><span class="special">::</span><span class="identifier">gloo</span><span class="special">::</span><span class="identifier">element_index</span><span class="special">&lt;</span><span class="keyword">unsigned</span> <span class="keyword">short</span><span class="special">&gt;</span> <span class="identifier">outline_index_</span><span class="special">;</span>
+</pre>
+                <div class="note"><table border="0" summary="Note">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></td>
+<th align="left">Note</th>
+</tr>
+<tr><td align="left" valign="top"><p>
+                    Since the OpenGL objects in \c cube::gloo are lazy, we can create
+                    them in the constructor of the class although now OpenGL context
+                    is available yet.
+                  </p></td></tr>
+</table></div>
+              </td>
+</tr></tbody>
+</table></div>
+</div>
+<br class="table-break"><h5>
+<a name="cube.examples.display_shape.h4"></a>
+        <span class="phrase"><a name="cube.examples.display_shape.display"></a></span><a class="link" href="examples.html#cube.examples.display_shape.display">Display</a>
+      </h5>
+<div class="table">
+<a name="cube.examples.display_shape.initialize1"></a><p class="title"><b>Table&#160;1.4.&#160;Initialize</b></p>
+<div class="table-contents"><table class="table" summary="Initialize">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th>
+                <p>
+                  raw OpenGL
+                </p>
+              </th>
+<th>
+                <p>
+                  <code class="computeroutput"><span class="identifier">cube</span><span class="special">::</span><span class="identifier">gloo</span></code>
+                </p>
+              </th>
+</tr></thead>
+<tbody><tr>
+<td>
+<pre class="programlisting"><span class="keyword">void</span> <span class="identifier">display</span><span class="special">()</span>
+<span class="special">{</span>
+    <span class="identifier">glUseProgram</span><span class="special">(</span><span class="identifier">program_</span><span class="special">);</span>
+
+    <span class="identifier">glUniform4fv</span><span class="special">(</span><span class="identifier">color_uniform_</span><span class="special">,</span> <span class="number">1UL</span><span class="special">,</span> <span class="identifier">color</span><span class="special">);</span>
+
+    <span class="identifier">glBindBuffer</span><span class="special">(</span><span class="identifier">GL_ARRAY_BUFFER</span><span class="special">,</span> <span class="identifier">position_buffer_</span><span class="special">);</span>
+    <span class="identifier">glEnableVertexAttribArray</span><span class="special">(</span><span class="identifier">position_attrib_</span><span class="special">);</span>
+    <span class="identifier">glVertexAttribPointer</span><span class="special">(</span>
+        <span class="identifier">position_attrib_</span><span class="special">,</span>     <span class="comment">/* attribute */</span>
+        <span class="number">3</span><span class="special">,</span>                    <span class="comment">/* size */</span>
+        <span class="identifier">GL_FLOAT</span><span class="special">,</span>             <span class="comment">/* type */</span>
+        <span class="identifier">GL_FALSE</span><span class="special">,</span>             <span class="comment">/* normalized? */</span>
+        <span class="keyword">sizeof</span><span class="special">(</span><span class="identifier">GLfloat</span><span class="special">)*</span><span class="number">3</span><span class="special">,</span>    <span class="comment">/* stride */</span>
+        <span class="special">(</span><span class="keyword">void</span><span class="special">*)</span><span class="number">0</span>              <span class="comment">/* array buffer offset */</span>
+    <span class="special">);</span>
+
+    <span class="identifier">glBindBuffer</span><span class="special">(</span><span class="identifier">GL_ELEMENT_ARRAY_BUFFER</span><span class="special">,</span> <span class="identifier">element_buffer_</span><span class="special">);</span>
+    <span class="identifier">glDrawElements</span><span class="special">(</span>
+        <span class="identifier">GL_TRIANGLE_STRIP</span><span class="special">,</span>  <span class="comment">/* mode */</span>
+        <span class="number">4</span><span class="special">,</span>                  <span class="comment">/* count */</span>
+        <span class="identifier">GL_UNSIGNED_SHORT</span><span class="special">,</span>  <span class="comment">/* type */</span>
+        <span class="special">(</span><span class="keyword">void</span><span class="special">*)</span><span class="number">0</span>            <span class="comment">/* element array buffer offset */</span>
+    <span class="special">);</span>
+
+    <span class="identifier">assert</span><span class="special">(</span><span class="identifier">glGetError</span><span class="special">()</span> <span class="special">==</span> <span class="identifier">GL_NO_ERROR</span><span class="special">);</span>
+
+    <span class="identifier">glDisableVertexAttribArray</span><span class="special">(</span><span class="identifier">position_attrib_</span><span class="special">);</span>
+<span class="special">}</span>
+</pre>
+              </td>
+<td>
+<pre class="programlisting"><span class="keyword">void</span> <span class="identifier">display</span><span class="special">()</span>
+<span class="special">{</span>
+    <span class="comment">// draw faces using face_color</span>
+    <span class="identifier">u_color_</span> <span class="special">=</span> <span class="identifier">face_color</span><span class="special">;</span> <span class="comment">///&lt; set u_color uniform</span>
+    <span class="identifier">program_</span><span class="special">.</span><span class="identifier">draw</span><span class="special">(</span><span class="identifier">cube</span><span class="special">::</span><span class="identifier">gloo</span><span class="special">::</span><span class="identifier">program</span><span class="special">::</span><span class="identifier">triangle_strip</span><span class="special">,</span> <span class="identifier">face_index_</span><span class="special">);</span>
+
+    <span class="comment">// re-use program to draw outline using line_color</span>
+    <span class="identifier">u_color_</span> <span class="special">=</span> <span class="identifier">line_color</span><span class="special">;</span> <span class="comment">///&lt; set u_color uniform</span>
+    <span class="identifier">program_</span><span class="special">.</span><span class="identifier">draw</span><span class="special">(</span><span class="identifier">cube</span><span class="special">::</span><span class="identifier">gloo</span><span class="special">::</span><span class="identifier">program</span><span class="special">::</span><span class="identifier">line_strip</span><span class="special">,</span> <span class="identifier">outline_index_</span><span class="special">);</span>
+<span class="special">}</span>
+</pre>
+                <div class="note"><table border="0" summary="Note">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></td>
+<th align="left">Note</th>
+</tr>
+<tr><td align="left" valign="top"><p>
+                    The <code class="computeroutput"><span class="identifier">cube</span><span class="special">::</span><span class="identifier">gloo</span></code> version draws the faces
+                    and outline of the triangles, the raw OpenGL version draws just
+                    the faces.
+                  </p></td></tr>
+</table></div>
+              </td>
+</tr></tbody>
+</table></div>
+</div>
+<br class="table-break"><h5>
+<a name="cube.examples.display_shape.h5"></a>
+        <span class="phrase"><a name="cube.examples.display_shape.destruct"></a></span><a class="link" href="examples.html#cube.examples.display_shape.destruct">Destruct</a>
+      </h5>
+<p>
+        Cleanup all OpenGL objects.
+      </p>
+<div class="table">
+<a name="cube.examples.display_shape.destruct0"></a><p class="title"><b>Table&#160;1.5.&#160;Destruct</b></p>
+<div class="table-contents"><table class="table" summary="Destruct">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th>
+                <p>
+                  raw OpenGL
+                </p>
+              </th>
+<th>
+                <p>
+                  <code class="computeroutput"><span class="identifier">cube</span><span class="special">::</span><span class="identifier">gloo</span></code>
+                </p>
+              </th>
+</tr></thead>
+<tbody><tr>
+<td>
+<pre class="programlisting"><span class="keyword">void</span> <span class="identifier">close</span><span class="special">()</span>
+<span class="special">{</span>
+    <span class="identifier">glDeleteProgram</span><span class="special">(</span><span class="identifier">program_</span><span class="special">);</span>
+    <span class="identifier">glDeleteShader</span><span class="special">(</span><span class="identifier">vertex_shader_</span><span class="special">);</span>
+    <span class="identifier">glDeleteShader</span><span class="special">(</span><span class="identifier">fragment_shader_</span><span class="special">);</span>
+    <span class="identifier">glDeleteBuffers</span><span class="special">(</span><span class="number">1</span><span class="special">,</span> <span class="special">&amp;</span><span class="identifier">position_buffer_</span><span class="special">);</span>
+<span class="special">}</span>
+</pre>
+              </td>
+<td>
+<pre class="programlisting"><span class="keyword">void</span> <span class="identifier">close</span><span class="special">()</span>
+<span class="special">{</span>
+    <span class="identifier">program_</span><span class="special">.</span><span class="identifier">dispose</span><span class="special">();</span>
+<span class="special">}</span>
+</pre>
+              </td>
+</tr></tbody>
+</table></div>
+</div>
+<br class="table-break">
+</div>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><div class="copyright-footer">Copyright &#169; 2014 Kiron<p>
+        Distributed under the Boost Software License, Version 1.0. (See accompanying
+        file LICENSE_1_0.txt or copy at <a href="http://www.boost.org/LICENSE_1_0.txt" target="_top">http://www.boost.org/LICENSE_1_0.txt</a>)
+      </p>
+</div></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="variables.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../index.html"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="developers.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<title>Build</title>
+<link rel="stylesheet" href="../boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="../index.html" title="Chapter&#160;1.&#160;Cube">
+<link rel="up" href="../index.html" title="Chapter&#160;1.&#160;Cube">
+<link rel="prev" href="introduction.html" title="Introduction">
+<link rel="next" href="variables.html" title="Variables">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="spirit-nav">
+<a accesskey="p" href="introduction.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../index.html"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="variables.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="cube.build"></a><a class="link" href="build.html" title="Build">Build</a>
+</h2></div></div></div>
+<div class="toc"><dl class="toc">
+<dt><span class="section"><a href="build.html#cube.build.dependencies">Dependencies</a></span></dt>
+<dt><span class="section"><a href="build.html#cube.build.configure">Configure</a></span></dt>
+<dt><span class="section"><a href="build.html#cube.build.compile">Compile</a></span></dt>
+<dt><span class="section"><a href="build.html#cube.build.install">Install</a></span></dt>
+</dl></div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="cube.build.dependencies"></a><a class="link" href="build.html#cube.build.dependencies" title="Dependencies">Dependencies</a>
+</h3></div></div></div>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+            <a href="http://www.opengl.org/" target="_top">OpenGL</a>
+          </li>
+<li class="listitem">
+            <a href="http://www.glew.org/" target="_top">GLEW</a>
+          </li>
+<li class="listitem">
+            <a href="http://freeglut.sf.net" target="_top">FreeGLUT</a>
+          </li>
+<li class="listitem">
+            <a href="http://boost.org/" target="_top">Boost</a>
+          </li>
+<li class="listitem">
+            C++11 compiler (e.g. <a href="http://www.clang.org/" target="_top">clang-3.5</a>)
+          </li>
+<li class="listitem">
+            <a href="http://www.cmake.org/" target="_top">CMake 3.0 or newer</a>
+          </li>
+<li class="listitem">
+            optional <a href="https://svn.boost.org/trac/boost/wiki/BoostDocs/GettingStarted" target="_top">BoostBook</a>
+            toolchaing to generate documentation
+          </li>
+</ul></div>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="cube.build.configure"></a><a class="link" href="build.html#cube.build.configure" title="Configure">Configure</a>
+</h3></div></div></div>
+<div class="toc"><dl class="toc"><dt><span class="section"><a href="build.html#cube.build.configure.configure_options">Configure options</a></span></dt></dl></div>
+<p>
+        Issue the following command in the source directoy to generate the project
+        in the <code class="computeroutput"><span class="identifier">_build</span></code> subdirectory
+        (the <code class="computeroutput"><span class="identifier">_build</span></code> directory will
+        be automaticaly created it it does not exist).
+      </p>
+<pre class="programlisting"><span class="identifier">cmake</span> <span class="special">-</span><span class="identifier">H</span><span class="special">.</span> <span class="special">-</span><span class="identifier">B_build</span>
+</pre>
+<div class="note"><table border="0" summary="Note">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></td>
+<th align="left">Note</th>
+</tr>
+<tr><td align="left" valign="top"><p>
+          The <a href="https://github.com/martine/ninja" target="_top">Ninja build system</a>
+          is recommended, e.g. add <code class="computeroutput"><span class="special">-</span><span class="identifier">GNinja</span></code> to the above command.
+        </p></td></tr>
+</table></div>
+<div class="section">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="cube.build.configure.configure_options"></a><a class="link" href="build.html#cube.build.configure.configure_options" title="Configure options">Configure options</a>
+</h4></div></div></div>
+<p>
+          The following configure options are available:
+        </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+              <a href="http://www.cmake.org/cmake/help/v3.0/variable/CMAKE_BUILD_TYPE.html" target="_top"><code class="computeroutput"><span class="identifier">CMAKE_BUILD_TYPE</span></code></a> - Change
+              build type.
+            </li>
+<li class="listitem">
+              <a href="http://www.cmake.org/cmake/help/v3.0/variable/CMAKE_INSTALL_PREFIX.html" target="_top"><code class="computeroutput"><span class="identifier">CMAKE_INSTALL_PREFIX</span></code></a> - Change
+              installation location.
+            </li>
+<li class="listitem">
+              <code class="computeroutput"><span class="identifier">BUILD_TESTING</span></code> - Enable
+              generation of test targets.
+            </li>
+<li class="listitem">
+              <code class="computeroutput"><span class="identifier">BUILD_DOCUMENTATION</span></code>
+              - Enable generation of <code class="computeroutput"><span class="identifier">doc</span></code>
+              target.
+            </li>
+<li class="listitem">
+              <code class="computeroutput"><span class="identifier">Cube_DEVELOPER</span></code> - Enable
+              custom targets for developers (e.g. <code class="computeroutput"><span class="identifier">clang</span><span class="special">-</span><span class="identifier">format</span></code>).
+            </li>
+</ul></div>
+<p>
+          To change some options, append <code class="computeroutput"><span class="special">-</span><span class="identifier">DOPTION</span><span class="special">=</span><span class="identifier">Value</span></code> (e.g. <code class="computeroutput"><span class="special">-</span><span class="identifier">DCMAKE_BUILD_TYPE</span><span class="special">=</span><span class="identifier">Debug</span></code> to generate the project to build
+          in debug mode).
+        </p>
+</div>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="cube.build.compile"></a><a class="link" href="build.html#cube.build.compile" title="Compile">Compile</a>
+</h3></div></div></div>
+<p>
+        The following command will build the project:
+      </p>
+<pre class="programlisting"><span class="identifier">cmake</span> <span class="special">--</span><span class="identifier">build</span> <span class="identifier">_build</span> <span class="special">--</span><span class="identifier">config</span> <span class="identifier">Release</span>
+</pre>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="cube.build.install"></a><a class="link" href="build.html#cube.build.install" title="Install">Install</a>
+</h3></div></div></div>
+<p>
+        To install the project, use the following command:
+      </p>
+<pre class="programlisting"><span class="identifier">cmake</span> <span class="special">--</span><span class="identifier">build</span> <span class="identifier">_build</span> <span class="special">--</span><span class="identifier">config</span> <span class="identifier">Release</span> <span class="special">--</span><span class="identifier">target</span> <span class="identifier">install</span>
+</pre>
+</div>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><div class="copyright-footer">Copyright &#169; 2014 Kiron<p>
+        Distributed under the Boost Software License, Version 1.0. (See accompanying
+        file LICENSE_1_0.txt or copy at <a href="http://www.boost.org/LICENSE_1_0.txt" target="_top">http://www.boost.org/LICENSE_1_0.txt</a>)
+      </p>
+</div></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="introduction.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../index.html"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="variables.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+</body>
+</html>

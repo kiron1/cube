@@ -1,0 +1,119 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<title>Class strategy</title>
+<link rel="stylesheet" href="../../../boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="../../../index.html" title="Chapter&#160;1.&#160;Cube">
+<link rel="up" href="../window.html#idp84776688" title="Description">
+<link rel="prev" href="../window.html" title="Class window">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="spirit-nav">
+<a accesskey="p" href="../window.html"><img src="../../../images/prev.png" alt="Prev"></a><a accesskey="u" href="../window.html#idp84776688"><img src="../../../images/up.png" alt="Up"></a><a accesskey="h" href="../../../index.html"><img src="../../../images/home.png" alt="Home"></a>
+</div>
+<div class="refentry">
+<a name="cube.gloo.window.strategy"></a><div class="titlepage"></div>
+<div class="refnamediv">
+<h2><span class="refentrytitle">Class strategy</span></h2>
+<p>cube::gloo::window::strategy</p>
+</div>
+<h2 xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv-title">Synopsis</h2>
+<div xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv"><pre class="synopsis"><span class="comment">// In header: &lt;<a class="link" href="../../reference.html#header..home.ion.src.cube.include.cube.gloo.window_hpp" title="Header &lt;/home/ion/src/cube/include/cube/gloo/window.hpp&gt;">/home/ion/src/cube/include/cube/gloo/window.hpp</a>&gt;
+
+</span>
+
+<span class="keyword">class</span> <a class="link" href="strategy.html" title="Class strategy">strategy</a> <span class="special">{</span>
+<span class="keyword">public</span><span class="special">:</span>
+  <span class="comment">// <a class="link" href="strategy.html#cube.gloo.window.strategyconstruct-copy-destruct">construct/copy/destruct</a></span>
+  <a class="link" href="strategy.html#idp31096752-bb"><span class="identifier">strategy</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <a class="link" href="strategy.html#idp31097008-bb"><span class="special">~</span><span class="identifier">strategy</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="strategy.html#idp31097264-bb">protected static functions</a></span>
+  <span class="keyword">static</span> <span class="keyword">void</span> <a class="link" href="strategy.html#idp31097760-bb"><span class="identifier">leave</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">static</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">chrono</span><span class="special">::</span><span class="identifier">milliseconds</span> <a class="link" href="strategy.html#idp31099008-bb"><span class="identifier">time_elapsed</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">static</span> <span class="keyword">void</span> <a class="link" href="strategy.html#idp31100256-bb"><span class="identifier">periodic</span></a><span class="special">(</span><span class="keyword">int</span><span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="strategy.html#idp31103024-bb">private member functions</a></span>
+  <span class="keyword">virtual</span> <span class="keyword">void</span> <a class="link" href="strategy.html#idp31103520-bb"><span class="identifier">initialize</span></a><span class="special">(</span><span class="special">)</span> <span class="special">=</span> <span class="number">0</span><span class="special">;</span>
+  <span class="keyword">virtual</span> <span class="keyword">void</span> <a class="link" href="strategy.html#idp31104752-bb"><span class="identifier">display</span></a><span class="special">(</span><span class="special">)</span> <span class="special">=</span> <span class="number">0</span><span class="special">;</span>
+  <span class="keyword">virtual</span> <span class="keyword">void</span> <a class="link" href="strategy.html#idp31105984-bb"><span class="identifier">reshape</span></a><span class="special">(</span><span class="keyword">int</span><span class="special">,</span> <span class="keyword">int</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">virtual</span> <span class="keyword">void</span> <a class="link" href="strategy.html#idp31108224-bb"><span class="identifier">keyboard</span></a><span class="special">(</span><span class="keyword">unsigned</span> <span class="keyword">char</span><span class="special">,</span> <span class="keyword">int</span><span class="special">,</span> <span class="keyword">int</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">virtual</span> <span class="keyword">void</span> <a class="link" href="strategy.html#idp31111088-bb"><span class="identifier">idle</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">virtual</span> <span class="keyword">void</span> <a class="link" href="strategy.html#idp31112080-bb"><span class="identifier">timer</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">virtual</span> <span class="keyword">void</span> <a class="link" href="strategy.html#idp31113072-bb"><span class="identifier">close</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+<span class="special">}</span><span class="special">;</span></pre></div>
+<div class="refsect1">
+<a name="idp84950432"></a><h2>Description</h2>
+<div class="refsect2">
+<a name="idp84950848"></a><h3>
+<a name="cube.gloo.window.strategyconstruct-copy-destruct"></a><code class="computeroutput">strategy</code> 
+        public
+       construct/copy/destruct</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><pre class="literallayout"><a name="idp31096752-bb"></a><span class="identifier">strategy</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><a name="idp31097008-bb"></a><span class="special">~</span><span class="identifier">strategy</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+</ol></div>
+</div>
+<div class="refsect2">
+<a name="idp84960880"></a><h3>
+<a name="idp31097264-bb"></a><code class="computeroutput">strategy</code> protected static functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem">
+<pre class="literallayout"><span class="keyword">static</span> <span class="keyword">void</span> <a name="idp31097760-bb"></a><span class="identifier">leave</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>Leave main loop. </li>
+<li class="listitem">
+<pre class="literallayout"><span class="keyword">static</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">chrono</span><span class="special">::</span><span class="identifier">milliseconds</span> <a name="idp31099008-bb"></a><span class="identifier">time_elapsed</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>Retrieve elapsed time in msec. </li>
+<li class="listitem">
+<pre class="literallayout"><span class="keyword">static</span> <span class="keyword">void</span> <a name="idp31100256-bb"></a><span class="identifier">periodic</span><span class="special">(</span><span class="keyword">int</span> time<span class="special">)</span><span class="special">;</span></pre>Start periodic timer. <p>
+</p>
+<div class="variablelist"><table border="0" class="variablelist compact">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term">Parameters:</span></p></td>
+<td><div class="variablelist"><table border="0" class="variablelist compact">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term"><code class="computeroutput">time</code></span></p></td>
+<td><p>Period in msec. </p></td>
+</tr></tbody>
+</table></div></td>
+</tr></tbody>
+</table></div>
+</li>
+</ol></div>
+</div>
+<div class="refsect2">
+<a name="idp84984528"></a><h3>
+<a name="idp31103024-bb"></a><code class="computeroutput">strategy</code> private member functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><pre class="literallayout"><span class="keyword">virtual</span> <span class="keyword">void</span> <a name="idp31103520-bb"></a><span class="identifier">initialize</span><span class="special">(</span><span class="special">)</span> <span class="special">=</span> <span class="number">0</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">virtual</span> <span class="keyword">void</span> <a name="idp31104752-bb"></a><span class="identifier">display</span><span class="special">(</span><span class="special">)</span> <span class="special">=</span> <span class="number">0</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">virtual</span> <span class="keyword">void</span> <a name="idp31105984-bb"></a><span class="identifier">reshape</span><span class="special">(</span><span class="keyword">int</span> w<span class="special">,</span> <span class="keyword">int</span> h<span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">virtual</span> <span class="keyword">void</span> <a name="idp31108224-bb"></a><span class="identifier">keyboard</span><span class="special">(</span><span class="keyword">unsigned</span> <span class="keyword">char</span> key<span class="special">,</span> <span class="keyword">int</span> w<span class="special">,</span> <span class="keyword">int</span> h<span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">virtual</span> <span class="keyword">void</span> <a name="idp31111088-bb"></a><span class="identifier">idle</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">virtual</span> <span class="keyword">void</span> <a name="idp31112080-bb"></a><span class="identifier">timer</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">virtual</span> <span class="keyword">void</span> <a name="idp31113072-bb"></a><span class="identifier">close</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+</ol></div>
+</div>
+</div>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><div class="copyright-footer">Copyright &#169; 2014 Kiron<p>
+        Distributed under the Boost Software License, Version 1.0. (See accompanying
+        file LICENSE_1_0.txt or copy at <a href="http://www.boost.org/LICENSE_1_0.txt" target="_top">http://www.boost.org/LICENSE_1_0.txt</a>)
+      </p>
+</div></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="../window.html"><img src="../../../images/prev.png" alt="Prev"></a><a accesskey="u" href="../window.html#idp84776688"><img src="../../../images/up.png" alt="Up"></a><a accesskey="h" href="../../../index.html"><img src="../../../images/home.png" alt="Home"></a>
+</div>
+</body>
+</html>

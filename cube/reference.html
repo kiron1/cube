@@ -1,0 +1,152 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<title>Reference</title>
+<link rel="stylesheet" href="../boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="../index.html" title="Chapter&#160;1.&#160;Cube">
+<link rel="up" href="../index.html" title="Chapter&#160;1.&#160;Cube">
+<link rel="prev" href="references.html" title="References">
+<link rel="next" href="gloo/attribute_base.html" title="Class attribute_base">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="spirit-nav">
+<a accesskey="p" href="references.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../index.html"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="gloo/attribute_base.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="cube.reference"></a>Reference</h2></div></div></div>
+<div class="toc"><dl class="toc">
+<dt><span class="section"><a href="reference.html#header..home.ion.src.cube.include.cube.gloo_hpp">Header &lt;/home/ion/src/cube/include/cube/gloo.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header..home.ion.src.cube.include.cube.gloo.attribute_hpp">Header &lt;/home/ion/src/cube/include/cube/gloo/attribute.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header..home.ion.src.cube.include.cube.gloo.buffer_hpp">Header &lt;/home/ion/src/cube/include/cube/gloo/buffer.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header..home.ion.src.cube.include.cube.gloo.element_index_hpp">Header &lt;/home/ion/src/cube/include/cube/gloo/element_index.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header..home.ion.src.cube.include.cube.gloo.globject_hpp">Header &lt;/home/ion/src/cube/include/cube/gloo/globject.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header..home.ion.src.cube.include.cube.gloo.opengl_hpp">Header &lt;/home/ion/src/cube/include/cube/gloo/opengl.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header..home.ion.src.cube.include.cube.gloo.program_hpp">Header &lt;/home/ion/src/cube/include/cube/gloo/program.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header..home.ion.src.cube.include.cube.gloo.shader_hpp">Header &lt;/home/ion/src/cube/include/cube/gloo/shader.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header..home.ion.src.cube.include.cube.gloo.uniform_hpp">Header &lt;/home/ion/src/cube/include/cube/gloo/uniform.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header..home.ion.src.cube.include.cube.gloo.window_hpp">Header &lt;/home/ion/src/cube/include/cube/gloo/window.hpp&gt;</a></span></dt>
+</dl></div>
+<div class="section"><div class="titlepage"><div><div><h3 class="title">
+<a name="header..home.ion.src.cube.include.cube.gloo_hpp"></a>Header &lt;<a href="../../..//home/ion/src/cube/include/cube/gloo.hpp" target="_top">/home/ion/src/cube/include/cube/gloo.hpp</a>&gt;</h3></div></div></div></div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="header..home.ion.src.cube.include.cube.gloo.attribute_hpp"></a>Header &lt;<a href="../../..//home/ion/src/cube/include/cube/gloo/attribute.hpp" target="_top">/home/ion/src/cube/include/cube/gloo/attribute.hpp</a>&gt;</h3></div></div></div>
+<pre class="synopsis"><span class="keyword">namespace</span> <span class="identifier">cube</span> <span class="special">{</span>
+  <span class="keyword">namespace</span> <span class="identifier">gloo</span> <span class="special">{</span>
+    <span class="keyword">class</span> <a class="link" href="gloo/attribute_base.html" title="Class attribute_base">attribute_base</a><span class="special">;</span>
+    <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span> Dim<span class="special">&gt;</span> <span class="keyword">class</span> <a class="link" href="gloo/basic_attribute.html" title="Class template basic_attribute">basic_attribute</a><span class="special">;</span>
+    <span class="keyword">namespace</span> <span class="identifier">attribute</span> <span class="special">{</span>
+      <span class="keyword">typedef</span> <a class="link" href="gloo/basic_attribute.html" title="Class template basic_attribute">basic_attribute</a><span class="special">&lt;</span> <span class="keyword">float</span><span class="special">,</span> <span class="number">1</span> <span class="special">&gt;</span> <a name="cube.gloo.attribute.float_"></a><span class="identifier">float_</span><span class="special">;</span>  <span class="comment">// attribute float </span>
+      <span class="keyword">typedef</span> <a class="link" href="gloo/basic_attribute.html" title="Class template basic_attribute">basic_attribute</a><span class="special">&lt;</span> <span class="keyword">float</span><span class="special">,</span> <span class="number">2</span> <span class="special">&gt;</span> <a name="cube.gloo.attribute.vec2"></a><span class="identifier">vec2</span><span class="special">;</span>  <span class="comment">// attribute vec2 </span>
+      <span class="keyword">typedef</span> <a class="link" href="gloo/basic_attribute.html" title="Class template basic_attribute">basic_attribute</a><span class="special">&lt;</span> <span class="keyword">float</span><span class="special">,</span> <span class="number">3</span> <span class="special">&gt;</span> <a name="cube.gloo.attribute.vec3"></a><span class="identifier">vec3</span><span class="special">;</span>  <span class="comment">// attribute vec3 </span>
+      <span class="keyword">typedef</span> <a class="link" href="gloo/basic_attribute.html" title="Class template basic_attribute">basic_attribute</a><span class="special">&lt;</span> <span class="keyword">float</span><span class="special">,</span> <span class="number">4</span> <span class="special">&gt;</span> <a name="cube.gloo.attribute.vec4"></a><span class="identifier">vec4</span><span class="special">;</span>  <span class="comment">// attribute vec4 </span>
+    <span class="special">}</span>
+  <span class="special">}</span>
+<span class="special">}</span></pre>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="header..home.ion.src.cube.include.cube.gloo.buffer_hpp"></a>Header &lt;<a href="../../..//home/ion/src/cube/include/cube/gloo/buffer.hpp" target="_top">/home/ion/src/cube/include/cube/gloo/buffer.hpp</a>&gt;</h3></div></div></div>
+<pre class="synopsis"><span class="keyword">namespace</span> <span class="identifier">cube</span> <span class="special">{</span>
+  <span class="keyword">namespace</span> <span class="identifier">gloo</span> <span class="special">{</span>
+    <span class="keyword">class</span> <a class="link" href="gloo/buffer.html" title="Class buffer">buffer</a><span class="special">;</span>
+  <span class="special">}</span>
+<span class="special">}</span></pre>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="header..home.ion.src.cube.include.cube.gloo.element_index_hpp"></a>Header &lt;<a href="../../..//home/ion/src/cube/include/cube/gloo/element_index.hpp" target="_top">/home/ion/src/cube/include/cube/gloo/element_index.hpp</a>&gt;</h3></div></div></div>
+<pre class="synopsis"><span class="keyword">namespace</span> <span class="identifier">cube</span> <span class="special">{</span>
+  <span class="keyword">namespace</span> <span class="identifier">gloo</span> <span class="special">{</span>
+    <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">&gt;</span> <span class="keyword">class</span> <a class="link" href="gloo/element_index.html" title="Class template element_index">element_index</a><span class="special">;</span>
+    <span class="keyword">class</span> <a class="link" href="gloo/element_index_base.html" title="Class element_index_base">element_index_base</a><span class="special">;</span>
+  <span class="special">}</span>
+<span class="special">}</span></pre>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="header..home.ion.src.cube.include.cube.gloo.globject_hpp"></a>Header &lt;<a href="../../..//home/ion/src/cube/include/cube/gloo/globject.hpp" target="_top">/home/ion/src/cube/include/cube/gloo/globject.hpp</a>&gt;</h3></div></div></div>
+<pre class="synopsis"><span class="keyword">namespace</span> <span class="identifier">cube</span> <span class="special">{</span>
+  <span class="keyword">namespace</span> <span class="identifier">gloo</span> <span class="special">{</span>
+    <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> Derived<span class="special">,</span> <span class="keyword">typename</span><span class="special">...</span> Policies<span class="special">&gt;</span> <span class="keyword">class</span> <a class="link" href="gloo/globject.html" title="Class template globject">globject</a><span class="special">;</span>
+    <span class="keyword">class</span> <a class="link" href="gloo/with_handle.html" title="Class with_handle">with_handle</a><span class="special">;</span>
+    <span class="keyword">class</span> <a class="link" href="gloo/with_target.html" title="Class with_target">with_target</a><span class="special">;</span>
+    <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> Iterator<span class="special">&gt;</span> <span class="keyword">void</span> <a class="link" href="gloo/activate_all.html" title="Function template activate_all"><span class="identifier">activate_all</span></a><span class="special">(</span><span class="identifier">Iterator</span><span class="special">,</span> <span class="identifier">Iterator</span> <span class="keyword">const</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+    <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> Iterator<span class="special">&gt;</span> 
+      <span class="keyword">void</span> <a class="link" href="gloo/deactivate_all.html" title="Function template deactivate_all"><span class="identifier">deactivate_all</span></a><span class="special">(</span><span class="identifier">Iterator</span><span class="special">,</span> <span class="identifier">Iterator</span> <span class="keyword">const</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+    <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> Iterator<span class="special">&gt;</span> <span class="keyword">void</span> <a class="link" href="gloo/dispose_all.html" title="Function template dispose_all"><span class="identifier">dispose_all</span></a><span class="special">(</span><span class="identifier">Iterator</span><span class="special">,</span> <span class="identifier">Iterator</span> <span class="keyword">const</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <span class="special">}</span>
+<span class="special">}</span></pre>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="header..home.ion.src.cube.include.cube.gloo.opengl_hpp"></a>Header &lt;<a href="../../..//home/ion/src/cube/include/cube/gloo/opengl.hpp" target="_top">/home/ion/src/cube/include/cube/gloo/opengl.hpp</a>&gt;</h3></div></div></div>
+<pre class="synopsis">
+
+<a class="link" href="../CUBE_GLOO_GL_H.html" title="Macro CUBE_GLOO_GL_H">CUBE_GLOO_GL_H</a></pre>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="header..home.ion.src.cube.include.cube.gloo.program_hpp"></a>Header &lt;<a href="../../..//home/ion/src/cube/include/cube/gloo/program.hpp" target="_top">/home/ion/src/cube/include/cube/gloo/program.hpp</a>&gt;</h3></div></div></div>
+<pre class="synopsis"><span class="keyword">namespace</span> <span class="identifier">cube</span> <span class="special">{</span>
+  <span class="keyword">namespace</span> <span class="identifier">gloo</span> <span class="special">{</span>
+    <span class="keyword">class</span> <a class="link" href="gloo/program.html" title="Class program">program</a><span class="special">;</span>
+  <span class="special">}</span>
+<span class="special">}</span></pre>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="header..home.ion.src.cube.include.cube.gloo.shader_hpp"></a>Header &lt;<a href="../../..//home/ion/src/cube/include/cube/gloo/shader.hpp" target="_top">/home/ion/src/cube/include/cube/gloo/shader.hpp</a>&gt;</h3></div></div></div>
+<pre class="synopsis"><span class="keyword">namespace</span> <span class="identifier">cube</span> <span class="special">{</span>
+  <span class="keyword">namespace</span> <span class="identifier">gloo</span> <span class="special">{</span>
+    <span class="keyword">class</span> <a class="link" href="gloo/fragment_shader.html" title="Class fragment_shader">fragment_shader</a><span class="special">;</span>
+    <span class="keyword">class</span> <a class="link" href="gloo/vertex_shader.html" title="Class vertex_shader">vertex_shader</a><span class="special">;</span>
+  <span class="special">}</span>
+<span class="special">}</span></pre>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="header..home.ion.src.cube.include.cube.gloo.uniform_hpp"></a>Header &lt;<a href="../../..//home/ion/src/cube/include/cube/gloo/uniform.hpp" target="_top">/home/ion/src/cube/include/cube/gloo/uniform.hpp</a>&gt;</h3></div></div></div>
+<pre class="synopsis"><span class="keyword">namespace</span> <span class="identifier">cube</span> <span class="special">{</span>
+  <span class="keyword">namespace</span> <span class="identifier">gloo</span> <span class="special">{</span>
+    <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span> N<span class="special">&gt;</span> <span class="keyword">class</span> <a class="link" href="gloo/basic_uniform_matrix.html" title="Class template basic_uniform_matrix">basic_uniform_matrix</a><span class="special">;</span>
+    <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span> N<span class="special">&gt;</span> <span class="keyword">class</span> <a class="link" href="gloo/basic_uniform_vector.html" title="Class template basic_uniform_vector">basic_uniform_vector</a><span class="special">;</span>
+    <span class="keyword">class</span> <a class="link" href="gloo/uniform_base.html" title="Class uniform_base">uniform_base</a><span class="special">;</span>
+    <span class="keyword">namespace</span> <span class="identifier">uniform</span> <span class="special">{</span>
+      <span class="keyword">typedef</span> <a class="link" href="gloo/basic_uniform_vector.html" title="Class template basic_uniform_vector">basic_uniform_vector</a><span class="special">&lt;</span> <span class="keyword">float</span><span class="special">,</span> <span class="number">1</span> <span class="special">&gt;</span> <a name="cube.gloo.uniform.float_"></a><span class="identifier">float_</span><span class="special">;</span>  <span class="comment">// uniform float </span>
+      <span class="keyword">typedef</span> <a class="link" href="gloo/basic_uniform_vector.html" title="Class template basic_uniform_vector">basic_uniform_vector</a><span class="special">&lt;</span> <span class="keyword">float</span><span class="special">,</span> <span class="number">2</span> <span class="special">&gt;</span> <a name="cube.gloo.uniform.vec2"></a><span class="identifier">vec2</span><span class="special">;</span>  <span class="comment">// uniform vec2 </span>
+      <span class="keyword">typedef</span> <a class="link" href="gloo/basic_uniform_vector.html" title="Class template basic_uniform_vector">basic_uniform_vector</a><span class="special">&lt;</span> <span class="keyword">float</span><span class="special">,</span> <span class="number">3</span> <span class="special">&gt;</span> <a name="cube.gloo.uniform.vec3"></a><span class="identifier">vec3</span><span class="special">;</span>  <span class="comment">// uniform vec3 </span>
+      <span class="keyword">typedef</span> <a class="link" href="gloo/basic_uniform_vector.html" title="Class template basic_uniform_vector">basic_uniform_vector</a><span class="special">&lt;</span> <span class="keyword">float</span><span class="special">,</span> <span class="number">4</span> <span class="special">&gt;</span> <a name="cube.gloo.uniform.vec4"></a><span class="identifier">vec4</span><span class="special">;</span>  <span class="comment">// uniform vec4 </span>
+      <span class="keyword">typedef</span> <a class="link" href="gloo/basic_uniform_matrix.html" title="Class template basic_uniform_matrix">basic_uniform_matrix</a><span class="special">&lt;</span> <span class="keyword">float</span><span class="special">,</span> <span class="number">2</span> <span class="special">&gt;</span> <a name="cube.gloo.uniform.mat2"></a><span class="identifier">mat2</span><span class="special">;</span>  <span class="comment">// uniform mat2 </span>
+      <span class="keyword">typedef</span> <a class="link" href="gloo/basic_uniform_matrix.html" title="Class template basic_uniform_matrix">basic_uniform_matrix</a><span class="special">&lt;</span> <span class="keyword">float</span><span class="special">,</span> <span class="number">3</span> <span class="special">&gt;</span> <a name="cube.gloo.uniform.mat3"></a><span class="identifier">mat3</span><span class="special">;</span>  <span class="comment">// uniform mat3 </span>
+      <span class="keyword">typedef</span> <a class="link" href="gloo/basic_uniform_matrix.html" title="Class template basic_uniform_matrix">basic_uniform_matrix</a><span class="special">&lt;</span> <span class="keyword">float</span><span class="special">,</span> <span class="number">4</span> <span class="special">&gt;</span> <a name="cube.gloo.uniform.mat4"></a><span class="identifier">mat4</span><span class="special">;</span>  <span class="comment">// uniform mat4 </span>
+    <span class="special">}</span>
+  <span class="special">}</span>
+<span class="special">}</span></pre>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="header..home.ion.src.cube.include.cube.gloo.window_hpp"></a>Header &lt;<a href="../../..//home/ion/src/cube/include/cube/gloo/window.hpp" target="_top">/home/ion/src/cube/include/cube/gloo/window.hpp</a>&gt;</h3></div></div></div>
+<pre class="synopsis"><span class="keyword">namespace</span> <span class="identifier">cube</span> <span class="special">{</span>
+  <span class="keyword">namespace</span> <span class="identifier">gloo</span> <span class="special">{</span>
+    <span class="keyword">class</span> <a class="link" href="gloo/window.html" title="Class window">window</a><span class="special">;</span>
+  <span class="special">}</span>
+<span class="special">}</span></pre>
+</div>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><div class="copyright-footer">Copyright &#169; 2014 Kiron<p>
+        Distributed under the Boost Software License, Version 1.0. (See accompanying
+        file LICENSE_1_0.txt or copy at <a href="http://www.boost.org/LICENSE_1_0.txt" target="_top">http://www.boost.org/LICENSE_1_0.txt</a>)
+      </p>
+</div></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="references.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../index.html"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="gloo/attribute_base.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+</body>
+</html>

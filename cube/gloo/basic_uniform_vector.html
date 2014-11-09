@@ -1,0 +1,145 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<title>Class template basic_uniform_vector</title>
+<link rel="stylesheet" href="../../boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="../../index.html" title="Chapter&#160;1.&#160;Cube">
+<link rel="up" href="../reference.html#header..home.ion.src.cube.include.cube.gloo.uniform_hpp" title="Header &lt;/home/ion/src/cube/include/cube/gloo/uniform.hpp&gt;">
+<link rel="prev" href="basic_uniform_matrix.html" title="Class template basic_uniform_matrix">
+<link rel="next" href="uniform_base.html" title="Class uniform_base">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="spirit-nav">
+<a accesskey="p" href="basic_uniform_matrix.html"><img src="../../images/prev.png" alt="Prev"></a><a accesskey="u" href="../reference.html#header..home.ion.src.cube.include.cube.gloo.uniform_hpp"><img src="../../images/up.png" alt="Up"></a><a accesskey="h" href="../../index.html"><img src="../../images/home.png" alt="Home"></a><a accesskey="n" href="uniform_base.html"><img src="../../images/next.png" alt="Next"></a>
+</div>
+<div class="refentry">
+<a name="cube.gloo.basic_uniform_vector"></a><div class="titlepage"></div>
+<div class="refnamediv">
+<h2><span class="refentrytitle">Class template basic_uniform_vector</span></h2>
+<p>cube::gloo::basic_uniform_vector &#8212; Uniform vector proxy of an OpenGL program. </p>
+</div>
+<h2 xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv-title">Synopsis</h2>
+<div xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv"><pre class="synopsis"><span class="comment">// In header: &lt;<a class="link" href="../reference.html#header..home.ion.src.cube.include.cube.gloo.uniform_hpp" title="Header &lt;/home/ion/src/cube/include/cube/gloo/uniform.hpp&gt;">/home/ion/src/cube/include/cube/gloo/uniform.hpp</a>&gt;
+
+</span><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span> N<span class="special">&gt;</span> 
+<span class="keyword">class</span> <a class="link" href="basic_uniform_vector.html" title="Class template basic_uniform_vector">basic_uniform_vector</a> <span class="special">:</span> <span class="keyword">public</span> <span class="identifier">cube</span><span class="special">::</span><span class="identifier">gloo</span><span class="special">::</span><span class="identifier">uniform_base</span> <span class="special">{</span>
+<span class="keyword">public</span><span class="special">:</span>
+  <span class="comment">// <a class="link" href="basic_uniform_vector.html#cube.gloo.basic_uniform_vectorconstruct-copy-destruct">construct/copy/destruct</a></span>
+  <a class="link" href="basic_uniform_vector.html#idp31052384-bb"><span class="identifier">basic_uniform_vector</span></a><span class="special">(</span><a class="link" href="program.html" title="Class program">program</a> <span class="special">&amp;</span><span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span><span class="special">)</span><span class="special">;</span>
+  <a class="link" href="basic_uniform_vector.html" title="Class template basic_uniform_vector">basic_uniform_vector</a> <span class="special">&amp;</span> <a class="link" href="basic_uniform_vector.html#idp31055552-bb"><span class="keyword">operator</span><span class="special">=</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">T</span><span class="special">(</span><span class="special">&amp;</span><span class="special">)</span><span class="special">)</span><span class="special">;</span>
+  <a class="link" href="basic_uniform_vector.html" title="Class template basic_uniform_vector">basic_uniform_vector</a> <span class="special">&amp;</span> <a class="link" href="basic_uniform_vector.html#idp31058464-bb"><span class="keyword">operator</span><span class="special">=</span></a><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">array</span><span class="special">&lt;</span> <span class="identifier">T</span><span class="special">,</span> <span class="identifier">N</span> <span class="special">&gt;</span> <span class="keyword">const</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> Allocator<span class="special">&gt;</span> 
+    <a class="link" href="basic_uniform_vector.html" title="Class template basic_uniform_vector">basic_uniform_vector</a> <span class="special">&amp;</span> <a class="link" href="basic_uniform_vector.html#idp31061376-bb"><span class="keyword">operator</span><span class="special">=</span></a><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <span class="identifier">T</span><span class="special">,</span> <span class="identifier">Allocator</span> <span class="special">&gt;</span> <span class="keyword">const</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> Allocator<span class="special">&gt;</span> 
+    <a class="link" href="basic_uniform_vector.html" title="Class template basic_uniform_vector">basic_uniform_vector</a><span class="special">&lt;</span> <span class="identifier">T</span><span class="special">,</span> <span class="identifier">N</span> <span class="special">&gt;</span> <span class="special">&amp;</span> 
+    <a class="link" href="basic_uniform_vector.html#idp31065040-bb"><span class="keyword">operator</span><span class="special">=</span></a><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <span class="identifier">T</span><span class="special">,</span> <span class="identifier">Allocator</span> <span class="special">&gt;</span> <span class="keyword">const</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="basic_uniform_vector.html#idp31050128-bb">public member functions</a></span>
+  <span class="keyword">void</span> <a class="link" href="basic_uniform_vector.html#idp31050624-bb"><span class="identifier">set</span></a><span class="special">(</span><span class="identifier">T</span> <span class="keyword">const</span> <span class="special">*</span><span class="keyword">const</span><span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="basic_uniform_vector.html#idp31067184-bb">private member functions</a></span>
+  <span class="keyword">virtual</span> <span class="keyword">void</span> <a class="link" href="basic_uniform_vector.html#idp31067680-bb"><span class="identifier">transfer</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+<span class="special">}</span><span class="special">;</span></pre></div>
+<div class="refsect1">
+<a name="idp84429280"></a><h2>Description</h2>
+<p><b>Example.&#160;</b></p>
+<p>
+</p>
+<pre class="programlisting"><span class="special">...</span>
+</pre>
+<p><b>Thread Safety.&#160;</b></p>
+<p>
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p><span class="emphasis"><em>Distinct objects:</em></span> Safe.</p></li>
+<li class="listitem"><p><span class="emphasis"><em>Shared objects:</em></span> Not safe. </p></li>
+</ul></div>
+<p>
+</p>
+<div class="refsect2">
+<a name="idp84434144"></a><h3>
+<a name="cube.gloo.basic_uniform_vectorconstruct-copy-destruct"></a><code class="computeroutput">basic_uniform_vector</code> 
+        public
+       construct/copy/destruct</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem">
+<pre class="literallayout"><a name="idp31052384-bb"></a><span class="identifier">basic_uniform_vector</span><span class="special">(</span><a class="link" href="program.html" title="Class program">program</a> <span class="special">&amp;</span> p<span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> name<span class="special">)</span><span class="special">;</span></pre>Construct a uniform vector proxy. <p>
+</p>
+<div class="variablelist"><table border="0" class="variablelist compact">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term">Parameters:</span></p></td>
+<td><div class="variablelist"><table border="0" class="variablelist compact">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td><p><span class="term"><code class="computeroutput">name</code></span></p></td>
+<td><p>Name of the unifrom in the shader. </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="computeroutput">p</code></span></p></td>
+<td><p>OpenGL program. </p></td>
+</tr>
+</tbody>
+</table></div></td>
+</tr></tbody>
+</table></div>
+</li>
+<li class="listitem">
+<pre class="literallayout"><a class="link" href="basic_uniform_vector.html" title="Class template basic_uniform_vector">basic_uniform_vector</a> <span class="special">&amp;</span> <a name="idp31055552-bb"></a><span class="keyword">operator</span><span class="special">=</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">T</span><span class="special">(</span><span class="special">&amp;</span><span class="special">)</span> rhs<span class="special">)</span><span class="special">;</span></pre>Assign a value to the uniform,. <p><span class="bold"><strong>See Also:</strong></span></p>
+<p>basic_uniform_vector::set. </p>
+<p>
+</p>
+</li>
+<li class="listitem">
+<pre class="literallayout"><a class="link" href="basic_uniform_vector.html" title="Class template basic_uniform_vector">basic_uniform_vector</a> <span class="special">&amp;</span> <a name="idp31058464-bb"></a><span class="keyword">operator</span><span class="special">=</span><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">array</span><span class="special">&lt;</span> <span class="identifier">T</span><span class="special">,</span> <span class="identifier">N</span> <span class="special">&gt;</span> <span class="keyword">const</span> <span class="special">&amp;</span> rhs<span class="special">)</span><span class="special">;</span></pre>Assign a value to the uniform,. <p><span class="bold"><strong>See Also:</strong></span></p>
+<p>basic_uniform_vector::set. </p>
+<p>
+</p>
+</li>
+<li class="listitem">
+<pre class="literallayout"><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> Allocator<span class="special">&gt;</span> 
+  <a class="link" href="basic_uniform_vector.html" title="Class template basic_uniform_vector">basic_uniform_vector</a> <span class="special">&amp;</span> <a name="idp31061376-bb"></a><span class="keyword">operator</span><span class="special">=</span><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <span class="identifier">T</span><span class="special">,</span> <span class="identifier">Allocator</span> <span class="special">&gt;</span> <span class="keyword">const</span> <span class="special">&amp;</span> rhs<span class="special">)</span><span class="special">;</span></pre>Assign a value to the uniform,. <p><span class="bold"><strong>See Also:</strong></span></p>
+<p>basic_uniform_vector::set. </p>
+<p>
+</p>
+</li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> Allocator<span class="special">&gt;</span> 
+  <a class="link" href="basic_uniform_vector.html" title="Class template basic_uniform_vector">basic_uniform_vector</a><span class="special">&lt;</span> <span class="identifier">T</span><span class="special">,</span> <span class="identifier">N</span> <span class="special">&gt;</span> <span class="special">&amp;</span> 
+  <a name="idp31065040-bb"></a><span class="keyword">operator</span><span class="special">=</span><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <span class="identifier">T</span><span class="special">,</span> <span class="identifier">Allocator</span> <span class="special">&gt;</span> <span class="keyword">const</span> <span class="special">&amp;</span> rhs<span class="special">)</span><span class="special">;</span></pre></li>
+</ol></div>
+</div>
+<div class="refsect2">
+<a name="idp84505424"></a><h3>
+<a name="idp31050128-bb"></a><code class="computeroutput">basic_uniform_vector</code> public member functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+<pre class="literallayout"><span class="keyword">void</span> <a name="idp31050624-bb"></a><span class="identifier">set</span><span class="special">(</span><span class="identifier">T</span> <span class="keyword">const</span> <span class="special">*</span><span class="keyword">const</span> data<span class="special">)</span><span class="special">;</span></pre>Raw interface to set the data of the uniform. </li></ol></div>
+</div>
+<div class="refsect2">
+<a name="idp84514608"></a><h3>
+<a name="idp31067184-bb"></a><code class="computeroutput">basic_uniform_vector</code> private member functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><pre class="literallayout"><span class="keyword">virtual</span> <span class="keyword">void</span> <a name="idp31067680-bb"></a><span class="identifier">transfer</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li></ol></div>
+</div>
+</div>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><div class="copyright-footer">Copyright &#169; 2014 Kiron<p>
+        Distributed under the Boost Software License, Version 1.0. (See accompanying
+        file LICENSE_1_0.txt or copy at <a href="http://www.boost.org/LICENSE_1_0.txt" target="_top">http://www.boost.org/LICENSE_1_0.txt</a>)
+      </p>
+</div></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="basic_uniform_matrix.html"><img src="../../images/prev.png" alt="Prev"></a><a accesskey="u" href="../reference.html#header..home.ion.src.cube.include.cube.gloo.uniform_hpp"><img src="../../images/up.png" alt="Up"></a><a accesskey="h" href="../../index.html"><img src="../../images/home.png" alt="Home"></a><a accesskey="n" href="uniform_base.html"><img src="../../images/next.png" alt="Next"></a>
+</div>
+</body>
+</html>
