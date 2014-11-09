@@ -1,0 +1,14 @@
+[section References]
+
+# [@http://duriansoftware.com/joe/An-intro-to-modern-OpenGL.-Table-of-Contents.html An intro to modern OpenGL],
+  Joe Groff, July 2014.
+# [@http://www.arcsynthesis.org/gltut/ Learning Modern 3D Graphics Programming Through OpenGL],
+  Jason L. McKesson, 2012
+# [@http://www.labri.fr/perso/nrougier/teaching/opengl/ Modern OpenGL tutorial (python)],
+  Nicolas P. Rougier, ERSF Code camp 2014
+# [@http://openglinsights.com/ OpenGL Insights],
+  Patrick Cozzi, Christophe Riccio, July 2012
+# [@http://tartley.com/?p=1142 Flying High: Hobbyist OpenGL from Python] [@http://tartley.com/?p=1207 part 2],
+  Jonathan Hartley, 2010
+
+[endsect]

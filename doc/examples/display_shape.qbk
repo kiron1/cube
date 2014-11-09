@@ -1,0 +1,98 @@
+
+[section Display Shape]
+
+[import ../../examples/basic/display_shape.cpp]
+[import ../../examples/basic/display_shape_rawgl.cpp]
+
+[note
+    The idea of this example is from
+    [@http://vispy.org/examples/basics/gloo/display_shape.html vispy].
+]
+
+This example is provided in two version. One version uses the raw
+OpenGL calls, the other uses the `cube::gloo` higher level API.
+
+This example demontrates how to draw two colored triangles on the screen.
+
+[heading OpenGL shader code]
+
+The used OpenGL shaders are the same for both versions:
+
+[table OpenGL shader code
+    [[Vertex shader][Fragment shader]]
+    [[ [vertex_shader] ][ [fragment_shader] ]]
+]
+
+[heading OpenGL data]
+
+The uniforms and vertex attributes are also the same for both bersions:
+
+[data]
+
+[heading Helper functions for raw OpenGL]
+
+First introduces some helper functions used in the raw OpenGL example:
+
+[table OpenGL helper functions.
+    [[raw OpenGL][`cube::gloo`]]
+    [[
+        [helpers]
+    ][
+        [note The `cube::gloo` version does not need any helpers, the library is the helper.]
+    ]]
+]
+
+[heading Initialize]
+
+The raw OpenGL objects must be create when an OpenGL context is available.
+
+[table Initialize
+    [[raw OpenGL][`cube::gloo`]]
+    [[
+        [initialize]
+    ][
+        [construct]
+
+        With the following class attributes:
+
+        [class_attributes]
+
+
+        [note
+            Since the OpenGL objects in \c cube::gloo are lazy, we
+            can create them in the constructor of the class although
+            now OpenGL context is available yet.
+        ]
+    ]]
+]
+
+[heading Display]
+
+[table Initialize
+    [[raw OpenGL][`cube::gloo`]]
+    [[
+        [display_gl]
+    ][
+        [display]
+
+        [note
+            The `cube::gloo` version draws the faces and outline of
+            the triangles, the raw OpenGL version draws just the faces.
+        ]
+    ]]
+]
+
+[heading Destruct]
+
+Cleanup all OpenGL objects.
+
+[table Destruct
+    [[raw OpenGL][`cube::gloo`]]
+    [[
+        [close_gl]
+    ][
+        [close]
+    ]]
+]
+
+[endsect]

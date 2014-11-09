@@ -30,6 +30,7 @@ find_package(Doxygen 1.8.0 QUIET)
 find_package(Git QUIET)
 find_package(ScanBuild QUIET)
 find_package(ClangFormat 3.5.0 QUIET)
+find_package(BoostBook)
 
 if(GIT_EXECUTABLE AND NOT TARGET Git::git)
     add_executable(Git::git IMPORTED)
@@ -42,6 +43,7 @@ include(GNUInstallDirs)
 include(CMakePackageConfigHelpers)
 
 option(BUILD_TESTING "Enable tests" On)
+option(BUILD_DOCUMENTATION "Enable documentation" On)
 option(${PROJECT_NAME}_DEVELOPER "Enable extra targets for developers" Off)
 mark_as_advanced(${PROJECT_NAME}_DEVELOPER)
 

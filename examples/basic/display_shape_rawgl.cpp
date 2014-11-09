@@ -11,7 +11,6 @@
 #include <cube/gloo/opengl.hpp>
 #include <cube/gloo/window.hpp>
 
-/// [vertex_shader]
 static const std::string vertex_shader_source =
     "// Attributes\n"
     "// ------------------------------------\n"
@@ -21,9 +20,7 @@ static const std::string vertex_shader_source =
     "{\n"
     "    gl_Position = vec4(a_position, 1.0);\n"
     "}\n";
-/// [vertex_shader]
 
-/// [fragment_shader]
 static const std::string fragment_shader_source =
     "// Uniforms\n"
     "// ------------------------------------\n"
@@ -33,9 +30,7 @@ static const std::string fragment_shader_source =
     "{\n"
     "    gl_FragColor = u_color;\n"
     "}\n";
-/// [fragment_shader]
 
-/// [data]
 static const float color[4] = {
     0.2f, 1.0f, 0.4f, 1.0f
 };
@@ -50,9 +45,8 @@ static const float position[4*3] = {
 static const GLushort elements[] = {
     0, 1, 2, 3
 };
-/// [data]
 
-/// [helpers]
+//[ helpers
 static GLuint make_buffer(
     GLenum target,
     const void *data,
@@ -124,7 +118,7 @@ static GLuint make_program(GLuint vertex_shader, GLuint fragment_shader)
     }
     return program;
 }
-/// [helpers]
+//]
 
 class shape_strategy : public cube::gloo::window::strategy
 {
@@ -134,7 +128,7 @@ public:
     }
 
 private:
-    /// [initialize]
+    //[ initialize
     void initialize()
     {
         vertex_shader_ = make_shader(
@@ -177,9 +171,9 @@ private:
         assert(position_buffer_ != 0);
         assert(glGetError() == GL_NO_ERROR);
     }
-    /// [initialize]
+    //]
 
-    /// [display]
+    //[ display_gl
     void display()
     {
         glUseProgram(program_);
@@ -209,13 +203,14 @@ private:
 
         glDisableVertexAttribArray(position_attrib_);
     }
-    /// [display]
+    //]
 
     void keyboard(unsigned char key, int w, int h)
     {
         leave();
     }
 
+    //[ close_gl
     void close()
     {
         glDeleteProgram(program_);
@@ -223,6 +218,7 @@ private:
         glDeleteShader(fragment_shader_);
         glDeleteBuffers(1, &position_buffer_);
     }
+    //]
 
 private:
     GLuint vertex_shader_;
@@ -236,13 +232,11 @@ private:
 
 int main(int argc, char* argv[])
 {
-    /// [window]
     cube::gloo::window::size_type s = { 400, 400 };
     std::unique_ptr<cube::gloo::window::strategy> strategy(new shape_strategy);
     cube::gloo::window win(std::move(strategy), "Display Shape RawGL", s);
 
     win.run();
-    /// [window]
 
     return 0;
 }

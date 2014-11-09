@@ -12,7 +12,7 @@
 #include <cube/gloo.hpp>
 
 
-/// [vertex_shader]
+//[ vertex_shader
 static const std::string vertex_shader_source =
     "// Attributes\n"
     "// ------------------------------------\n"
@@ -22,9 +22,9 @@ static const std::string vertex_shader_source =
     "{\n"
     "    gl_Position = vec4(a_position, 1.0);\n"
     "}\n";
-/// [vertex_shader]
+//]
 
-/// [fragment_shader]
+//[ fragment_shader
 static const std::string fragment_shader_source =
     "// Uniforms\n"
     "// ------------------------------------\n"
@@ -34,9 +34,9 @@ static const std::string fragment_shader_source =
     "{\n"
     "    gl_FragColor = u_color;\n"
     "}\n";
-/// [fragment_shader]
+//]
 
-/// [data]
+//[ data
 static const float position[4*3] = {
     -0.8f, -0.8f, 0.0f,
     +0.7f, -0.7f, 0.0f,
@@ -55,12 +55,12 @@ static const float face_color[4] = {
 static const float line_color[4] = {
     0.0f, 0.0f, 0.0f, 1.0f
 };
-/// [data]
+//]
 
 class shape_strategy : public cube::gloo::window::strategy
 {
 public:
-    /// [construct]
+    //[ construct
     shape_strategy()
         : program_(vertex_shader_source, fragment_shader_source)
         , a_position_(program_, "a_position")
@@ -73,14 +73,14 @@ public:
 
         a_position_ = position; ///< set a_position attribute
     }
-    /// [construct]
+    //]
 
 private:
     void initialize()
     {
     }
 
-    /// [display]
+    //[ display
     void display()
     {
         // draw faces using face_color
@@ -91,19 +91,21 @@ private:
         u_color_ = line_color; ///< set u_color uniform
         program_.draw(cube::gloo::program::line_strip, outline_index_);
     }
-    /// [display]
+    //]
 
     void keyboard(unsigned char key, int w, int h)
     {
         leave();
     }
 
+    //[ close
     void close()
     {
         program_.dispose();
     }
+    //]
 private:
-    /// [class_attributes]
+    //[ class_attributes
     cube::gloo::program program_;
 
     cube::gloo::attribute::vec3 a_position_; // 'attribute vec3 a_position' proxy
@@ -112,18 +114,18 @@ private:
 
     cube::gloo::element_index<unsigned short> face_index_;
     cube::gloo::element_index<unsigned short> outline_index_;
-    /// [class_attributes]
+    //]
 };
 
 int main(int argc, char* argv[])
 {
-    /// [window]
+    //[ window
     cube::gloo::window::size_type s = { 400, 400 };
     std::unique_ptr<cube::gloo::window::strategy> strategy(new shape_strategy);
     cube::gloo::window win(std::move(strategy), "Display Shape", s);
 
     win.run();
-    /// [window]
+    //]
 
     return 0;
 }

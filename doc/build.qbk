@@ -1,0 +1,58 @@
+
+[section Build]
+
+[section Dependencies]
+
+* [@http://www.opengl.org/ OpenGL]
+* [@http://www.glew.org/ GLEW]
+* [@http://freeglut.sf.net FreeGLUT]
+* [@http://boost.org/ Boost]
+* C++11 compiler (e.g. [@http://www.clang.org/ clang-3.5])
+* [@http://www.cmake.org/ CMake 3.0 or newer]
+* optional [@https://svn.boost.org/trac/boost/wiki/BoostDocs/GettingStarted BoostBook] toolchaing to generate documentation
+
+[endsect]
+
+[section Configure]
+
+Issue the following command in the source directoy to generate the
+project in the `_build` subdirectory (the `_build` directory will
+be automaticaly created it it does not exist).
+
+    cmake -H. -B_build
+
+[note The [@https://github.com/martine/ninja Ninja build system] is recommended, e.g. add `-GNinja` to the above command.]
+
+[section Configure options]
+
+The following configure options are available:
+
+* [@http://www.cmake.org/cmake/help/v3.0/variable/CMAKE_BUILD_TYPE.html `CMAKE_BUILD_TYPE`] - Change build type.
+* [@http://www.cmake.org/cmake/help/v3.0/variable/CMAKE_INSTALL_PREFIX.html `CMAKE_INSTALL_PREFIX`] -  Change installation location.
+* `BUILD_TESTING` - Enable generation of test targets.
+* `BUILD_DOCUMENTATION` - Enable generation of `doc` target.
+* `Cube_DEVELOPER` - Enable custom targets for developers (e.g. `clang-format`).
+
+To change some options, append `-DOPTION=Value` (e.g.
+`-DCMAKE_BUILD_TYPE=Debug` to generate the project to build in debug mode).
+
+[endsect]
+[endsect]
+
+[section Compile]
+
+The following command will build the project:
+
+    cmake --build _build --config Release
+
+[endsect]
+
+[section Install]
+
+To install the project, use the following command:
+
+    cmake --build _build --config Release --target install
+
+[endsect]
+
+[endsect]

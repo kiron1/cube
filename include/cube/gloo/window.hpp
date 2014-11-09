@@ -20,7 +20,11 @@ namespace gloo
      *
      * \par Example
      *
-     * \snippet display_shape.cpp window
+     * \code
+     * cube::gloo::window::size_type s = { 400, 400 };
+     * std::unique_ptr<cube::gloo::window::strategy> strategy(new shape_strategy);
+     * cube::gloo::window win(std::move(strategy), "Display Shape", s);
+     * \endcode
      *
      * \par Thread safety
      *

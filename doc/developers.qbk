@@ -1,0 +1,12 @@
+
+[section Developers]
+
+[section class globject]
+
+Basic building block to handle the state of OpenGL objects. [classref cube::gloo::globject]
+uses [@https://en.wikipedia.org/wiki/Curiously_recurring_template_pattern CRTP].
+
+[endsect]
+
+[endsect]
+

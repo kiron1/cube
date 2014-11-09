@@ -17,12 +17,6 @@
 #include <cube/gloo/globject.hpp>
 #include <cube/gloo/buffer.hpp>
 
-/**
- * \ingroup variables
- * \{
- *
- */
-
 namespace cube
 {
 namespace gloo
@@ -138,5 +132,3 @@ namespace gloo
     }
 }
 }
-
-/** \} */

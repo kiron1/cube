@@ -16,12 +16,6 @@
 #include <cube/gloo/globject.hpp>
 #include <cube/gloo/buffer.hpp>
 
-/**
- * \defgroup element_index OpenGL element index array
- * \{
- * The \ref element_index can be used with program::draw.
- */
-
 namespace cube
 {
 namespace gloo
@@ -115,5 +109,3 @@ namespace gloo
     }
 }
 }
-
-/** \} */

@@ -12,14 +12,6 @@
 
 #include <cube/gloo/globject.hpp>
 
-/**
- * \addtogroup shader OpenGL shader
- * \{
- * \anchor shaders
- *
- * OpenGL shaders.
- */
-
 namespace cube
 {
 namespace gloo
@@ -99,5 +91,3 @@ namespace gloo
     };
 }
 }
-
-/** \} */

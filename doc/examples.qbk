@@ -1,0 +1,10 @@
+
+[section Examples]
+
+[heading Basic examples]
+
+* display_shape - the most basic example to displat a simple 2d shape
+
+[include examples/display_shape.qbk]
+
+[endsect]

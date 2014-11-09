@@ -1,0 +1,34 @@
+[/
+ / Copyright (c) 2014 Ion Kiron
+ /
+ / Distributed under the Boost Software License, Version 1.0. (See accompanying
+ / file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
+ /]
+[library Cube
+    [quickbook 1.6]
+    [authors [Kiron, Ion]]
+    [copyright 2014 Kiron]
+    [id cube]
+    [dirname cube]
+    [purpose A modern OpenGL C++11 visualization library for 2d and 3d dataL]
+    [license
+        Distributed under the Boost Software License, Version 1.0.
+        (See accompanying file LICENSE_1_0.txt or copy at
+        [@http://www.boost.org/LICENSE_1_0.txt])
+    ]
+    [xmlbase .]
+]
+
+[note
+    This library his heavily inspired by by the Python [@http://vispy.org/ vispy.gloo] library.
+]
+
+[include preface.qbk]
+[include introduction.qbk]
+[include build.qbk]
+[include variables.qbk]
+[include examples.qbk]
+[include developers.qbk]
+[include references.qbk]
+
+[xinclude autodoc.xml]

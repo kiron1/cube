@@ -1,8 +1,0 @@
-
-Introduction {#introduction}
-============
-
-Technical details
------------------
-
-
