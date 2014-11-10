@@ -40,36 +40,36 @@
   <span class="keyword">typedef</span> <span class="keyword">typename</span> <span class="identifier">base</span><span class="special">::</span><span class="identifier">const_reverse_iterator</span> <a name="cube.gloo.element_index.const_reverse_iterator"></a><span class="identifier">const_reverse_iterator</span><span class="special">;</span>
 
   <span class="comment">// <a class="link" href="element_index.html#cube.gloo.element_indexconstruct-copy-destruct">construct/copy/destruct</a></span>
-  <a class="link" href="element_index.html#idp31661184-bb"><span class="identifier">element_index</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
-  <span class="keyword">explicit</span> <a class="link" href="element_index.html#idp31661696-bb"><span class="identifier">element_index</span></a><span class="special">(</span><span class="identifier">size_type</span><span class="special">)</span><span class="special">;</span>
-  <a class="link" href="element_index.html#idp31663456-bb"><span class="special">~</span><span class="identifier">element_index</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <a class="link" href="element_index.html#idp43422880-bb"><span class="identifier">element_index</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">explicit</span> <a class="link" href="element_index.html#idp43423392-bb"><span class="identifier">element_index</span></a><span class="special">(</span><span class="identifier">size_type</span><span class="special">)</span><span class="special">;</span>
+  <a class="link" href="element_index.html#idp43425152-bb"><span class="special">~</span><span class="identifier">element_index</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
 
-  <span class="comment">// <a class="link" href="element_index.html#idp31658096-bb">public member functions</a></span>
-  <span class="keyword">virtual</span> <span class="keyword">void</span> <span class="keyword">const</span> <span class="special">*</span> <a class="link" href="element_index.html#idp31658592-bb"><span class="identifier">data</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
-  <span class="keyword">virtual</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span> <a class="link" href="element_index.html#idp31659824-bb"><span class="identifier">size</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="comment">// <a class="link" href="element_index.html#idp43419792-bb">public member functions</a></span>
+  <span class="keyword">virtual</span> <span class="keyword">void</span> <span class="keyword">const</span> <span class="special">*</span> <a class="link" href="element_index.html#idp43420288-bb"><span class="identifier">data</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">virtual</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span> <a class="link" href="element_index.html#idp43421520-bb"><span class="identifier">size</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
 <span class="special">}</span><span class="special">;</span></pre></div>
 <div class="refsect1">
-<a name="idp102087056"></a><h2>Description</h2>
+<a name="idp87482720"></a><h2>Description</h2>
 <p>The <a class="link" href="element_index.html" title="Class template element_index">element_index</a> contains a array to store the indices. Upon drawing using a <a class="link" href="element_index.html" title="Class template element_index">element_index</a> the array is transfered to the GPU. </p>
 <div class="refsect2">
-<a name="idp102088944"></a><h3>
+<a name="idp87484688"></a><h3>
 <a name="cube.gloo.element_indexconstruct-copy-destruct"></a><code class="computeroutput">element_index</code> 
         public
        construct/copy/destruct</h3>
 <div class="orderedlist"><ol class="orderedlist" type="1">
 <li class="listitem">
-<pre class="literallayout"><a name="idp31661184-bb"></a><span class="identifier">element_index</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>Construct an empty array. </li>
+<pre class="literallayout"><a name="idp43422880-bb"></a><span class="identifier">element_index</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>Construct an empty array. </li>
 <li class="listitem">
-<pre class="literallayout"><span class="keyword">explicit</span> <a name="idp31661696-bb"></a><span class="identifier">element_index</span><span class="special">(</span><span class="identifier">size_type</span> size<span class="special">)</span><span class="special">;</span></pre>Construct an array of a specific <span class="emphasis"><em>size</em></span>. </li>
-<li class="listitem"><pre class="literallayout"><a name="idp31663456-bb"></a><span class="special">~</span><span class="identifier">element_index</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+<pre class="literallayout"><span class="keyword">explicit</span> <a name="idp43423392-bb"></a><span class="identifier">element_index</span><span class="special">(</span><span class="identifier">size_type</span> size<span class="special">)</span><span class="special">;</span></pre>Construct an array of a specific <span class="emphasis"><em>size</em></span>. </li>
+<li class="listitem"><pre class="literallayout"><a name="idp43425152-bb"></a><span class="special">~</span><span class="identifier">element_index</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
 </ol></div>
 </div>
 <div class="refsect2">
-<a name="idp102102832"></a><h3>
-<a name="idp31658096-bb"></a><code class="computeroutput">element_index</code> public member functions</h3>
+<a name="idp87498576"></a><h3>
+<a name="idp43419792-bb"></a><code class="computeroutput">element_index</code> public member functions</h3>
 <div class="orderedlist"><ol class="orderedlist" type="1">
-<li class="listitem"><pre class="literallayout"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="keyword">const</span> <span class="special">*</span> <a name="idp31658592-bb"></a><span class="identifier">data</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
-<li class="listitem"><pre class="literallayout"><span class="keyword">virtual</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span> <a name="idp31659824-bb"></a><span class="identifier">size</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="keyword">const</span> <span class="special">*</span> <a name="idp43420288-bb"></a><span class="identifier">data</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">virtual</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span> <a name="idp43421520-bb"></a><span class="identifier">size</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
 </ol></div>
 </div>
 </div>

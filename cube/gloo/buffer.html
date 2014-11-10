@@ -50,44 +50,44 @@
                     dynamic_read = = GL_DYNAMIC_READ, 
                     dynamic_copy = = GL_DYNAMIC_COPY <span class="special">}</span><span class="special">;</span>
   <span class="comment">// <a class="link" href="buffer.html#cube.gloo.bufferconstruct-copy-destruct">construct/copy/destruct</a></span>
-  <a class="link" href="buffer.html#idp31639440-bb"><span class="identifier">buffer</span></a><span class="special">(</span><span class="identifier">target_type</span><span class="special">,</span> <span class="identifier">usage_type</span><span class="special">)</span><span class="special">;</span>
+  <a class="link" href="buffer.html#idp43401136-bb"><span class="identifier">buffer</span></a><span class="special">(</span><span class="identifier">target_type</span><span class="special">,</span> <span class="identifier">usage_type</span><span class="special">)</span><span class="special">;</span>
 
-  <span class="comment">// <a class="link" href="buffer.html#idp31632688-bb">public member functions</a></span>
-  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">&gt;</span> <span class="keyword">void</span> <a class="link" href="buffer.html#idp31633184-bb"><span class="identifier">set</span></a><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span><span class="special">,</span> <span class="keyword">const</span> <span class="identifier">T</span> <span class="special">*</span><span class="special">)</span><span class="special">;</span>
-  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">&gt;</span> <span class="keyword">void</span> <a class="link" href="buffer.html#idp31635936-bb"><span class="identifier">set</span></a><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span><span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span><span class="special">,</span> <span class="keyword">const</span> <span class="identifier">T</span> <span class="special">*</span><span class="special">)</span><span class="special">;</span>
+  <span class="comment">// <a class="link" href="buffer.html#idp43394384-bb">public member functions</a></span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">&gt;</span> <span class="keyword">void</span> <a class="link" href="buffer.html#idp43394880-bb"><span class="identifier">set</span></a><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span><span class="special">,</span> <span class="keyword">const</span> <span class="identifier">T</span> <span class="special">*</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">&gt;</span> <span class="keyword">void</span> <a class="link" href="buffer.html#idp43397632-bb"><span class="identifier">set</span></a><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span><span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span><span class="special">,</span> <span class="keyword">const</span> <span class="identifier">T</span> <span class="special">*</span><span class="special">)</span><span class="special">;</span>
 
-  <span class="comment">// <a class="link" href="buffer.html#idp31640944-bb">private member functions</a></span>
-  <span class="keyword">void</span> <a class="link" href="buffer.html#idp31641440-bb"><span class="identifier">create</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
-  <span class="keyword">void</span> <a class="link" href="buffer.html#idp31642192-bb"><span class="identifier">enable</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
-  <span class="keyword">void</span> <a class="link" href="buffer.html#idp31642944-bb"><span class="identifier">disable</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
-  <span class="keyword">void</span> <a class="link" href="buffer.html#idp31643696-bb"><span class="identifier">destroy</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="comment">// <a class="link" href="buffer.html#idp43402640-bb">private member functions</a></span>
+  <span class="keyword">void</span> <a class="link" href="buffer.html#idp43403136-bb"><span class="identifier">create</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="buffer.html#idp43403888-bb"><span class="identifier">enable</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="buffer.html#idp43404640-bb"><span class="identifier">disable</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="buffer.html#idp43405392-bb"><span class="identifier">destroy</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
 <span class="special">}</span><span class="special">;</span></pre></div>
 <div class="refsect1">
-<a name="idp101928496"></a><h2>Description</h2>
+<a name="idp87324160"></a><h2>Description</h2>
 <div class="refsect2">
-<a name="idp101928880"></a><h3>
+<a name="idp87324544"></a><h3>
 <a name="cube.gloo.bufferconstruct-copy-destruct"></a><code class="computeroutput">buffer</code> 
         public
        construct/copy/destruct</h3>
-<div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><pre class="literallayout"><a name="idp31639440-bb"></a><span class="identifier">buffer</span><span class="special">(</span><span class="identifier">target_type</span> t<span class="special">,</span> <span class="identifier">usage_type</span> usage<span class="special">)</span><span class="special">;</span></pre></li></ol></div>
+<div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><pre class="literallayout"><a name="idp43401136-bb"></a><span class="identifier">buffer</span><span class="special">(</span><span class="identifier">target_type</span> t<span class="special">,</span> <span class="identifier">usage_type</span> usage<span class="special">)</span><span class="special">;</span></pre></li></ol></div>
 </div>
 <div class="refsect2">
-<a name="idp101935824"></a><h3>
-<a name="idp31632688-bb"></a><code class="computeroutput">buffer</code> public member functions</h3>
+<a name="idp87331488"></a><h3>
+<a name="idp43394384-bb"></a><code class="computeroutput">buffer</code> public member functions</h3>
 <div class="orderedlist"><ol class="orderedlist" type="1">
-<li class="listitem"><pre class="literallayout"><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">&gt;</span> <span class="keyword">void</span> <a name="idp31633184-bb"></a><span class="identifier">set</span><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span> size<span class="special">,</span> <span class="keyword">const</span> <span class="identifier">T</span> <span class="special">*</span> data<span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">&gt;</span> <span class="keyword">void</span> <a name="idp43394880-bb"></a><span class="identifier">set</span><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span> size<span class="special">,</span> <span class="keyword">const</span> <span class="identifier">T</span> <span class="special">*</span> data<span class="special">)</span><span class="special">;</span></pre></li>
 <li class="listitem"><pre class="literallayout"><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">&gt;</span> 
-  <span class="keyword">void</span> <a name="idp31635936-bb"></a><span class="identifier">set</span><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span> offset<span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span> size<span class="special">,</span> <span class="keyword">const</span> <span class="identifier">T</span> <span class="special">*</span> data<span class="special">)</span><span class="special">;</span></pre></li>
+  <span class="keyword">void</span> <a name="idp43397632-bb"></a><span class="identifier">set</span><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span> offset<span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span> size<span class="special">,</span> <span class="keyword">const</span> <span class="identifier">T</span> <span class="special">*</span> data<span class="special">)</span><span class="special">;</span></pre></li>
 </ol></div>
 </div>
 <div class="refsect2">
-<a name="idp101960304"></a><h3>
-<a name="idp31640944-bb"></a><code class="computeroutput">buffer</code> private member functions</h3>
+<a name="idp87355968"></a><h3>
+<a name="idp43402640-bb"></a><code class="computeroutput">buffer</code> private member functions</h3>
 <div class="orderedlist"><ol class="orderedlist" type="1">
-<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp31641440-bb"></a><span class="identifier">create</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
-<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp31642192-bb"></a><span class="identifier">enable</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
-<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp31642944-bb"></a><span class="identifier">disable</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
-<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp31643696-bb"></a><span class="identifier">destroy</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp43403136-bb"></a><span class="identifier">create</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp43403888-bb"></a><span class="identifier">enable</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp43404640-bb"></a><span class="identifier">disable</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp43405392-bb"></a><span class="identifier">destroy</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
 </ol></div>
 </div>
 </div>
