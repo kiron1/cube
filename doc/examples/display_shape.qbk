@@ -9,10 +9,14 @@
     [@http://vispy.org/examples/basics/gloo/display_shape.html vispy].
 ]
 
-This example is provided in two version. One version uses the raw
+This example is provided in two versions. One version uses the raw
 OpenGL calls, the other uses the `cube::gloo` higher level API.
 
-This example demontrates how to draw two colored triangles on the screen.
+[note
+    The complete source files are in the `examples/basic` directory.
+]
+
+This example demonstrates how to draw two colored triangles on the screen.
 
 [heading OpenGL shader code]
 
@@ -61,7 +65,7 @@ The raw OpenGL objects must be create when an OpenGL context is available.
         [note
             Since the OpenGL objects in \c cube::gloo are lazy, we
             can create them in the constructor of the class although
-            now OpenGL context is available yet.
+            no OpenGL context is available yet.
         ]
     ]]
 ]
