@@ -4,7 +4,7 @@
 # http://www.boost.org/LICENSE_1_0.txt
 #=============================================================================
 
-if(BUILD_DOCUMENTATION)
+if(BUILD_DOCUMENTATION AND COMMAND add_boostbook)
     add_boostbook(html ALL
         SOURCES
             cube.qbk
