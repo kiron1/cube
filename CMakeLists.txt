@@ -11,16 +11,9 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/Modules")
 set(CMAKE_DISABLE_SOURCE_CHANGES ON)
 set(CMAKE_DISABLE_IN_SOURCE_BUILD ON)
 
-if(CMAKE_CONFIGURATION_TYPES)
-   set_property(CACHE CMAKE_CONFIGURATION_TYPES
-      PROPERTY STRINGS ${CMAKE_CONFIGURATION_TYPES}
-   )
-elseif(NOT CMAKE_BUILD_TYPE)
-    set(CMAKE_BUILD_TYPE "Release")
-    message(STATUS "CMAKE_BUILD_TYPE not set, using ${CMAKE_BUILD_TYPE}")
-endif()
-
 set_property(GLOBAL PROPERTY USE_FOLDERS On)
+
+project(Cube VERSION 0.3.0 LANGUAGES C CXX)
 
 find_package(Boost REQUIRED)
 find_package(OpenGL REQUIRED)
@@ -36,8 +29,6 @@ if(GIT_EXECUTABLE AND NOT TARGET Git::git)
     add_executable(Git::git IMPORTED)
     set_target_properties(Git::git PROPERTIES IMPORTED_LOCATION "${GIT_EXECUTABLE}")
 endif()
-
-project(Cube VERSION 0.3.0 LANGUAGES CXX)
 
 include(GNUInstallDirs)
 include(CMakePackageConfigHelpers)
