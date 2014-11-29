@@ -41,7 +41,7 @@ if(BoostQuickbook_EXECUTABLE)
 		ERROR_QUIET
 		OUTPUT_STRIP_TRAILING_WHITESPACE
     )
-	if (_quickbook_version MATCHES "^Quickbook Version  ([0-9]+\\.[0-9]+\\.[0-9]+).*")
+	if (_quickbook_version MATCHES "^Quickbook Version ([0-9]+\\.[0-9]+\\.[0-9]+).*")
         set(BoostQuickbook_VERSION_STRING "${CMAKE_MATCH_1}")
     else()
 	    unset(BoostQuickbook_VERSION_STRING)

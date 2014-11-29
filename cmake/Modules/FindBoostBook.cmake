@@ -1,5 +1,5 @@
 #.rst:
-# FindClangFormat
+# FindBoostBook
 # -------------
 #
 # FindModule for BoostBook tools.
@@ -15,10 +15,12 @@
 #
 # This module sets the following variables:
 #
-# ``ClangFormat_FOUND``
+# ``BoostBook_FOUND``
 #  True, if the system has clang-format.
-# ``ClangFormat_EXECUTABLE``
-#  Path to the clang-format script.
+# ``BoostBook_XSL_PATH``
+#  Path to the BoostBook XSL files.
+# ``BoostBook_DTD_PATH``
+#  Path to the BoostBook DTD files.
 #
 
 set(_BoostBook_FIND_ARGS)
@@ -65,6 +67,7 @@ find_package_handle_standard_args(BoostBook
     REQUIRED_VARS
         BoostBook_XSL_PATH
         BoostBook_DTD_PATH
+        BoostBook_ASSETS_PATH
         BoostQuickbook_EXECUTABLE
         LIBXSLT_XSLTPROC_EXECUTABLE
 )
@@ -206,7 +209,7 @@ if(BoostBook_FOUND AND NOT COMMAND add_boostbook)
         foreach(_file IN LISTS _arg_SOURCES)
             get_filename_component(_absfile "${_file}" ABSOLUTE)
             if(_absfile MATCHES "\\.(c|C|cc|cpp|cxx|h|H|hh|hpp|hxx)$")
-                                list(APPEND _doxsrc ${_absfile})
+                list(APPEND _doxsrc ${_absfile})
             elseif(_absfile MATCHES "\\.(qbk)$")
                 if(NOT _qbksrc)
                     list(APPEND _qbksrc ${_absfile})
@@ -217,8 +220,8 @@ if(BoostBook_FOUND AND NOT COMMAND add_boostbook)
                 list(APPEND _xmlsrc ${_absfile})
             else()
                 message(AUTHOR_WARNING "Unrecognized file format for file `${_file}'")
-                        endif()
-                endforeach()
+            endif()
+        endforeach()
 
         if(_doxsrc)
             doxygen("${_bin_dir}/doxygen/xml/index.xml"
