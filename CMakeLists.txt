@@ -5,7 +5,7 @@
 #=============================================================================
 
 cmake_minimum_required(VERSION 3.0 FATAL_ERROR)
-cmake_policy(VERSION 3.0)
+cmake_policy(VERSION 3.15)
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/Modules")
 set(CMAKE_DISABLE_SOURCE_CHANGES ON)

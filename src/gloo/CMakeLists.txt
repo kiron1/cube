@@ -29,11 +29,7 @@ target_include_directories(cube_gloo
     PUBLIC
         $<BUILD_INTERFACE:${Cube_SOURCE_DIR}/include>
         $<BUILD_INTERFACE:${Cube_BINARY_DIR}/include>
-        ${OPENGL_INCLUDE_DIR}
-        ${GLEW_INCLUDE_DIR}
-        ${GLUT_INCLUDE_DIR}
     PRIVATE
-        ${Boost_INCLUDE_DIRS}
         src
 )
 target_compile_options(cube_gloo
@@ -42,12 +38,10 @@ target_compile_options(cube_gloo
 )
 target_link_libraries(cube_gloo
     PUBLIC
-        #OpenGL::GL
-        ${OPENGL_gl_LIBRARY}
-        #GLEW::GLEW
-        ${GLEW_LIBRARY}
-        #GLUT::GLUT
-        ${GLUT_glut_LIBRARY}
+        Boost::headers
+        OpenGL::GL
+        GLEW::GLEW
+        GLUT::GLUT
         $<$<CXX_COMPILER_ID:Clang>:c++>
 )
 add_library(${PROJECT_NAME}::gloo ALIAS cube_gloo)
