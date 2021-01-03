@@ -15,6 +15,10 @@ set_property(GLOBAL PROPERTY USE_FOLDERS On)
 
 project(Cube VERSION 0.3.0 LANGUAGES C CXX)
 
+set(CMAKE_CXX_STANDARD 11)
+set(CXX_STANDARD_REQUIRED Yes)
+set(CMAKE_CXX_EXTENSIONS No)
+
 find_package(Boost REQUIRED)
 find_package(OpenGL REQUIRED)
 find_package(GLEW REQUIRED)

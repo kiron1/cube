@@ -38,7 +38,6 @@ target_include_directories(cube_gloo
 )
 target_compile_options(cube_gloo
     PUBLIC
-        $<$<OR:$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:GNU>>:-std=c++11>
         $<$<CXX_COMPILER_ID:Clang>:-stdlib=libc++>
 )
 target_link_libraries(cube_gloo
