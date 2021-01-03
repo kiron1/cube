@@ -8,8 +8,8 @@
 
 #include <array>
 #include <chrono>
-#include <string>
 #include <memory>
+#include <string>
 
 namespace cube
 {
@@ -90,5 +90,5 @@ namespace gloo
         position_type position_;
         int window_;
     };
-}
-}
+} // namespace gloo
+} // namespace cube

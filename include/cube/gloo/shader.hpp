@@ -42,7 +42,7 @@ namespace gloo
             std::string source_;
             bool compiled_;
         };
-    }
+    } // namespace detail
 
     /// Vertex shader linked to a \ref program.
     /**
@@ -89,5 +89,5 @@ namespace gloo
         /// Construct a shader from source.
         explicit fragment_shader(std::string src);
     };
-}
-}
+} // namespace gloo
+} // namespace cube

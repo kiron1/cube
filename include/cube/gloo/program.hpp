@@ -7,9 +7,9 @@
 #pragma once
 
 #include <memory>
-#include <vector>
 #include <unordered_map>
 #include <unordered_set>
+#include <vector>
 
 #include <cube/gloo/opengl.hpp>
 
@@ -38,7 +38,7 @@ namespace gloo
         struct uniform_desc : variable_desc
         {
         };
-    }
+    } // namespace detail
 
     /// OpenGL shader program, linking the \ref shaders and binding the \ref variables.
     /**
@@ -122,5 +122,5 @@ namespace gloo
 
         bool need_link_;
     };
-}
-}
+} // namespace gloo
+} // namespace cube

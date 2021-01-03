@@ -39,6 +39,6 @@ namespace gloo
             std::string name_;
             const GLint expected_type_;
         };
-    }
-}
-}
+    } // namespace detail
+} // namespace gloo
+} // namespace cube

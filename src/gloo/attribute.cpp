@@ -6,8 +6,8 @@
 
 #include <cassert>
 
-#include <cube/gloo/program.hpp>
 #include <cube/gloo/attribute.hpp>
+#include <cube/gloo/program.hpp>
 
 namespace cube
 {
@@ -102,5 +102,5 @@ namespace gloo
         : attribute_base(p, std::move(name), GL_FLOAT_VEC4, 4UL)
     {
     }
-}
-}
+} // namespace gloo
+} // namespace cube

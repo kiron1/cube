@@ -6,16 +6,16 @@
 
 #pragma once
 
-#include <cassert>
 #include <algorithm>
-#include <string>
 #include <array>
-#include <vector>
+#include <cassert>
 #include <memory>
+#include <string>
+#include <vector>
 
+#include <cube/gloo/buffer.hpp>
 #include <cube/gloo/detail/variable.hpp>
 #include <cube/gloo/globject.hpp>
-#include <cube/gloo/buffer.hpp>
 
 namespace cube
 {
@@ -155,7 +155,8 @@ namespace gloo
         typedef basic_uniform_matrix<float, 2> mat2;   ///< uniform mat2
         typedef basic_uniform_matrix<float, 3> mat3;   ///< uniform mat3
         typedef basic_uniform_matrix<float, 4> mat4;   ///< uniform mat4
-    }
+
+    } // namespace uniform
 
     template <typename Derived>
     detail::variable<Derived>::variable(program& p, std::string name, GLint expected_type)
@@ -252,5 +253,5 @@ namespace gloo
         }
     }
     */
-}
-}
+} // namespace gloo
+} // namespace cube

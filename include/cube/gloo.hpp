@@ -18,4 +18,4 @@ namespace cube
 namespace gloo
 {
 }
-}
+} // namespace cube

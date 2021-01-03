@@ -6,8 +6,8 @@
 
 #include <cassert>
 
-#include <cube/gloo/opengl.hpp>
 #include <GL/freeglut.h>
+#include <cube/gloo/opengl.hpp>
 
 #include <cube/gloo/window.hpp>
 
@@ -145,5 +145,5 @@ namespace gloo
     {
         self()->close();
     }
-}
-}
+} // namespace gloo
+} // namespace cube

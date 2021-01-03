@@ -69,7 +69,7 @@ std::string program_info_log(const GLint program)
     glGetProgramInfoLog(program, result.size(), nullptr, &result[0]);
     return result;
 }
-}
+} // namespace
 
 namespace cube
 {
@@ -247,11 +247,11 @@ namespace gloo
         assert(!vertex_shaders_.empty());
         assert(!fragment_shaders_.empty());
 
-        const auto v = std::any_of(begin(vertex_shaders_), end(vertex_shaders_), [](vertex_shader const& u)
-                                   { return !u.compiled();
+        const auto v = std::any_of(begin(vertex_shaders_), end(vertex_shaders_), [](vertex_shader const& u) {
+            return !u.compiled();
         });
-        const auto f = std::any_of(begin(fragment_shaders_), end(fragment_shaders_), [](fragment_shader const& u)
-                                   { return !u.compiled();
+        const auto f = std::any_of(begin(fragment_shaders_), end(fragment_shaders_), [](fragment_shader const& u) {
+            return !u.compiled();
         });
 
         const auto need_build = v || f;
@@ -319,5 +319,5 @@ namespace gloo
         assert(glGetError() == GL_NO_ERROR);
         handle(0);
     }
-}
-}
+} // namespace gloo
+} // namespace cube

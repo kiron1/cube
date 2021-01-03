@@ -149,5 +149,5 @@ namespace gloo
     {
         glUniformMatrix4fv(handle(), 1, GL_FALSE, data_);
     }
-}
-}
+} // namespace gloo
+} // namespace cube

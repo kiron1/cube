@@ -6,16 +6,16 @@
 
 #pragma once
 
-#include <cassert>
 #include <algorithm>
-#include <string>
 #include <array>
-#include <vector>
+#include <cassert>
 #include <memory>
+#include <string>
+#include <vector>
 
+#include <cube/gloo/buffer.hpp>
 #include <cube/gloo/detail/variable.hpp>
 #include <cube/gloo/globject.hpp>
-#include <cube/gloo/buffer.hpp>
 
 namespace cube
 {
@@ -129,6 +129,7 @@ namespace gloo
         typedef basic_attribute<float, 2> vec2;   ///< attribute vec2
         typedef basic_attribute<float, 3> vec3;   ///< attribute vec3
         typedef basic_attribute<float, 4> vec4;   ///< attribute vec4
-    }
-}
-}
+
+    } // namespace attribute
+} // namespace gloo
+} // namespace cube

@@ -204,5 +204,5 @@ namespace gloo
             first->dispose();
         }
     }
-}
-}
+} // namespace gloo
+} // namespace cube

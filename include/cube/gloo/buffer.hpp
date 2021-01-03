@@ -84,5 +84,5 @@ namespace gloo
         }
         transfer_queue_.push(buffer_view{bufoffset, bufsize, data});
     }
-}
-}
+} // namespace gloo
+} // namespace cube

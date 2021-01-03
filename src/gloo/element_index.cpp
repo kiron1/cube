@@ -96,5 +96,5 @@ namespace gloo
         , base(size)
     {
     }
-}
-}
+} // namespace gloo
+} // namespace cube

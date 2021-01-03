@@ -67,5 +67,5 @@ namespace gloo
         glDeleteBuffers(N, buffers);
         assert(glGetError() == GL_NO_ERROR);
     }
-}
-}
+} // namespace gloo
+} // namespace cube

@@ -32,7 +32,7 @@ std::string shader_info_log(const GLint shader)
     glGetShaderInfoLog(shader, result.size(), nullptr, &result[0]);
     return result;
 }
-}
+} // namespace
 
 namespace cube
 {
@@ -107,5 +107,5 @@ namespace gloo
     {
         code(std::move(src));
     }
-}
-}
+} // namespace gloo
+} // namespace cube

@@ -26,7 +26,7 @@ find_package(GLUT REQUIRED) # Note: we require FreeGLUT
 find_package(Doxygen 1.8.0 QUIET)
 find_package(Git QUIET)
 find_package(ScanBuild QUIET)
-find_package(ClangFormat 3.5.0 QUIET)
+find_package(ClangFormat 10.0 QUIET)
 find_package(BoostBook)
 
 if(GIT_EXECUTABLE AND NOT TARGET Git::git)

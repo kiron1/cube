@@ -6,15 +6,15 @@
 
 #pragma once
 
-#include <cassert>
 #include <algorithm>
-#include <string>
 #include <array>
-#include <vector>
+#include <cassert>
 #include <memory>
+#include <string>
+#include <vector>
 
-#include <cube/gloo/globject.hpp>
 #include <cube/gloo/buffer.hpp>
+#include <cube/gloo/globject.hpp>
 
 namespace cube
 {
@@ -75,15 +75,15 @@ namespace gloo
         using reverse_iterator = typename base::reverse_iterator;
         using const_reverse_iterator = typename base::const_reverse_iterator;
 
-        using base::begin;
-        using base::end;
-        using base::rbegin;
-        using base::rend;
         using base::at;
-        using base::front;
         using base::back;
+        using base::begin;
         using base::capacity;
         using base::clear;
+        using base::end;
+        using base::front;
+        using base::rbegin;
+        using base::rend;
         using base::operator=;
         using base::operator[];
         using base::assign;
@@ -107,5 +107,5 @@ namespace gloo
     element_index<T>::~element_index()
     {
     }
-}
-}
+} // namespace gloo
+} // namespace cube
