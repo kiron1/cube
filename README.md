@@ -16,7 +16,7 @@ Dependencies
 
 - [OpenGL](http://www.opengl.org/)
 - [GLEW](http://www.glew.org/)
-- [FreeGLUT](http://freeglut.sf.net)
+- [GLFW](https://www.glfw.org)
 - [Boost](http://boost.org/)
 - C++11 compiler
 - [cmake](http://www.cmake.org/) 3.0 or newer

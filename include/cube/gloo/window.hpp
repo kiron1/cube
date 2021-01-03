@@ -11,6 +11,8 @@
 #include <memory>
 #include <string>
 
+struct GLFWwindow;
+
 namespace cube
 {
 namespace gloo
@@ -45,26 +47,17 @@ namespace gloo
             strategy();
             virtual ~strategy();
 
-        protected:
-            /// Leave main loop.
-            static void leave();
-
-            /// Retrieve elapsed time in msec.
-            static std::chrono::milliseconds time_elapsed();
-
-            /// Start periodic timer
-            /**
-              * \param time Period in msec.
-              */
-            static void periodic(int time);
+            enum class command
+            {
+                none,
+                close
+            };
 
         private:
             virtual void initialize() = 0;
             virtual void display() = 0;
             virtual void reshape(int w, int h);
-            virtual void keyboard(unsigned char key, int w, int h);
-            virtual void idle();
-            virtual void timer();
+            virtual command keyboard(int key) = 0;
             virtual void close();
         };
 
@@ -74,21 +67,19 @@ namespace gloo
         void run();
 
     private:
-        static strategy* const self();
+        static strategy* const self(GLFWwindow* window);
 
-        static void display();
-        static void reshape(int w, int h);
-        static void keyboard(unsigned char, int w, int h);
-        static void idle();
-        static void timer(int value);
-        static void close();
+        void display();
+        static void reshape(GLFWwindow* window, int w, int h);
+        static void keyboard(GLFWwindow* window, int key, int scancode, int action, int mods);
+        static void close(GLFWwindow* window);
 
     private:
-        std::unique_ptr<strategy> stategy_;
+        std::unique_ptr<strategy> strategy_;
         std::string name_;
         size_type size_;
         position_type position_;
-        int window_;
+        GLFWwindow* window_;
     };
 } // namespace gloo
 } // namespace cube

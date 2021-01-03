@@ -5,12 +5,11 @@
 //=============================================================================
 
 #include <iostream>
-#include <numeric> // iota
 #include <iterator> // begin, end
+#include <numeric>  // iota
 #include <vector>
 
 #include <cube/gloo.hpp>
-
 
 //[ vertex_shader
 static const std::string vertex_shader_source =
@@ -37,24 +36,23 @@ static const std::string fragment_shader_source =
 //]
 
 //[ data
-static const float position[4*3] = {
+static const float position[4 * 3] = {
+    // clang-format off
     -0.8f, -0.8f, 0.0f,
     +0.7f, -0.7f, 0.0f,
     -0.7f, +0.7f, 0.0f,
     +0.8f, +0.8f, 0.0f,
+    // clang-format on
 };
 
 static unsigned short outline_elements[] = {
-    2, 0, 1, 2, 3, 1
-};
+    2, 0, 1, 2, 3, 1};
 
 static const float face_color[4] = {
-    0.2f, 1.0f, 0.4f, 1.0f
-};
+    0.2f, 1.0f, 0.4f, 1.0f};
 
 static const float line_color[4] = {
-    0.0f, 0.0f, 0.0f, 1.0f
-};
+    0.0f, 0.0f, 0.0f, 1.0f};
 //]
 
 class shape_strategy : public cube::gloo::window::strategy
@@ -93,9 +91,9 @@ private:
     }
     //]
 
-    void keyboard(unsigned char key, int w, int h)
+    cube::gloo::window::strategy::command keyboard(int key)
     {
-        leave();
+        return cube::gloo::window::strategy::command::close;
     }
 
     //[ close
@@ -120,7 +118,7 @@ private:
 int main(int argc, char* argv[])
 {
     //[ window
-    cube::gloo::window::size_type s = { 400, 400 };
+    cube::gloo::window::size_type s = {400, 400};
     std::unique_ptr<cube::gloo::window::strategy> strategy(new shape_strategy);
     cube::gloo::window win(std::move(strategy), "Display Shape", s);
 

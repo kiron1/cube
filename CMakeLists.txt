@@ -22,7 +22,7 @@ set(CMAKE_CXX_EXTENSIONS No)
 find_package(Boost REQUIRED)
 find_package(OpenGL REQUIRED)
 find_package(GLEW REQUIRED)
-find_package(GLUT REQUIRED) # Note: we require FreeGLUT
+find_package(GLFW REQUIRED)
 find_package(Doxygen 1.8.0 QUIET)
 find_package(Git QUIET)
 find_package(ScanBuild QUIET)

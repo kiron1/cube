@@ -5,7 +5,7 @@
 
 * [@http://www.opengl.org/ OpenGL]
 * [@http://www.glew.org/ GLEW]
-* [@http://freeglut.sf.net FreeGLUT]
+* [@http://www.glfw.org GLFW]
 * [@http://boost.org/ Boost]
 * C++11 compiler (e.g. [@http://www.clang.org/ clang-3.5])
 * [@http://www.cmake.org/ CMake 3.0 or newer]

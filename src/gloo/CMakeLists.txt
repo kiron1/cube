@@ -41,7 +41,7 @@ target_link_libraries(cube_gloo
         Boost::headers
         OpenGL::GL
         GLEW::GLEW
-        GLUT::GLUT
+        GLFW::GLFW
         $<$<CXX_COMPILER_ID:Clang>:c++>
 )
 add_library(${PROJECT_NAME}::gloo ALIAS cube_gloo)

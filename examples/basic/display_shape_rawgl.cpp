@@ -32,26 +32,26 @@ static const std::string fragment_shader_source =
     "}\n";
 
 static const float color[4] = {
-    0.2f, 1.0f, 0.4f, 1.0f
-};
+    0.2f, 1.0f, 0.4f, 1.0f};
 
-static const float position[4*3] = {
+static const float position[4 * 3] = {
+    // clang-format off
     -0.8f, -0.8f, 0.0f,
     +0.7f, -0.7f, 0.0f,
     -0.7f, +0.7f, 0.0f,
     +0.8f, +0.8f, 0.0f,
+    // clang-format on
 };
 
 static const GLushort elements[] = {
-    0, 1, 2, 3
-};
+    0, 1, 2, 3};
 
 //[ helpers
 static GLuint make_buffer(
     GLenum target,
-    const void *data,
-    GLsizei size
-) {
+    const void* data,
+    GLsizei size)
+{
     GLuint buffer;
     glGenBuffers(1, &buffer);
     glBindBuffer(target, buffer);
@@ -61,8 +61,7 @@ static GLuint make_buffer(
 static std::string info_log(
     GLuint object,
     PFNGLGETSHADERIVPROC shader_iv_proc,
-    PFNGLGETSHADERINFOLOGPROC shader_infolog_proc
-)
+    PFNGLGETSHADERINFOLOGPROC shader_infolog_proc)
 {
     GLint len;
     std::string log;
@@ -75,8 +74,8 @@ static std::string info_log(
 
 static GLuint make_shader(GLenum type, std::string const& source)
 {
-    const GLchar* src[] = { source.c_str() };
-    const GLint srclen[] = { static_cast<GLint>(source.size()) };
+    const GLchar* src[] = {source.c_str()};
+    const GLint srclen[] = {static_cast<GLint>(source.size())};
     GLuint shader;
     GLint shader_ok;
 
@@ -85,17 +84,17 @@ static GLuint make_shader(GLenum type, std::string const& source)
     glCompileShader(shader);
 
     glGetShaderiv(shader, GL_COMPILE_STATUS, &shader_ok);
-    if (!shader_ok) {
+    if (!shader_ok)
+    {
         std::cerr
-                << "Failed to compile shader:\n"
-                << info_log(shader, glGetShaderiv, glGetShaderInfoLog)
-                << std::endl;
+            << "Failed to compile shader:\n"
+            << info_log(shader, glGetShaderiv, glGetShaderInfoLog)
+            << std::endl;
         glDeleteShader(shader);
         return 0;
     }
     return shader;
 }
-
 
 static GLuint make_program(GLuint vertex_shader, GLuint fragment_shader)
 {
@@ -108,11 +107,12 @@ static GLuint make_program(GLuint vertex_shader, GLuint fragment_shader)
     glLinkProgram(program);
 
     glGetProgramiv(program, GL_LINK_STATUS, &program_ok);
-    if (!program_ok) {
+    if (!program_ok)
+    {
         std::cerr
-                << "Failed to link shader program:\n"
-                << info_log(program, glGetProgramiv, glGetProgramInfoLog)
-                << std::endl;
+            << "Failed to link shader program:\n"
+            << info_log(program, glGetProgramiv, glGetProgramInfoLog)
+            << std::endl;
         glDeleteProgram(program);
         return 0;
     }
@@ -133,15 +133,13 @@ private:
     {
         vertex_shader_ = make_shader(
             GL_VERTEX_SHADER,
-            vertex_shader_source
-        );
+            vertex_shader_source);
         assert(vertex_shader_ != 0);
         assert(glGetError() == GL_NO_ERROR);
 
         fragment_shader_ = make_shader(
             GL_FRAGMENT_SHADER,
-            fragment_shader_source
-        );
+            fragment_shader_source);
         assert(fragment_shader_ != 0);
         assert(glGetError() == GL_NO_ERROR);
 
@@ -158,16 +156,14 @@ private:
         position_buffer_ = make_buffer(
             GL_ARRAY_BUFFER,
             position,
-            sizeof(position)
-        );
+            sizeof(position));
         assert(position_buffer_ != 0);
         assert(glGetError() == GL_NO_ERROR);
 
         element_buffer_ = make_buffer(
             GL_ELEMENT_ARRAY_BUFFER,
             elements,
-            sizeof(elements)
-        );
+            sizeof(elements));
         assert(position_buffer_ != 0);
         assert(glGetError() == GL_NO_ERROR);
     }
@@ -183,20 +179,20 @@ private:
         glBindBuffer(GL_ARRAY_BUFFER, position_buffer_);
         glEnableVertexAttribArray(position_attrib_);
         glVertexAttribPointer(
-            position_attrib_,     /* attribute */
-            3,                    /* size */
-            GL_FLOAT,             /* type */
-            GL_FALSE,             /* normalized? */
-            sizeof(GLfloat)*3,    /* stride */
-            (void*)0              /* array buffer offset */
+            position_attrib_,    /* attribute */
+            3,                   /* size */
+            GL_FLOAT,            /* type */
+            GL_FALSE,            /* normalized? */
+            sizeof(GLfloat) * 3, /* stride */
+            (void*)0             /* array buffer offset */
         );
 
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, element_buffer_);
         glDrawElements(
-            GL_TRIANGLE_STRIP,  /* mode */
-            4,                  /* count */
-            GL_UNSIGNED_SHORT,  /* type */
-            (void*)0            /* element array buffer offset */
+            GL_TRIANGLE_STRIP, /* mode */
+            4,                 /* count */
+            GL_UNSIGNED_SHORT, /* type */
+            (void*)0           /* element array buffer offset */
         );
 
         assert(glGetError() == GL_NO_ERROR);
@@ -205,9 +201,9 @@ private:
     }
     //]
 
-    void keyboard(unsigned char key, int w, int h)
+    cube::gloo::window::strategy::command keyboard(int key)
     {
-        leave();
+        return cube::gloo::window::strategy::command::close;
     }
 
     //[ close_gl
@@ -232,7 +228,7 @@ private:
 
 int main(int argc, char* argv[])
 {
-    cube::gloo::window::size_type s = { 400, 400 };
+    cube::gloo::window::size_type s = {400, 400};
     std::unique_ptr<cube::gloo::window::strategy> strategy(new shape_strategy);
     cube::gloo::window win(std::move(strategy), "Display Shape RawGL", s);
 

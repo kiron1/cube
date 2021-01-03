@@ -5,20 +5,32 @@
 //=============================================================================
 
 #include <cassert>
+#include <iostream>
 
-#include <GL/freeglut.h>
+// clang-format off
 #include <cube/gloo/opengl.hpp>
+#include <GLFW/glfw3.h>
+// clang-format on
 
 #include <cube/gloo/window.hpp>
+
+namespace
+{
+void error_callback(int error, const char* description)
+{
+    std::cerr << "Error(" << error << "): " << description << std::endl;
+}
+} // namespace
 
 namespace cube
 {
 namespace gloo
 {
     window::window(std::unique_ptr<strategy> stategy, std::string name, size_type size)
-        : stategy_(std::move(stategy))
+        : strategy_(std::move(stategy))
         , name_(std::move(name))
         , size_(size)
+        , window_(nullptr)
     {
     }
 
@@ -34,39 +46,15 @@ namespace gloo
     {
     }
 
-    void window::strategy::leave()
-    {
-        glutLeaveMainLoop();
-    }
-
-    std::chrono::milliseconds window::strategy::time_elapsed()
-    {
-        std::chrono::milliseconds const ms{glutGet(GLUT_ELAPSED_TIME)};
-        return ms;
-    }
-
-    void window::strategy::periodic(int time)
-    {
-        glutTimerFunc(time, window::timer, 0);
-    }
-
     void window::strategy::reshape(int w, int h)
     {
         glViewport(0, 0, static_cast<GLsizei>(w), static_cast<GLsizei>(h));
         assert(glGetError() == GL_NO_ERROR);
-        glutPostRedisplay();
     }
 
-    void window::strategy::keyboard(unsigned char key, int w, int h)
+    window::strategy::command window::strategy::keyboard(int key)
     {
-    }
-
-    void window::strategy::idle()
-    {
-    }
-
-    void window::strategy::timer()
-    {
+        return window::strategy::command::none;
     }
 
     void window::strategy::close()
@@ -75,36 +63,58 @@ namespace gloo
 
     void window::run()
     {
-        int argc = 0;
-        glutInit(&argc, 0);
+        glfwSetErrorCallback(error_callback);
 
-        glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH);
+        if (!glfwInit())
+        {
+            return;
+        }
 
-        glutInitWindowSize(size_[0], size_[1]);
+        // Create a windowed mode window and its OpenGL context
+        window_ = glfwCreateWindow(size_[0], size_[1], name_.c_str(), NULL, NULL);
+        if (!window_)
+        {
+            glfwTerminate();
+            return;
+        }
 
-        window_ = glutCreateWindow(name_.c_str());
-        GLenum err = glewInit();
-        assert(err == GLEW_OK);
+        glfwSetWindowUserPointer(window_, strategy_.get());
+        glfwSetKeyCallback(window_, window::keyboard);
+        //glfwSetWindowSizeCallback(window_, window::reshape);
+        glfwSetFramebufferSizeCallback(window_, window::reshape);
+        glfwSetWindowCloseCallback(window_, window::close);
 
-        glutSetWindowData(stategy_.get());
+        // make context current, must happen before the call to glewInit
+        glfwMakeContextCurrent(window_);
 
-        glutDisplayFunc(window::display);
-        glutReshapeFunc(window::reshape);
-        glutKeyboardFunc(window::keyboard);
-        glutIdleFunc(window::idle);
-        glutCloseFunc(window::close);
+        // after glfwMakeContextCurrent
+        const GLenum err = glewInit();
+        if (err != GLEW_OK)
+        {
+            glfwTerminate();
+            return;
+        }
 
-        glutReshapeWindow(glutGet(GLUT_WINDOW_WIDTH), glutGet(GLUT_WINDOW_HEIGHT));
-
-        self()->initialize();
+        strategy_->initialize();
         assert(glGetError() == GL_NO_ERROR);
 
-        glutMainLoop();
+        /* Loop until the user closes the window */
+        while (!glfwWindowShouldClose(window_))
+        {
+            // Render here
+            display();
+
+            glfwSwapBuffers(window_);
+
+            glfwPollEvents();
+        }
+
+        glfwTerminate();
     }
 
-    window::strategy* const window::self()
+    window::strategy* const window::self(GLFWwindow* window)
     {
-        void* const data = glutGetWindowData();
+        void* const data = glfwGetWindowUserPointer(window);
         assert(data != nullptr);
         return static_cast<strategy*>(data);
     }
@@ -115,35 +125,31 @@ namespace gloo
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         assert(glGetError() == GL_NO_ERROR);
 
-        self()->display();
+        strategy_->display();
         assert(glGetError() == GL_NO_ERROR);
-
-        glutSwapBuffers();
     }
 
-    void window::reshape(int w, int h)
+    void window::reshape(GLFWwindow* window, int w, int h)
     {
-        self()->reshape(w, h);
+        self(window)->reshape(w, h);
     }
 
-    void window::keyboard(unsigned char key, int w, int h)
+    void window::keyboard(GLFWwindow* window, int key, int scancode, int action, int mods)
     {
-        self()->keyboard(key, w, h);
+        const auto cmd = self(window)->keyboard(key);
+        switch (cmd)
+        {
+        case strategy::command::none:
+            break;
+        case strategy::command::close:
+            glfwSetWindowShouldClose(window, GL_TRUE);
+            break;
+        }
     }
 
-    void window::idle()
+    void window::close(GLFWwindow* window)
     {
-        self()->idle();
-    }
-
-    void window::timer(int value)
-    {
-        self()->timer();
-    }
-
-    void window::close()
-    {
-        self()->close();
+        self(window)->close();
     }
 } // namespace gloo
 } // namespace cube
