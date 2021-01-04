@@ -40,11 +40,18 @@ namespace gloo
     }
 
     window::strategy::strategy()
+        : start_time_(std::chrono::steady_clock::now())
     {
     }
 
     window::strategy::~strategy()
     {
+    }
+
+    std::chrono::duration<float> window::strategy::time_elapsed()
+    {
+        std::chrono::duration<float> const ms = std::chrono::steady_clock::now() - start_time_;
+        return ms;
     }
 
     void window::strategy::reshape(int w, int h)

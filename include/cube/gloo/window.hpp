@@ -53,12 +53,19 @@ namespace gloo
                 close
             };
 
+        protected:
+            /// Retrieve elapsed time in msec.
+            std::chrono::duration<float> time_elapsed();
+
         private:
             virtual void initialize() = 0;
             virtual void display() = 0;
             virtual void reshape(int w, int h);
             virtual command keyboard(int key) = 0;
             virtual void close();
+
+        private:
+            std::chrono::time_point<std::chrono::steady_clock> start_time_;
         };
 
         window(std::unique_ptr<strategy> stategy, std::string name, size_type size);
