@@ -4,6 +4,9 @@
 # http://www.boost.org/LICENSE_1_0.txt
 #=============================================================================
 
-add_subdirectory(basic)
-add_subdirectory(model_view_projection)
+add_executable(mvp mvp.cpp)
+target_link_libraries(mvp
+    PRIVATE
+        ${PROJECT_NAME}::gloo
+)
 

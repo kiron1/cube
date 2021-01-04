@@ -13,3 +13,9 @@ cc_binary(
     srcs = ["basic/display_shape_rawgl.cpp"],
     deps = ["//cube:cube"],
 )
+
+cc_binary(
+    name = "model_view_projection",
+    srcs = ["model_view_projection/mvp.cpp"],
+    deps = ["//cube:cube"],
+)
