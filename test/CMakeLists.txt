@@ -6,6 +6,7 @@
 
 set(_tests
     test_globject.cpp
+    test_mat.cpp
 )
 
 foreach(_test IN LISTS _tests)
