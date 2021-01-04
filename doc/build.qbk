@@ -4,7 +4,6 @@
 [section Dependencies]
 
 * [@http://www.opengl.org/ OpenGL]
-* [@http://www.glew.org/ GLEW]
 * [@http://www.glfw.org GLFW]
 * [@http://boost.org/ Boost]
 * C++11 compiler (e.g. [@http://www.clang.org/ clang-3.5])

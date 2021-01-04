@@ -9,6 +9,7 @@
 
 // clang-format off
 #include <cube/gloo/opengl.hpp>
+#define GLFW_INCLUDE_NONE
 #include <GLFW/glfw3.h>
 // clang-format on
 
@@ -84,16 +85,10 @@ namespace gloo
         glfwSetFramebufferSizeCallback(window_, window::reshape);
         glfwSetWindowCloseCallback(window_, window::close);
 
-        // make context current, must happen before the call to glewInit
         glfwMakeContextCurrent(window_);
 
         // after glfwMakeContextCurrent
-        const GLenum err = glewInit();
-        if (err != GLEW_OK)
-        {
-            glfwTerminate();
-            return;
-        }
+        gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
 
         strategy_->initialize();
         assert(glGetError() == GL_NO_ERROR);

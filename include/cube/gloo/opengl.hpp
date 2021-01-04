@@ -7,7 +7,7 @@
 // Extension point to hook in a different OpenGL header for mocking.
 // clang-format off
 #ifndef CUBE_GLOO_GL_H
-#define CUBE_GLOO_GL_H "GL/glew.h"
+#define CUBE_GLOO_GL_H "glad/glad.h"
 #endif
 // clang-format on
 

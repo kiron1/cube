@@ -15,7 +15,6 @@ Dependencies
 ------------
 
 - [OpenGL](http://www.opengl.org/)
-- [GLEW](http://www.glew.org/)
 - [GLFW](https://www.glfw.org)
 - [Boost](http://boost.org/)
 - C++11 compiler

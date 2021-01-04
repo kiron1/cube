@@ -21,7 +21,6 @@ set(CMAKE_CXX_EXTENSIONS No)
 
 find_package(Boost REQUIRED)
 find_package(OpenGL REQUIRED)
-find_package(GLEW REQUIRED)
 find_package(GLFW REQUIRED)
 find_package(Doxygen 1.8.0 QUIET)
 find_package(Git QUIET)
@@ -46,6 +45,7 @@ add_subdirectory(src)
 add_subdirectory(doc)
 add_subdirectory(test)
 add_subdirectory(examples)
+add_subdirectory(third_party)
 
 install(DIRECTORY include/
     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
