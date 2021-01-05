@@ -5,32 +5,29 @@
 #=============================================================================
 
 add_library(cube_gloo
-    ${Cube_SOURCE_DIR}/include/cube/gloo.hpp
-    ${Cube_SOURCE_DIR}/include/cube/gloo/attribute.hpp
-    ${Cube_SOURCE_DIR}/include/cube/gloo/buffer.hpp
-    ${Cube_SOURCE_DIR}/include/cube/gloo/detail/variable.hpp
-    ${Cube_SOURCE_DIR}/include/cube/gloo/element_index.hpp
-    ${Cube_SOURCE_DIR}/include/cube/gloo/globject.hpp
-    ${Cube_SOURCE_DIR}/include/cube/gloo/opengl.hpp
-    ${Cube_SOURCE_DIR}/include/cube/gloo/program.hpp
-    ${Cube_SOURCE_DIR}/include/cube/gloo/shader.hpp
-    ${Cube_SOURCE_DIR}/include/cube/gloo/uniform.hpp
-    ${Cube_SOURCE_DIR}/include/cube/gloo/variable.hpp
-    ${Cube_SOURCE_DIR}/include/cube/gloo/window.hpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/attribute.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/buffer.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/element_index.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/program.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/shader.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/uniform.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/window.cpp
+    gloo.hpp
+    gloo/attribute.hpp
+    gloo/buffer.hpp
+    gloo/detail/variable.hpp
+    gloo/element_index.hpp
+    gloo/globject.hpp
+    gloo/opengl.hpp
+    gloo/program.hpp
+    gloo/shader.hpp
+    gloo/uniform.hpp
+    gloo/variable.hpp
+    gloo/window.hpp
+    gloo/attribute.cpp
+    gloo/buffer.cpp
+    gloo/element_index.cpp
+    gloo/program.cpp
+    gloo/shader.cpp
+    gloo/uniform.cpp
+    gloo/window.cpp
 )
 target_include_directories(cube_gloo
     PUBLIC
-        $<BUILD_INTERFACE:${Cube_SOURCE_DIR}/include>
-        $<BUILD_INTERFACE:${Cube_BINARY_DIR}/include>
-    PRIVATE
-        src
+        $<BUILD_INTERFACE:${Cube_SOURCE_DIR}>
 )
 target_compile_options(cube_gloo
     PUBLIC

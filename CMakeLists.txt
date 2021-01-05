@@ -41,7 +41,7 @@ option(BUILD_DOCUMENTATION "Enable documentation" On)
 option(${PROJECT_NAME}_DEVELOPER "Enable extra targets for developers" Off)
 mark_as_advanced(${PROJECT_NAME}_DEVELOPER)
 
-add_subdirectory(src)
+add_subdirectory(cube)
 add_subdirectory(doc)
 add_subdirectory(test)
 add_subdirectory(examples)
