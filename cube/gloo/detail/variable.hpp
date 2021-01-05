@@ -8,7 +8,7 @@
 
 #include <string>
 
-#include <cube/gloo/globject.hpp>
+#include "cube/gloo/globject.hpp"
 
 namespace cube
 {

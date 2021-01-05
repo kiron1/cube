@@ -13,9 +13,9 @@
 #include <string>
 #include <vector>
 
-#include <cube/gloo/buffer.hpp>
-#include <cube/gloo/detail/variable.hpp>
-#include <cube/gloo/globject.hpp>
+#include "cube/gloo/buffer.hpp"
+#include "cube/gloo/detail/variable.hpp"
+#include "cube/gloo/globject.hpp"
 
 namespace cube
 {

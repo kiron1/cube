@@ -8,12 +8,12 @@
 #include <iostream>
 
 // clang-format off
-#include <cube/gloo/opengl.hpp>
+#include "cube/gloo/opengl.hpp"
 #define GLFW_INCLUDE_NONE
 #include <GLFW/glfw3.h>
 // clang-format on
 
-#include <cube/gloo/window.hpp>
+#include "cube/gloo/window.hpp"
 
 namespace
 {

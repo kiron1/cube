@@ -6,8 +6,8 @@
 
 #include <cassert>
 
-#include <cube/gloo/program.hpp>
-#include <cube/gloo/uniform.hpp>
+#include "cube/gloo/program.hpp"
+#include "cube/gloo/uniform.hpp"
 
 namespace cube
 {

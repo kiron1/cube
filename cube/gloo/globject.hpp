@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include <cube/gloo/opengl.hpp>
+#include "cube/gloo/opengl.hpp"
 
 namespace cube
 {

@@ -11,12 +11,12 @@
 #include <unordered_set>
 #include <vector>
 
-#include <cube/gloo/opengl.hpp>
+#include "cube/gloo/opengl.hpp"
 
-#include <cube/gloo/element_index.hpp>
-#include <cube/gloo/globject.hpp>
-#include <cube/gloo/shader.hpp>
-#include <cube/gloo/variable.hpp>
+#include "cube/gloo/element_index.hpp"
+#include "cube/gloo/globject.hpp"
+#include "cube/gloo/shader.hpp"
+#include "cube/gloo/variable.hpp"
 
 namespace cube
 {

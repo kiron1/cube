@@ -8,9 +8,9 @@
 
 #include <string>
 
-#include <cube/gloo/opengl.hpp>
+#include "cube/gloo/opengl.hpp"
 
-#include <cube/gloo/globject.hpp>
+#include "cube/gloo/globject.hpp"
 
 namespace cube
 {

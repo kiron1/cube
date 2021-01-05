@@ -6,7 +6,7 @@
 
 #include <cassert>
 
-#include <cube/gloo/shader.hpp>
+#include "cube/gloo/shader.hpp"
 
 namespace
 {

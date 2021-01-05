@@ -8,8 +8,8 @@
 #include <iostream>
 #include <vector>
 
-#include <cube/gloo/opengl.hpp>
-#include <cube/gloo/window.hpp>
+#include "cube/gloo/opengl.hpp"
+#include "cube/gloo/window.hpp"
 
 static const std::string vertex_shader_source =
     "// Attributes\n"

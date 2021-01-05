@@ -6,7 +6,7 @@
 
 #include "catch.hpp"
 
-#include <cube/mat.hpp>
+#include "cube/mat.hpp"
 
 TEST_CASE("cube::mat::eye test", "[mat]")
 {

@@ -1,3 +1,7 @@
+bazel-bin
+bazel-cube
+bazel-out
+bazel-testlogs
 *build*/
 init-cache-*.cmake
 *.bat

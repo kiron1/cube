@@ -6,7 +6,7 @@
 
 #include <cassert>
 
-#include <cube/gloo/element_index.hpp>
+#include "cube/gloo/element_index.hpp"
 
 namespace cube
 {

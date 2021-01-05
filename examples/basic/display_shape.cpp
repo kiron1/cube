@@ -9,7 +9,7 @@
 #include <numeric>  // iota
 #include <vector>
 
-#include <cube/gloo.hpp>
+#include "cube/gloo.hpp"
 
 //[ vertex_shader
 static const std::string vertex_shader_source =

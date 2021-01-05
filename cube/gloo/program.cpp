@@ -11,7 +11,7 @@
 
 #include <boost/iterator/indirect_iterator.hpp>
 
-#include <cube/gloo/program.hpp>
+#include "cube/gloo/program.hpp"
 
 namespace
 {

@@ -6,5 +6,5 @@
 
 #pragma once
 
-#include <cube/gloo/attribute.hpp>
-#include <cube/gloo/uniform.hpp>
+#include "cube/gloo/attribute.hpp"
+#include "cube/gloo/uniform.hpp"

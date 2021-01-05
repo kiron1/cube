@@ -6,11 +6,11 @@
 
 #pragma once
 
-#include <cube/gloo/element_index.hpp>
-#include <cube/gloo/program.hpp>
-#include <cube/gloo/shader.hpp>
-#include <cube/gloo/variable.hpp>
-#include <cube/gloo/window.hpp>
+#include "cube/gloo/element_index.hpp"
+#include "cube/gloo/program.hpp"
+#include "cube/gloo/shader.hpp"
+#include "cube/gloo/variable.hpp"
+#include "cube/gloo/window.hpp"
 
 namespace cube
 {

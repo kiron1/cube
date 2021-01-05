@@ -6,8 +6,8 @@
 
 #include <cassert>
 
-#include <cube/gloo/attribute.hpp>
-#include <cube/gloo/program.hpp>
+#include "cube/gloo/attribute.hpp"
+#include "cube/gloo/program.hpp"
 
 namespace cube
 {

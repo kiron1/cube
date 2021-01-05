@@ -7,7 +7,7 @@
 #include <cassert>
 #include <cstddef>
 
-#include <cube/gloo/buffer.hpp>
+#include "cube/gloo/buffer.hpp"
 
 namespace cube
 {
