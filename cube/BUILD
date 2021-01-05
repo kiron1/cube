@@ -18,7 +18,7 @@ cc_test(
     srcs = ["mat_test.cpp"],
     deps = [
         ":cube",
-        "//third_party/catch:catch",
+        "//third_party/catchorg:catch2_with_main",
     ],
 )
 
@@ -27,6 +27,6 @@ cc_test(
     srcs = ["gloo/globject_test.cpp"],
     deps = [
         ":cube",
-        "//third_party/catch:catch",
+        "//third_party/catchorg:catch2_with_main",
     ],
 )

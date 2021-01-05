@@ -4,5 +4,5 @@
 # http://www.boost.org/LICENSE_1_0.txt
 #=============================================================================
 
-add_subdirectory(catch)
+add_subdirectory(catchorg)
 add_subdirectory(glad)

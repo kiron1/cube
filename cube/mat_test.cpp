@@ -4,7 +4,7 @@
 // http://www.boost.org/LICENSE_1_0.txt
 //=============================================================================
 
-#include "catch.hpp"
+#include <catch2/catch.hpp>
 
 #include "cube/mat.hpp"
 

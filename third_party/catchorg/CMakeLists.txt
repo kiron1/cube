@@ -4,13 +4,20 @@
 # http://www.boost.org/LICENSE_1_0.txt
 #=============================================================================
 
-add_library(catch INTERFACE catch.hpp)
-target_include_directories(catch
+add_library(catch2 INTERFACE)
+target_include_directories(catch2
     INTERFACE
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
 
 )
-target_compile_definitions(catch
+
+add_library(catch2_with_main INTERFACE)
+target_compile_definitions(catch2_with_main
     INTERFACE
         CATCH_CONFIG_MAIN=1
 )
+target_link_libraries(catch2_with_main
+    INTERFACE
+        catch2
+)
+

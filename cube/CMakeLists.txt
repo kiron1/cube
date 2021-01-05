@@ -66,7 +66,7 @@ foreach(_test IN LISTS _tests)
     target_link_libraries(${_target}
         PRIVATE
           ${PROJECT_NAME}::gloo
-          catch
+          catch2_with_main
     )
     add_test(NAME ${_target} COMMAND $<TARGET_FILE:${_target}>)
 endforeach()
