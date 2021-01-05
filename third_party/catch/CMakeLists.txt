@@ -4,5 +4,13 @@
 # http://www.boost.org/LICENSE_1_0.txt
 #=============================================================================
 
-add_subdirectory(catch)
-add_subdirectory(glad)
+add_library(catch INTERFACE catch.hpp)
+target_include_directories(catch
+    INTERFACE
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
+
+)
+target_compile_definitions(catch
+    INTERFACE
+        CATCH_CONFIG_MAIN=1
+)

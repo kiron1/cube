@@ -4,6 +4,11 @@
 # http://www.boost.org/LICENSE_1_0.txt
 #=============================================================================
 
+set(_tests
+    gloo/globject_test.cpp
+    mat_test.cpp
+)
+
 add_library(cube_gloo
     gloo.hpp
     gloo/attribute.hpp
@@ -24,6 +29,7 @@ add_library(cube_gloo
     gloo/shader.cpp
     gloo/uniform.cpp
     gloo/window.cpp
+    mat.hpp
 )
 target_include_directories(cube_gloo
     PUBLIC
@@ -53,3 +59,14 @@ install(TARGETS cube_gloo EXPORT ${PROJECT_NAME}
     INCLUDES      DESTINATION ${CMAKE_INSTALL_INCLUDEDIR} COMPONENT "${PROJECT_NAME}-dev"
 )
 
+
+foreach(_test IN LISTS _tests)
+    get_filename_component(_target "${_test}" NAME_WE)
+    add_executable(${_target} ${_test})
+    target_link_libraries(${_target}
+        PRIVATE
+          ${PROJECT_NAME}::gloo
+          catch
+    )
+    add_test(NAME ${_target} COMMAND $<TARGET_FILE:${_target}>)
+endforeach()

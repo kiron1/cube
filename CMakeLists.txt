@@ -43,7 +43,6 @@ mark_as_advanced(${PROJECT_NAME}_DEVELOPER)
 
 add_subdirectory(cube)
 add_subdirectory(doc)
-add_subdirectory(test)
 add_subdirectory(examples)
 add_subdirectory(third_party)
 
