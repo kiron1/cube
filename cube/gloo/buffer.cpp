@@ -14,8 +14,8 @@ namespace cube
 namespace gloo
 {
     buffer::buffer(target_type t, usage_type usage)
-        : size_(0)
-        , usage_(usage)
+        : usage_(usage)
+        , size_(0)
     {
         target(static_cast<GLint>(t));
     }

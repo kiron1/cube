@@ -15,8 +15,8 @@ namespace gloo
 {
     uniform_base::uniform_base(program& p, std::string name, GLint expected_type)
         : variable(p, std::move(name), expected_type)
-        , desc_()
         , dirty_(false)
+        , desc_()
     {
         program_->attach(this);
     }

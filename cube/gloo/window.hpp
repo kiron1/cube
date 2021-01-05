@@ -85,7 +85,6 @@ namespace gloo
         std::unique_ptr<strategy> strategy_;
         std::string name_;
         size_type size_;
-        position_type position_;
         GLFWwindow* window_;
     };
 } // namespace gloo

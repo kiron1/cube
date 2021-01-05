@@ -17,8 +17,8 @@ namespace gloo
         : variable(p, std::move(name), expected_type)
         , buffer_(buffer::array_buffer, buffer::static_draw)
         , size_(0)
-        , desc_()
         , generic_(false)
+        , desc_()
         , dim_(dim)
     {
         program_->attach(this);
