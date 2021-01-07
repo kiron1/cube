@@ -1,0 +1,25 @@
+#!/bin/sh
+
+set -eu
+
+BOOST_ROOT=bazel-cube/external/boost
+OUT_DIR=doc-bin
+
+export XML_CATALOG_FILES=${OUT_DIR}/docbook-xsl-1.79.1/catalog.xml
+
+doxygen --version
+quickbook --version
+xsltproc --version
+
+doxygen
+xsltproc --xinclude --output ${OUT_DIR}/autodoc.doxygen.xml ${BOOST_ROOT}/tools/boostbook/xsl/doxygen/collect.xsl doxygen/xml/index.xml
+xsltproc --xinclude --output ${OUT_DIR}/autodoc.xml ${BOOST_ROOT}/tools/boostbook/xsl/doxygen/doxygen2boostbook.xsl ${OUT_DIR}/autodoc.doxygen.xml
+cp doc/cube.qbk ${OUT_DIR}
+quickbook -I doc --input-file ${OUT_DIR}/cube.qbk --output-file ${OUT_DIR}/cube.xml
+xsltproc --xinclude --output ${OUT_DIR}/docbook.xml ${BOOST_ROOT}/tools/boostbook/xsl/docbook.xsl ${OUT_DIR}/cube.xml
+xsltproc --xinclude --output ${OUT_DIR}/index.html  ${BOOST_ROOT}/tools/boostbook/xsl/html.xsl ${OUT_DIR}/docbook.xml
+
+cp -r ${BOOST_ROOT}/doc/src/images/ ${OUT_DIR}/
+cp ${BOOST_ROOT}/doc/src/*.css ${OUT_DIR}/
+
+echo See ${OUT_DIR}/index.html

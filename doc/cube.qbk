@@ -7,7 +7,7 @@
 [library Cube
     [quickbook 1.6]
     [authors [Kiron, Ion]]
-    [copyright 2014 Kiron]
+    [copyright 2014-2021 Kiron]
     [id cube]
     [dirname cube]
     [purpose A modern OpenGL C++11 visualization library for 2d and 3d dataL]
@@ -16,7 +16,6 @@
         (See accompanying file LICENSE_1_0.txt or copy at
         [@http://www.boost.org/LICENSE_1_0.txt])
     ]
-    [xmlbase .]
 ]
 
 [note
