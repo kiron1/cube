@@ -43,7 +43,6 @@ cc_library(
         "src/context.c",
         "src/egl_context.c",
         "src/egl_context.h",
-        "src/glfw_config.h",
         "src/glx_context.c",
         "src/glx_context.h",
         "src/init.c",
@@ -51,11 +50,14 @@ cc_library(
         "src/internal.h",
         "src/linux_joystick.c",
         "src/linux_joystick.h",
+        "src/mappings.h",
         "src/monitor.c",
+        "src/osmesa_context.c",
+        "src/osmesa_context.h",
+        "src/posix_thread.c",
+        "src/posix_thread.h",
         "src/posix_time.c",
         "src/posix_time.h",
-        "src/posix_tls.c",
-        "src/posix_tls.h",
         "src/vulkan.c",
         "src/window.c",
         "src/x11_init.c",
@@ -73,10 +75,9 @@ cc_library(
         "-I/usr/include",
     ],
     linkopts = [
-        # Note:  This is a bit of a HACK to build & link against whatever
-        # version of X11 is installed on the system. Ideally, X11 would also
-        # be built with bazel to ensure consistency.
         "-lX11",
+        "-lpthread",
+        "-ldl",
     ],
     defines = [
         "_GLFW_X11",
